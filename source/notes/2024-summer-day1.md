@@ -1,7 +1,23 @@
 # Day1
 
 ## Basic Linux
-1
+
+
+```bash
+ls
+
+
+```
+
+
 ## VScode
+
+
+### Extension
+
+安装 `Remote`插件
+
+
+
 
 ## Git
