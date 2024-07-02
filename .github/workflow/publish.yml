@@ -1,0 +1,28 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch name to trigger deployment
+
+jobs:
+  publish:
+    name: Deploy Site
+    runs-on: ubuntu-22.04
+    environment: github-pages
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Install 
+        shell: bash
+        run: |
+          pip install -r requirements.txt
+          sphinx-build -b html source build
+
+
+      - name: Deploy Website
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
