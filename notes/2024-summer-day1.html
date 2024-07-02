@@ -73,12 +73,36 @@ data-aria-dark="切换到自动模式">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>该页内容</h3><ul>
-<li><a class="reference internal" href="#basic-linux">Basic Linux</a></li>
-<li><a class="reference internal" href="#vscode">VScode</a><ul>
-<li><a class="reference internal" href="#extension">Extension</a></li>
+<li><a class="reference internal" href="#basic-linux">&#19968;&#12289;Basic Linux</a><ul>
+<li><a class="reference internal" href="#id1">1. &#25991;&#20214;&#21644;&#30446;&#24405;&#31649;&#29702;</a></li>
+<li><a class="reference internal" href="#id2">2. &#31995;&#32479;&#30417;&#25511;&#21644;&#20219;&#21153;&#31649;&#29702;</a></li>
+<li><a class="reference internal" href="#id3">3. &#28165;&#29702;&#23631;&#24149;</a></li>
+<li><a class="reference internal" href="#id4">4. &#32593;&#32476;&#21644;&#31995;&#32479;&#20449;&#24687;</a></li>
+<li><a class="reference internal" href="#id5">5. &#25991;&#20214;&#20256;&#36755;&#21644;&#23433;&#35013;</a></li>
+<li><a class="reference internal" href="#vim">6. VIM&#24555;&#25463;&#38190;</a></li>
+<li><a class="reference internal" href="#python">7. Python&#21644;&#34394;&#25311;&#29615;&#22659;&#31649;&#29702;</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#git">Git</a></li>
+<li><a class="reference internal" href="#vscode">&#20108;&#12289;VScode</a><ul>
+<li><a class="reference internal" href="#extension">Extension</a><ul>
+<li><a class="reference internal" href="#remote">1.Remote</a></li>
+<li><a class="reference internal" href="#id6">2.&#31616;&#20307;&#20013;&#25991;</a></li>
+<li><a class="reference internal" href="#id7">3.Python</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">VSCode&#36830;&#25509;&#26381;&#21153;&#22120;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#git">&#19977;&#12289;Git</a><ul>
+<li><a class="reference internal" href="#id9">&#21629;&#20196;&#34892;&#25805;&#20316;</a><ul>
+<li><a class="reference internal" href="#repo">&#19968;&#12289;repo&#26159;&#20320;&#33258;&#24049;&#21019;&#24314;&#30340;/&#20320;&#21442;&#19982;&#21327;&#20316;&#19988;&#25317;&#26377;&#35775;&#38382;&#26435;&#38480;</a></li>
+<li><a class="reference internal" href="#id10">&#20108;&#12289;repo&#26159;&#21035;&#20154;&#30340;&#65292;&#20320;&#24819;&#25644;&#36816;&#26469;&#29992;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">VSCode&#20013;&#28304;&#20195;&#30721;&#31649;&#29702;</a></li>
+<li><a class="reference internal" href="#id12">&#20195;&#30721;&#25552;&#20132;&#25805;&#20316;&#27493;&#39588;</a></li>
+</ul>
+</li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -111,26 +135,249 @@ data-aria-dark="切换到自动模式">
           <section id="day1">
 <h1>Day1<a class="headerlink" href="#day1" title="Link to this heading">¶</a></h1>
 <section id="basic-linux">
-<h2>Basic Linux<a class="headerlink" href="#basic-linux" title="Link to this heading">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">ls
+<h2>一、Basic Linux<a class="headerlink" href="#basic-linux" title="Link to this heading">¶</a></h2>
+<section id="id1">
+<h3>1. 文件和目录管理<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>列出当前目录下的文件列表</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ls</span>
+</span><span data-line="2">
+</span></pre></div>
+</div>
+<p>显示当前工作目录的路径</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">pwd</span>
+</span></pre></div>
+</div>
+<p>进入目录</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">cd /path/to/directory（请替换需要进入的路径）
+</span></pre></div>
+</div>
+<p>显示磁盘结构，包括各个磁盘的挂载点</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">lsblk</span>
 </span></pre></div>
 </div>
 </section>
+<section id="id2">
+<h3>2. 系统监控和任务管理<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p>显示任务管理器，监控系统进程</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">top</span>
+</span></pre></div>
+</div>
+<p>美化版的top，提供更直观的任务管理界面</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">btop</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>3. 清理屏幕<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>清空当前终端页面</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">clear</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>4. 网络和系统信息<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<p>查看curl命令的文档</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">man</span> <span class="n">curl</span>
+</span></pre></div>
+</div>
+<p>查看当前IP地址</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">curl</span> <span class="n">ip</span><span class="o">.</span><span class="n">sb</span>
+</span></pre></div>
+</div>
+<p>使用curl测试网络连接，使用谷歌可查看是否能访问外网</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">curl</span> <span class="n">baidu</span><span class="o">.</span><span class="n">com</span>
+</span><span data-line="2"><span class="n">curl</span> <span class="n">google</span><span class="o">.</span><span class="n">com</span>
+</span></pre></div>
+</div>
+<p>显示每个接口的详细信息</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ip</span> <span class="n">a</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>5. 文件传输和安装<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>使用scp命令进行文件传输</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">scp</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span> <span class="n">username</span><span class="nd">@remotehost</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">destination</span><span class="o">/</span>
+</span></pre></div>
+</div>
+<p>运行bash脚本进行安装</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">bash</span> <span class="n">install</span><span class="o">.</span><span class="n">sh</span>
+</span></pre></div>
+</div>
+</section>
+<section id="vim">
+<h3>6. VIM快捷键<a class="headerlink" href="#vim" title="Link to this heading">¶</a></h3>
+<p>向下移动</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">J</span>
+</span></pre></div>
+</div>
+<p>向上移动</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">K</span>
+</span></pre></div>
+</div>
+<p>退出VIM（组合键）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">:</span><span class="n">q</span>
+</span></pre></div>
+</div>
+</section>
+<section id="python">
+<h3>7. Python和虚拟环境管理<a class="headerlink" href="#python" title="Link to this heading">¶</a></h3>
+<p>创建Python虚拟环境，用于隔离项目的依赖环境</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">virtualenv</span> <span class="n">myenv</span>
+</span></pre></div>
+</div>
+</section>
+</section>
 <section id="vscode">
-<h2>VScode<a class="headerlink" href="#vscode" title="Link to this heading">¶</a></h2>
+<h2>二、VScode<a class="headerlink" href="#vscode" title="Link to this heading">¶</a></h2>
 <section id="extension">
 <h3>Extension<a class="headerlink" href="#extension" title="Link to this heading">¶</a></h3>
-<p>安装 <code class="docutils literal notranslate"><span class="pre">Remote</span></code>插件, 然后进行登陆</p>
+<section id="remote">
+<h4>1.Remote<a class="headerlink" href="#remote" title="Link to this heading">¶</a></h4>
+<p>安装Remote插件, 然后进行服务器的登录操作
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925146461-f8bf3229-c1d0-4082-88ee-6c9464920a62.png#averageHue=%23303942&amp;clientId=ud3b6b92c-252e-4&amp;from=paste&amp;height=72&amp;id=u7f5c4d03&amp;originHeight=72&amp;originWidth=249&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5064&amp;status=done&amp;style=none&amp;taskId=ube1af80b-f928-494d-9411-5ab3a601e82&amp;title=&amp;width=249" /></p>
+</section>
+<section id="id6">
+<h4>2.简体中文<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
+<p>如果不习惯看英文，可以安装简体中文的插件
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925162642-0d700547-4947-4b13-ae13-f465b45fb658.png#averageHue=%232f373f&amp;clientId=ud3b6b92c-252e-4&amp;from=paste&amp;height=74&amp;id=ucc5e036b&amp;originHeight=74&amp;originWidth=250&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=6301&amp;status=done&amp;style=none&amp;taskId=ub71f9b60-5f50-4ccf-8acb-607af93fa88&amp;title=&amp;width=250" /></p>
+</section>
+<section id="id7">
+<h4>3.Python<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
+<p>VSCode中Python开发环境支持的插件
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925182463-3510f60a-9563-4f8e-9dc8-6de9941c932c.png#averageHue=%233d4956&amp;clientId=ud3b6b92c-252e-4&amp;from=paste&amp;height=71&amp;id=u566b79b5&amp;originHeight=71&amp;originWidth=247&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5240&amp;status=done&amp;style=none&amp;taskId=u9f99da98-b4c1-4d1a-b2d1-1f86df7bd6e&amp;title=&amp;width=247" /></p>
+</section>
+</section>
+<section id="id8">
+<h3>VSCode连接服务器<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<p>在安装好remote插件后，就可以连接到服务器了。
+点击这个按钮：
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925705407-e7e0d283-4126-4bb4-b855-a1cdce5f9c7c.png#averageHue=%232c3136&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=55&amp;id=u24a6a018&amp;originHeight=55&amp;originWidth=164&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3336&amp;status=done&amp;style=none&amp;taskId=uab81b8ae-2e4a-4cc1-9cbe-92a3c297b5a&amp;title=&amp;width=164" />
+左边栏空空如也，点击这个加号按钮：
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925731564-51dd461f-6546-40e1-aef5-cc00c29fb32d.png#averageHue=%23282f35&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=48&amp;id=ud09127ca&amp;originHeight=48&amp;originWidth=246&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3328&amp;status=done&amp;style=none&amp;taskId=u4f964cb4-0a8a-45fe-a5ca-28e9a4e5cb3&amp;title=&amp;width=246" />
+输入ssh连接命令：
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925744839-d4d1594c-8a52-4063-8d82-cfda00fd79ba.png#averageHue=%232f363d&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=97&amp;id=u3a339893&amp;originHeight=97&amp;originWidth=613&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=7818&amp;status=done&amp;style=none&amp;taskId=u6976d1ea-efaf-4768-a97e-cc6ebea3797&amp;title=&amp;width=613" />
+现在假设已经添加好了，点击刷新，左边就可以进行连接了。
+这里用挂在校园网上的服务器举例：
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925796677-203bef53-7b76-4044-9783-14ba887fdd8b.png#averageHue=%232c3237&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=59&amp;id=u24eb3380&amp;originHeight=59&amp;originWidth=271&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=4920&amp;status=done&amp;style=none&amp;taskId=u9047495b-2cfb-456e-b796-e9d40f52f74&amp;title=&amp;width=271" />
+点击箭头，顶端搜索栏中会要求输入密码，输入正确后即可连接。
+此时点击左边的资源管理器，画面如下：
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925856335-809ad7af-34f3-4abb-84e7-2cf40c5615ec.png#averageHue=%23252d33&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=219&amp;id=u8c025546&amp;originHeight=219&amp;originWidth=237&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=10188&amp;status=done&amp;style=none&amp;taskId=u2491b072-0d78-45db-abb2-ea0e470d880&amp;title=&amp;width=237" />
+点击打开文件夹，就可以进入服务器中的文件夹了。
+在你有权限的文件夹中，你可以进行文件的增删改等操作，请根据服务器不同位置的具体权限自行使用。</p>
 </section>
 </section>
 <section id="git">
-<h2>Git<a class="headerlink" href="#git" title="Link to this heading">¶</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="n">xxx</span>
-</span><span data-line="2">
-</span><span data-line="3"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="n">xxx</span>
-</span><span data-line="4">
+<h2>三、Git<a class="headerlink" href="#git" title="Link to this heading">¶</a></h2>
+<p>首先请确保你的电脑已经安装了Git！
+Git的安装网址如下：
+<a class="reference external" href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git">https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git</a>
+如果你是MacOS系统，可以使用brew进行安装。
+首次使用需要在命令行对个人信息进行初始化：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="n">你的用户名</span>
+</span><span data-line="2"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="n">你的邮箱</span>
 </span></pre></div>
 </div>
+<p>这里的邮箱需要与你注册github的邮箱对应。为了方便，用户名和邮箱都使用Github的注册信息即可。</p>
+<section id="id9">
+<h3>命令行操作<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<p>如果你要把Github上的项目克隆到本地，分两种情况，操作都大同小异。
+在后文，项目统一用repo代替，与github的repositories对应。</p>
+<section id="repo">
+<h4>一、repo是你自己创建的/你参与协作且拥有访问权限<a class="headerlink" href="#repo" title="Link to this heading">¶</a></h4>
+<p>进入自己的repo，点击绿色的Code按钮，会找到一个https网址，把它复制下来。用这行代码克隆到你初始化的仓库，url即复制的网址。访问Github可以使用科学上网。</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">复制的url</span></code>
+命令行会反馈是否成功，如果不成功可能是网络问题。</p>
+</section>
+<section id="id10">
+<h4>二、repo是别人的，你想搬运来用<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h4>
+<p>点击Fork按钮，将项目fork到你自己的repo中，随后在自己的repo中查看url并使用相同的命令。网址后的ID是你自己的才是正确的。
+举例：<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1716475568434-0fcba53d-4e2e-48f4-83a0-7989a3ef9acd.png#averageHue=%23d5d8d9&amp;clientId=ub1b7a934-b487-4&amp;from=paste&amp;height=41&amp;id=u93b3b16b&amp;originHeight=82&amp;originWidth=682&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=14834&amp;status=done&amp;style=none&amp;taskId=u5ca81032-fbc7-4780-81a8-e40c54f6bb4&amp;title=&amp;width=341" />
+现在，你可以在本地对这个项目进行操作。
+这里需要注意项目的法律条款协议。
+当操作完成后，需要将项目推送到GitHub时
+命令行进入工作文件夹。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
+</span></pre></div>
+</div>
+<p>将文件夹中的所有文件添加到工作区</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">status</span>
+</span></pre></div>
+</div>
+<p>查看当前工作区状态，可以查看经过修改的文件</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;your message&quot;</span>
+</span></pre></div>
+</div>
+<p>将修改好的内容提交到工作区，your message部分是你的提交信息，日志会更新在这里<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1716475753120-747bb456-425c-4c5f-a8ac-e3115b07adbd.png#averageHue=%23fef8f7&amp;clientId=ub1b7a934-b487-4&amp;from=paste&amp;height=45&amp;id=u38d828e6&amp;originHeight=90&amp;originWidth=1790&amp;originalType=binary&amp;ratio=2&amp;rotation=0&amp;showTitle=false&amp;size=26386&amp;status=done&amp;style=none&amp;taskId=u904fbf6f-4a05-4b8d-a87b-4b4af143263&amp;title=&amp;width=895" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">push</span>
+</span></pre></div>
+</div>
+<p>将代码推送到GitHub，如果失败是网络问题
+如果你要将你修改的代码提交到别人的repo中，第一次，要用到</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">push</span><span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span>
+</span></pre></div>
+</div>
+<p>推送远程仓库，第一次可能需要登录
+如果GitHub的仓库更新了，比如和别人共同协作一个repo，他提交了代码，你要同步</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">pull</span>
+</span></pre></div>
+</div>
+<p>拉取最新的代码
+如果在repo中有不同的分支
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">分支名</span></code>
+创建本地分支</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">a</span>
+</span></pre></div>
+</div>
+<p>查看本地的所有分支</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">checkout</span> <span class="n">分支名</span>
+</span></pre></div>
+</div>
+<p>切换到某分支</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">branch</span> <span class="o">-</span> <span class="n">D</span> <span class="n">分支名</span>
+</span></pre></div>
+</div>
+<p>删除本地分支</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">url</span>
+</span></pre></div>
+</div>
+<p>将本地分支同步到远程分支</p>
+</section>
+</section>
+<section id="id11">
+<h3>VSCode中源代码管理<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925375990-e0bed7f5-c33c-4b5c-9fe3-5fb4400596a3.png#averageHue=%23272d33&amp;clientId=ud3b6b92c-252e-4&amp;from=paste&amp;height=240&amp;id=a759u&amp;originHeight=240&amp;originWidth=45&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=3227&amp;status=done&amp;style=none&amp;taskId=u7e767b32-88d4-4737-ad17-608f5120cbd&amp;title=&amp;width=45" />
+页面的左侧工具栏自上往下第三个是源代码管理，在这里可以对你代码的修改提交进行管理。
+例如我对我的代码进行了修改，在源代码管理处就能看到我进行的修改。
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926119935-50dfbdf6-13e6-4aca-a877-c9b033e14773.png#averageHue=%23293138&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=243&amp;id=WF74e&amp;originHeight=243&amp;originWidth=237&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=15871&amp;status=done&amp;style=none&amp;taskId=uba9a29c1-81d2-42a0-b45b-9fa5fac7e3d&amp;title=&amp;width=237" />
+点击修改文件右边的加号，把修改提交到暂存区。
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926140200-b830f9e8-5f94-4025-ba30-b836a1f206c1.png#averageHue=%23293036&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=229&amp;id=pIyz1&amp;originHeight=229&amp;originWidth=237&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=15496&amp;status=done&amp;style=none&amp;taskId=u4d894b74-8141-447a-9cf4-9ddd230d059&amp;title=&amp;width=237" />
+在将所有需要提交的文件提交到暂存区后，请输入修改信息，例如：
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926188744-c5d00cfa-d873-4764-b744-5cf3a6fa971b.png#averageHue=%23263039&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=120&amp;id=cvMsX&amp;originHeight=120&amp;originWidth=218&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5560&amp;status=done&amp;style=none&amp;taskId=uaeb577c6-bb26-43b9-88a6-c8ee8868e29&amp;title=&amp;width=218" />
+这里的修改信息请遵守规范。
+编辑好信息后确认无误，请点击提交。
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926225878-19644134-dab2-4795-9bd4-9bdf074e021b.png#averageHue=%23262d32&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=168&amp;id=Zlkpk&amp;originHeight=168&amp;originWidth=237&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=10373&amp;status=done&amp;style=none&amp;taskId=u100bda21-bd81-46a3-8495-f3789f08181&amp;title=&amp;width=237" />
+点击同步更改，即可将提交的更改进行推送。
+界面的最上面，会有这个图标，请善用：
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926277458-ca69a5af-106e-47c1-a5f6-8893725daf59.png#averageHue=%23252b31&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=33&amp;id=OwqQI&amp;originHeight=33&amp;originWidth=235&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=2882&amp;status=done&amp;style=none&amp;taskId=u72a4287d-4938-44bb-ada8-96834db09f2&amp;title=&amp;width=235" />
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926284537-27be0214-382d-4300-b35f-97ee735f6f21.png#averageHue=%23343b42&amp;clientId=u0c009d04-de1b-4&amp;from=paste&amp;height=367&amp;id=ETeIS&amp;originHeight=367&amp;originWidth=200&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=10087&amp;status=done&amp;style=none&amp;taskId=ud66b78cf-69e9-4c50-84d4-e8993128eab&amp;title=&amp;width=200" />
+这里简单进行一下解释，可以参考上文的命令行操作进行比对。
+拉取（pull）：如果你的代码版本和main分支下的代码不同，或者是有新的更新要从代码仓库拉取，请使用<strong>拉取</strong>
+推送（push）：在提交了更改后，使用<strong>推送</strong>将代码推送到所在的分支
+克隆（clone）：从URL<strong>克隆</strong>整个代码仓库到本地
+签出到（branch）：<strong>切换</strong>分支
+抓取（fetch）：与pull不同之处在于，fetch会下载远程分支的所有更新，但不会自动合并到本地分支</p>
+</section>
+<section id="id12">
+<h3>代码提交操作步骤<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>将仓库克隆到本地目录</p></li>
+<li><p>切换到正确的分支，对代码进行修改</p></li>
+<li><p>将所有要提交的修改添加到暂存区</p></li>
+<li><p>确认无误后，提交修改，编辑符合规范的提交信息</p></li>
+<li><p>将已提交的修改推送到远程仓库。如果分支需要合并，请在GitHub提交合并请求，由项目负责人检查代码后进行操作。如果推送到自己的分支，自己进行确认即可。</p></li>
+</ol>
+</section>
 </section>
 </section>
 
