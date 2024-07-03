@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh" data-accent-color="violet" data-content_root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Missing Semester of Your CS Education - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=0e780e79" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    <meta property="og:type" content="website"/><meta property="og:title" content="The Missing Semester of Your CS Education"/>
+<meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../index.html">
+      
+      
+      <strong>Dev_zero_to_hero</strong>
+    </a>
+    <div class="sy-head-nav" id="HeadNav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="搜索" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials flex items-center">
+</div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="切换到亮色模式"
+data-aria-light="切换到暗色模式"
+data-aria-dark="切换到自动模式">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2 -translate-x-2"></span>
+          <span class="hamburger_3 -translate-x-1"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="2024-summer-day1.html">Day1</a></li>
+</ul>
+
+        </div>
+      </div></div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>该页内容</h3><ul>
+<li><a class="reference internal" href="#topic-1-shell">Topic 1 Shell</a></li>
+<li><a class="reference internal" href="#topic-2-shell">Topic 2 Shell&#24037;&#20855;&#21644;&#33050;&#26412;</a></li>
+<li><a class="reference internal" href="#topic-3-vim">Topic 3 &#32534;&#36753;&#22120; (Vim)</a><ul>
+<li><a class="reference internal" href="#id1">&#27491;&#24120;&#27169;&#24335;</a></li>
+<li><a class="reference internal" href="#id2">&#21629;&#20196;&#34892;&#27169;&#24335;</a></li>
+<li><a class="reference internal" href="#id3">&#21487;&#35270;&#21270;&#27169;&#24335;</a></li>
+<li><a class="reference internal" href="#id4">&#25554;&#20837;&#27169;&#24335;</a></li>
+<li><a class="reference internal" href="#id5">&#35745;&#25968;&#21644;&#20462;&#39280;&#35821;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#topic-4">Topic 4 &#25968;&#25454;&#25972;&#29702;</a></li>
+<li><a class="reference internal" href="#topic-5">Topic 5 &#21629;&#20196;&#34892;&#29615;&#22659;</a><ul>
+<li><a class="reference internal" href="#id6">&#32456;&#31471;&#22810;&#36335;&#22797;&#29992;</a><ul>
+<li><a class="reference internal" href="#id7">&#20250;&#35805;</a></li>
+<li><a class="reference internal" href="#id8">&#31383;&#21475;</a></li>
+<li><a class="reference internal" href="#id9">&#38754;&#26495;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">&#21035;&#21517;</a></li>
+<li><a class="reference internal" href="#id11">&#37197;&#32622;&#25991;&#20214;</a></li>
+<li><a class="reference internal" href="#id12">&#36828;&#31471;&#35774;&#22791;</a><ul>
+<li><a class="reference internal" href="#ssh">&#36890;&#36807;ssh&#22797;&#21046;&#25991;&#20214;</a></li>
+<li><a class="reference internal" href="#id13">&#31471;&#21475;&#36716;&#21457;</a></li>
+<li><a class="reference internal" href="#id14">ssh&#37197;&#32622;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#shell">shell&#26694;&#26550;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#topic-6-git">Topic 6 &#29256;&#26412;&#25511;&#21046;(Git)</a><ul>
+<li><a class="reference internal" href="#git">Git &#30340;&#25968;&#25454;&#27169;&#22411;</a><ul>
+<li><a class="reference internal" href="#blob-object">blob object</a></li>
+<li><a class="reference internal" href="#tree-object">tree object</a></li>
+<li><a class="reference internal" href="#commit-object">commit object</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">&#26242;&#23384;&#21306;</a></li>
+<li><a class="reference internal" href="#id16">Git&#30340;&#21629;&#20196;&#34892;&#22522;&#30784;</a><ul>
+<li><a class="reference internal" href="#id17">&#22522;&#26412;&#20351;&#29992;</a></li>
+<li><a class="reference internal" href="#id18">&#20998;&#25903;&#21644;&#21512;&#24182;</a></li>
+<li><a class="reference internal" href="#id19">&#36828;&#31243;&#25805;&#20316;</a></li>
+<li><a class="reference internal" href="#id20">&#25764;&#38144;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#topic-7">Topic 7 &#35843;&#35797;&#21450;&#24615;&#33021;&#20998;&#26512;</a><ul>
+<li><a class="reference internal" href="#id21">&#35843;&#35797;</a></li>
+<li><a class="reference internal" href="#id22">&#38745;&#24577;&#20998;&#26512;</a></li>
+<li><a class="reference internal" href="#id23">&#24615;&#33021;&#20998;&#26512;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#topic-8">Topic 8 &#23433;&#20840;&#21644;&#23494;&#30721;&#23398;</a><ul>
+<li><a class="reference internal" href="#id24">&#29109;</a></li>
+<li><a class="reference internal" href="#id25">&#25955;&#21015;&#20989;&#25968;</a></li>
+<li><a class="reference internal" href="#id26">&#23494;&#38053;&#29983;&#25104;&#20989;&#25968;</a></li>
+<li><a class="reference internal" href="#id27">&#23545;&#31216;&#21152;&#23494;&#19982;&#38750;&#23545;&#31216;&#21152;&#23494;</a></li>
+</ul>
+</li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6"><div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html"><span itemprop="name">Dev_zero_to_hero</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">The Missing Semester of Your CS Education</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+        <article class="yue" role="main">
+          <section id="the-missing-semester-of-your-cs-education">
+<h1>The Missing Semester of Your CS Education<a class="headerlink" href="#the-missing-semester-of-your-cs-education" title="Link to this heading">¶</a></h1>
+<section id="topic-1-shell">
+<h2>Topic 1 Shell<a class="headerlink" href="#topic-1-shell" title="Link to this heading">¶</a></h2>
+<p>如今我们使用的大部分都是GUI，而有些时候GUI并不能帮我们完成所有的事情，这时候我们不得不回到Shell。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">echo</span> <span class="n">hello</span>
+</span><span data-line="2"><span class="n">hello</span>
+</span></pre></div>
+</div>
+<p>Shell会执行echo，将指定的hello参数打印。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">missing:~$ echo $PATH
+</span><span data-line="2">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+</span><span data-line="3">missing:~$ which echo
+</span><span data-line="4">/bin/echo
+</span><span data-line="5">missing:~$ /bin/echo $PATH
+</span><span data-line="6">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+</span></pre></div>
+</div>
+<p>$PATH 指的是环境变量，如果你是Windows系统，你可以在此电脑&gt;属性&gt;高级系统设置里面找到它。通常来说，配置全局环境就与环境变量有关。</p>
+<p>shell 中的路径是一组被分割的目录，在 Linux 和 macOS 上使用 / 分割，而在Windows上是 \。假设你进入了一个服务器，在根目录下使用<code class="docutils literal notranslate"><span class="pre">ls</span></code>命令可能会发现什么都没有，这是因为你没有进入磁盘的根目录。在路径中，<code class="docutils literal notranslate"><span class="pre">.</span></code> 表示的是当前目录，而 <code class="docutils literal notranslate"><span class="pre">..</span></code> 表示上级目录。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">missing:~$ pwd
+</span><span data-line="2">/home/missing
+</span><span data-line="3">missing:~$ cd /home
+</span><span data-line="4">missing:/home$ pwd
+</span><span data-line="5">/home
+</span><span data-line="6">missing:/home$ cd ..
+</span><span data-line="7">missing:/$ pwd
+</span><span data-line="8">/
+</span><span data-line="9">missing:/$ cd ./home
+</span><span data-line="10">missing:/home$ pwd
+</span><span data-line="11">/home
+</span><span data-line="12">missing:/home$ cd missing
+</span><span data-line="13">missing:~$ pwd
+</span><span data-line="14">/home/missing
+</span><span data-line="15">missing:~$ ../../bin/echo hello
+</span><span data-line="16">hello
+</span></pre></div>
+</div>
+<p>还有一些常用命令：</p>
+<p><code class="docutils literal notranslate"><span class="pre">pwd</span></code>命令查看我们当前所在的路径</p>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span></code>进入指定的路径</p>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> 命令查看指定目录下包含哪些文件</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">ls 显示当前目录下包含的文件
+</span><span data-line="2">ls -a 显示当前目录下包含的文件，包括隐藏文件
+</span><span data-line="3">ls -l -a 显示当前目录下包含的文件和隐藏文件，以及他们的详细信息
+</span></pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">man</span></code>命令查看程序名的文档</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">man</span> <span class="n">ls</span>
+</span></pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span></code>用于重命名或移动文件</p>
+<p><code class="docutils literal notranslate"><span class="pre">cp</span></code>用于拷贝文件</p>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code>新建文件夹</p>
+<p><code class="docutils literal notranslate"><span class="pre">cat</span></code>连接文件，打印输出</p>
+<p>我们可以对程序进行重定向。最简单的重定向是 <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">file</span></code> 和 <code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">file</span></code>。这两个命令可以将程序的输入输出流分别重定向到文件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">missing:~$ echo hello &gt; hello.txt
+</span><span data-line="2">missing:~$ cat hello.txt
+</span><span data-line="3">hello
+</span><span data-line="4">missing:~$ cat &lt; hello.txt
+</span><span data-line="5">hello
+</span><span data-line="6">missing:~$ cat &lt; hello.txt &gt; hello2.txt
+</span><span data-line="7">missing:~$ cat hello2.txt
+</span><span data-line="8">hello
+</span></pre></div>
+</div>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 来向一个文件追加内容。使用管道（ pipes ），我们能够更好的利用文件重定向。<code class="docutils literal notranslate"><span class="pre">|</span></code> 操作符允许我们将一个程序的输出和另外一个程序的输入连接起来。需要注意的是，<code class="docutils literal notranslate"><span class="pre">|</span></code>、<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>、和 <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> 是通过 shell 执行的，而不是被各个程序单独执行。 <code class="docutils literal notranslate"><span class="pre">echo</span></code> 等程序并不知道 <code class="docutils literal notranslate"><span class="pre">|</span></code> 的存在，它们只知道从自己的输入输出流中进行读写。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">missing:~$ ls -l / | tail -n1
+</span><span data-line="2">drwxr-xr-x 1 root  root  4096 Jun 20  2019 var
+</span><span data-line="3">missing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=&#39; &#39; -f2
+</span><span data-line="4">219
+</span></pre></div>
+</div>
+<p>另外，有些操作需要你作为<code class="docutils literal notranslate"><span class="pre">root</span></code>用户才能进行，比如与操作系统有关的文件<code class="docutils literal notranslate"><span class="pre">sysfs</span></code>。<code class="docutils literal notranslate"><span class="pre">/sys</span></code>目录挂载了系统，你可以在<code class="docutils literal notranslate"><span class="pre">/sys</span></code>目录下找到一些<code class="docutils literal notranslate"><span class="pre">.sysfs</span></code>文件控制内核参数。当然，专属于Linux系统。</p>
+<p>所以以控制屏幕亮度的程序为例，即使像下面这样写：</p>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">find</span> <span class="pre">-L</span> <span class="pre">/sys/class/backlight</span> <span class="pre">-maxdepth</span> <span class="pre">2</span> <span class="pre">-name</span> <span class="pre">'*brightness*'</span> <span class="pre">/sys/class/backlight/thinkpad_screen/brightness</span> <span class="pre">$</span> <span class="pre">cd</span> <span class="pre">/sys/class/backlight/thinkpad_screen</span> <span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">echo</span> <span class="pre">3</span> <span class="pre">&gt;</span> <span class="pre">brightness</span> <span class="pre">An</span> <span class="pre">error</span> <span class="pre">occurred</span> <span class="pre">while</span> <span class="pre">redirecting</span> <span class="pre">file</span> <span class="pre">'brightness'</span> <span class="pre">open:</span> <span class="pre">Permission</span> <span class="pre">denied</span></code></p>
+<p>我们已经使用了<code class="docutils literal notranslate"><span class="pre">sudo</span></code>命令（su是super user的意思，即root用户），系统在设置 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">echo</span></code> 前尝试打开 brightness 文件并写入，但系统拒绝了shell的操作，因为此时shell不是根用户。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">$ echo 3 | sudo tee brightness
+</span></pre></div>
+</div>
+<p>在这个程序中，打开<code class="docutils literal notranslate"><span class="pre">/sys</span></code>的是<code class="docutils literal notranslate"><span class="pre">tee</span></code>程序，而这个程序以<strong>root</strong>权限在运行，所以可以操作。</p>
+<p>最后，如果你想更愉快的使用你的shell，你可以安装fish、oh-my-bash或是oh-my-zsh，通过命令行安装，网上都有很简单的教程。、</p>
+</section>
+<section id="topic-2-shell">
+<h2>Topic 2 Shell工具和脚本<a class="headerlink" href="#topic-2-shell" title="Link to this heading">¶</a></h2>
+<p>包含以bash作为脚本语言的一些基础操作，以及几种最常用的shell工具。</p>
+</section>
+<section id="topic-3-vim">
+<h2>Topic 3 编辑器 (Vim)<a class="headerlink" href="#topic-3-vim" title="Link to this heading">¶</a></h2>
+<p>目前最流行的代码编辑器无疑是VS Code，而VIM是最流行的基于命令行的编辑器。熟练使用VIM之后，编写代码可以完全脱离鼠标且效率极高，但这往往需要很久的时间进行练习。</p>
+<p>VIM具有多种操作模式：</p>
+<ul class="simple">
+<li><p>正常模式：在文件中四处移动光标进行修改</p></li>
+<li><p>插入模式：插入文本</p></li>
+<li><p>替换模式：替换文本</p></li>
+<li><p>可视化模式（一般，行，块）：选中文本块</p></li>
+<li><p>命令模式：用于执行命令</p></li>
+</ul>
+<p>我们了解VIM可以通过这样一个例子开始，在不同的操作模式下，键盘敲击的含义也不同。比如，x 在插入模式会插入字母 x，但是在正常模式 会删除当前光标所在的字母，在可视模式下则会删除选中文块。</p>
+<p>你可以按下 <strong>ESC</strong>（退出键）从任何其他模式返回正常模式。在正常模式，键入 <strong>i</strong> 进入插入 模式，<strong>R</strong> 进入替换模式，小写的<strong>v</strong> 进入可视（一般）模式，大写的<strong>V</strong> 进入可视（行）模式，<strong>C-v</strong> （Ctrl-V, 有时也写作 ^V）进入可视（块）模式，<strong>引号:</strong> 进入命令模式。</p>
+<section id="id1">
+<h3>正常模式<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>基本移动: <strong>hjkl</strong> （左， 下， 上， 右）</p></li>
+<li><p>词： <strong>w</strong> （下一个词）， <strong>b</strong> （词初）， <strong>e</strong> （词尾）</p></li>
+<li><p>行： <strong>0</strong> （行初）， <strong>^</strong> （第一个非空格字符）， <strong>$</strong> （行尾）</p></li>
+<li><p>屏幕： <strong>H</strong> （屏幕首行）， <strong>M</strong> （屏幕中间）， <strong>L</strong> （屏幕底部）</p></li>
+<li><p>翻页： <strong>Ctrl-u</strong> （上翻）， <strong>Ctrl-d</strong> （下翻）</p></li>
+<li><p>文件： <strong>gg</strong> （文件头）， <strong>G</strong> （文件尾）</p></li>
+<li><p>行数： <strong>:{行数}CR</strong> 或者 <strong>{行数}G</strong> ({行数}为具体的行数)</p></li>
+<li><p>杂项： <strong>%</strong> （找到配对，比如括号或者 /* */ 之类的注释对）</p></li>
+<li><p>查找： <strong>f{字符}</strong>， <strong>t{字符}</strong>， <strong>F{字符}</strong>， <strong>T{字符}</strong></p>
+<ul>
+<li><p>查找/到 向前/向后 在本行的{字符}</p></li>
+<li><p><strong>,</strong> / <strong>;</strong> 用于导航匹配</p></li>
+</ul>
+</li>
+<li><p>搜索: <strong>/{正则表达式}</strong>, <strong>n</strong> / <strong>N</strong> 用于导航匹配</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>命令行模式<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p>在正常模式下键入 : 进入命令行模式。 在键入 : 后，你的光标会立即跳到屏幕下方的命令行。 这个模式有很多功能，包括打开，保存，关闭文件，以及 退出 Vim。</p>
+<ul class="simple">
+<li><p>:q 退出（关闭窗口）</p></li>
+<li><p>:w 保存（写）</p></li>
+<li><p>:wq 保存然后退出</p></li>
+<li><p>:e {文件名} 打开要编辑的文件</p></li>
+<li><p>:ls 显示打开的缓存</p></li>
+<li><p>:help {标题} 打开帮助文档</p>
+<ul>
+<li><p>:help :w 打开 :w 命令的帮助文档</p></li>
+<li><p>:help w 打开 w 移动的帮助文档</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id3">
+<h3>可视化模式<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>可以用移动命令来选中。</p>
+<ul class="simple">
+<li><p>可视化：<strong>v</strong></p></li>
+<li><p>可视化行： <strong>V</strong></p></li>
+<li><p>可视化块：<strong>Ctrl+v</strong></p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>插入模式<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>i</strong> 进入插入模式</p></li>
+<li><p><strong>O</strong> / <strong>o</strong> 在之上/之下插入行</p></li>
+<li><p><strong>d{移动命令}</strong> 删除 {移动命令}</p>
+<ul>
+<li><p>例如，<strong>dw</strong> 删除词, <strong>d$</strong> 删除到行尾, <strong>d0</strong> 删除到行头。</p></li>
+</ul>
+</li>
+<li><p><strong>c{移动命令}</strong> 改变 {移动命令}</p>
+<ul>
+<li><p>例如，<strong>cw</strong> 改变词</p></li>
+<li><p>比如 <strong>d{移动命令}</strong> 再 <strong>i</strong></p></li>
+</ul>
+</li>
+<li><p><strong>x</strong> 删除字符（等同于 <strong>dl</strong>）</p></li>
+<li><p><strong>s</strong> 替换字符（等同于 <strong>xi</strong>）</p></li>
+<li><p>可视化模式 + 操作</p>
+<ul>
+<li><p>选中文字, <strong>d</strong> 删除 或者 <strong>c</strong> 改变</p></li>
+</ul>
+</li>
+<li><p><strong>u</strong> 撤销, <strong>C-r</strong> 重做</p></li>
+<li><p><strong>y</strong> 复制 / “yank” （其他一些命令比如 <strong>d</strong> 也会复制）</p></li>
+<li><p><strong>p</strong> 粘贴</p></li>
+<li><p><strong>~</strong> 改变字符的大小写</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>计数和修饰语<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<p>可以用一个计数来结合“名词”和“动词”，这会执行指定操作若干次。</p>
+<ul class="simple">
+<li><p><strong>3w</strong> 向后移动三个词</p></li>
+<li><p><strong>5j</strong> 向下移动5行</p></li>
+<li><p><strong>7dw</strong> 删除7个词</p></li>
+</ul>
+<p>可以用修饰语改变“名词”的意义。修饰语有 i，表示“内部”或者“在内”，和 a， 表示“周围”。</p>
+<ul class="simple">
+<li><p><strong>ci(</strong> 改变当前括号内的内容</p></li>
+<li><p><strong>ci[</strong> 改变当前方括号内的内容</p></li>
+<li><p><strong>da'</strong> 删除一个单引号字符串， 包括周围的单引号</p></li>
+</ul>
+<p>最后要说的是，如果你真的非常有耐心且通过长时间的练习掌握了以上这些命令，你可以在网上查找更多关于VIM的扩展资料，它远比目前介绍的要强。不过上手难度确实是很大，如果坚持不下去，还是选择VS Code吧。</p>
+</section>
+</section>
+<section id="topic-4">
+<h2>Topic 4 数据整理<a class="headerlink" href="#topic-4" title="Link to this heading">¶</a></h2>
+<p>数据整理与两样东西密切相关：用来整理的数据，以及相关的应用场景。</p>
+</section>
+<section id="topic-5">
+<h2>Topic 5 命令行环境<a class="headerlink" href="#topic-5" title="Link to this heading">¶</a></h2>
+<p>###信号机制</p>
+<p>shell 会使用 UNIX 提供的信号机制执行进程间通信。当一个进程接收到信号时，它会停止执行、处理该信号并基于信号传递的信息来改变其执行。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGINT</span></code>信号：输入 <code class="docutils literal notranslate"><span class="pre">Ctrl-C</span></code> 时，shell 会发送一个<strong>SIGINT</strong>信号到进程，通知前台进程组终止进程。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGQUIT</span></code>信号：输入 <code class="docutils literal notranslate"><span class="pre">Ctrl-\</span></code> 时，shell会发送<strong>SIGQUIT</strong>信号到进程，进程在因收到<strong>SIGQUIT</strong>退出时会产生core文件, 在这个意义上类似于一个程序错误信号。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code>信号：通常用来要求程序自己正常退出，shell命令kill缺省产生这个信号。如果进程终止不了，我们才会尝试SIGKILL。命令是<code class="docutils literal notranslate"><span class="pre">kill</span> <span class="pre">-TERM</span> <span class="pre">&lt;PID&gt;</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGSTOP（SIGTSTP）</span></code>信号：输入 <code class="docutils literal notranslate"><span class="pre">Ctrl-Z</span></code> 时，shell会发送<strong>SIGTSTP</strong>信号（terminal版本的<strong>SIGSTOP</strong>）让进程暂停。</p></li>
+</ul>
+<section id="id6">
+<h3>终端多路复用<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<p>在使用命令行时通常会希望同时执行多个任务，例如运行编辑器的同时，在终端的另外一侧执行程序，这时候就可以使用终端多路复用器，如<strong>tmux</strong>。</p>
+<p>以下是tmux的基本操作：</p>
+<section id="id7">
+<h4>会话<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
+<p>每个会话都是一个独立的工作区，其中包含一个或多个窗口。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span></code> 开始一个新的会话</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">new</span> <span class="pre">-s</span> <span class="pre">NAME</span></code> 以指定名称开始一个新的会话</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">ls</span></code> 列出当前所有会话</p></li>
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">tmux</span></code> 中输入 <code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">d</span></code> ，将当前会话分离</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">a</span></code> 重新连接最后一个会话。您也可以通过 <code class="docutils literal notranslate"><span class="pre">-t</span></code> 来指定具体的会话</p></li>
+</ul>
+</section>
+<section id="id8">
+<h4>窗口<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h4>
+<p>相当于编辑器或是浏览器中的标签页，从视觉上将一个会话分割为多个部分。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">c</span></code> 创建一个新的窗口，使用 <code class="docutils literal notranslate"><span class="pre">&lt;C-d&gt;</span></code>关闭</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">N</span></code> 跳转到第 N 个窗口，注意每个窗口都是有编号的</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">p</span></code> 切换到前一个窗口</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">n</span></code> 切换到下一个窗口</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">,</span></code> 重命名当前窗口</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">w</span></code> 列出当前所有窗口</p></li>
+</ul>
+</section>
+<section id="id9">
+<h4>面板<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h4>
+<p>像 vim 中的分屏一样，面板使我们可以在一个屏幕里显示多个 shell。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">&quot;</span></code> 水平分割</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">%</span></code> 垂直分割</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">&lt;方向&gt;</span></code> 切换到指定方向的面板，&lt;方向&gt; 指的是键盘上的方向键</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">z</span></code> 切换当前面板的缩放</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">[</span></code> 开始往回卷动屏幕。您可以按下空格键来开始选择，回车键复制选中的部分</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;C-b&gt;</span> <span class="pre">&lt;空格&gt;</span></code> 在不同的面板排布间切换</p></li>
+</ul>
+</section>
+</section>
+<section id="id10">
+<h3>别名<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>别名相当于一个长命令的缩写，shell会将其自动替换成原本的命令，语法如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">alias</span> <span class="n">alias_name</span><span class="o">=</span><span class="s2">&quot;command_to_alias arg1 arg2&quot;</span>
+</span></pre></div>
+</div>
+<p>等号的两边没有空格，因为<code class="docutils literal notranslate"><span class="pre">alias</span></code>是一个shell命令，只接受一个参数。</p>
+<p>以下是一些别名的特性应用：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1"># 创建常用命令的缩写</span>
+</span><span data-line="2"><span class="n">alias</span> <span class="n">ll</span><span class="o">=</span><span class="s2">&quot;ls -lh&quot;</span>
+</span><span data-line="3">
+</span><span data-line="4"><span class="c1"># 能够少输入很多</span>
+</span><span data-line="5"><span class="n">alias</span> <span class="n">gs</span><span class="o">=</span><span class="s2">&quot;git status&quot;</span>
+</span><span data-line="6"><span class="n">alias</span> <span class="n">gc</span><span class="o">=</span><span class="s2">&quot;git commit&quot;</span>
+</span><span data-line="7"><span class="n">alias</span> <span class="n">v</span><span class="o">=</span><span class="s2">&quot;vim&quot;</span>
+</span><span data-line="8">
+</span><span data-line="9"><span class="c1"># 手误打错命令也没关系</span>
+</span><span data-line="10"><span class="n">alias</span> <span class="n">sl</span><span class="o">=</span><span class="n">ls</span>
+</span><span data-line="11">
+</span><span data-line="12"><span class="c1"># 重新定义一些命令行的默认行为</span>
+</span><span data-line="13"><span class="n">alias</span> <span class="n">mv</span><span class="o">=</span><span class="s2">&quot;mv -i&quot;</span>           <span class="c1"># -i prompts before overwrite</span>
+</span><span data-line="14"><span class="n">alias</span> <span class="n">mkdir</span><span class="o">=</span><span class="s2">&quot;mkdir -p&quot;</span>     <span class="c1"># -p make parent dirs as needed</span>
+</span><span data-line="15"><span class="n">alias</span> <span class="n">df</span><span class="o">=</span><span class="s2">&quot;df -h&quot;</span>           <span class="c1"># -h prints human readable format</span>
+</span><span data-line="16">
+</span><span data-line="17"><span class="c1"># 别名可以组合使用</span>
+</span><span data-line="18"><span class="n">alias</span> <span class="n">la</span><span class="o">=</span><span class="s2">&quot;ls -A&quot;</span>
+</span><span data-line="19"><span class="n">alias</span> <span class="n">lla</span><span class="o">=</span><span class="s2">&quot;la -l&quot;</span>
+</span><span data-line="20">
+</span><span data-line="21"><span class="c1"># 在忽略某个别名</span>
+</span><span data-line="22">\<span class="n">ls</span>
+</span><span data-line="23"><span class="c1"># 或者禁用别名</span>
+</span><span data-line="24"><span class="n">unalias</span> <span class="n">la</span>
+</span><span data-line="25">
+</span><span data-line="26"><span class="c1"># 获取别名的定义</span>
+</span><span data-line="27"><span class="n">alias</span> <span class="n">ll</span>
+</span><span data-line="28"><span class="c1"># 会打印 ll=&#39;ls -lh&#39;</span>
+</span></pre></div>
+</div>
+</section>
+<section id="id11">
+<h3>配置文件<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>shell的配置通过点文件来完成，一般来说点文件的文件名以<code class="docutils literal notranslate"><span class="pre">.</span></code>开头，默认是隐藏文件，直接使用<code class="docutils literal notranslate"><span class="pre">ls</span></code>并不会显示它们。</p>
+<p>管理配置文件有很多好处，比如可以移植你的工具配置，快速安装，同步配置文件，追踪配置文件的版本历史等等。不同的工具有不同的配置文件目录，可以根据自己的工具查找配置。</p>
+<p>可以通过在线文档和手册了解工具的设置项，网上也有很多其他人的配置文件，当然，每个人的操作习惯不同，建议不要直接复制别人的配置文件。</p>
+<p>配置文件的一个常见的痛点是它可能并不能在多种设备上生效。可以通过配置文件的<code class="docutils literal notranslate"><span class="pre">if</span></code>语句解决。如果你有多个设备，你可以通过配置文件的管理实现特定配置需求。</p>
+</section>
+<section id="id12">
+<h3>远端设备<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<p>最常用的工具是<strong>SSH</strong>。可以使用ssh连接到其他服务器，例如<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">foo&#64;bar.mit.edu</span></code>。服务器可以通过 URL 指定（例如<code class="docutils literal notranslate"><span class="pre">bar.mit.edu</span></code>），也可以使用 IP 指定（例如<code class="docutils literal notranslate"><span class="pre">foobar&#64;192.168.1.42</span></code>）。</p>
+<p>ssh可以直接执行远程命令，<code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">foobar&#64;server</span> <span class="pre">ls</span></code> 可以直接在用foobar的命令下执行 <code class="docutils literal notranslate"><span class="pre">ls</span></code> 命令。 想要配合管道来使用也可以， <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">foobar&#64;server</span> <span class="pre">ls</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">PATTERN</span></code> 会在本地查询远端 <code class="docutils literal notranslate"><span class="pre">ls</span></code> 的输出而 <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">|</span> <span class="pre">ssh</span> <span class="pre">foobar&#64;server</span> <span class="pre">grep</span> <span class="pre">PATTERN</span></code> 会在远端对本地 <code class="docutils literal notranslate"><span class="pre">ls</span></code> 输出的结果进行查询。</p>
+<p>ssh有基于密钥的验证机制，我们只需要向服务器证明客户端持有对应的私钥，而不需要公开其私钥。这样就可以避免每次登录都输入密码的麻烦了。</p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code>命令可以生成一对密钥。要检查是否持有密码并验证它，您可以运行 <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span> <span class="pre">-y</span> <span class="pre">-f</span> <span class="pre">/path/to/key</span></code>。ssh 会查询 <code class="docutils literal notranslate"><span class="pre">.ssh/authorized_keys</span></code> 来确认那些用户可以被允许登录。</p>
+<section id="ssh">
+<h4>通过ssh复制文件<a class="headerlink" href="#ssh" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ssh+tee</span></code>, 最简单的方法是执行 <code class="docutils literal notranslate"><span class="pre">ssh</span></code> 命令，然后通过这样的方法利用标准输入实现 <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">localfile</span> <span class="pre">|</span> <span class="pre">ssh</span> <span class="pre">remote_server</span> <span class="pre">tee</span> <span class="pre">serverfile</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scp</span></code> ：当需要拷贝大量的文件或目录时，使用<code class="docutils literal notranslate"><span class="pre">scp</span></code> 命令则更加方便，因为它可以方便的遍历相关路径。语法如下：<code class="docutils literal notranslate"><span class="pre">scp</span> <span class="pre">path/to/local_file</span> <span class="pre">remote_host:path/to/remote_file；</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rsync</span></code>对<code class="docutils literal notranslate"><span class="pre">scp</span></code>进行了改进，它可以检测本地和远端的文件以防止重复拷贝。它还可以提供一些诸如符号连接、权限管理等精心打磨的功能。甚至还可以基于<code class="docutils literal notranslate"><span class="pre">--partial</span></code>标记实现断点续传。<code class="docutils literal notranslate"><span class="pre">rsync</span></code>的语法和<code class="docutils literal notranslate"><span class="pre">scp</span></code>类似；</p></li>
+</ul>
+</section>
+<section id="id13">
+<h4>端口转发<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h4>
+<p>在本地设备上的一个端口建立连接，转发到远程端口上。例如在远程服务器上运行Jupyter notebook，监听8888端口，建立从本地9999端口的转发。使用 <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-L</span> <span class="pre">9999:localhost:8888</span> <span class="pre">foobar&#64;remote_server</span></code> 。这样只需要访问本地的 <code class="docutils literal notranslate"><span class="pre">localhost:9999</span></code> 即可。</p>
+</section>
+<section id="id14">
+<h4>ssh配置<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h4>
+<p>可以使用<code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code>文件创建别名，这个文件也可以被当作配置文件，不过请注意，最好不要将它公开到互联网上，因为这会暴露服务器的各种信息。服务器侧的配置通常放在<code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code>。</p>
+</section>
+</section>
+<section id="shell">
+<h3>shell框架<a class="headerlink" href="#shell" title="Link to this heading">¶</a></h3>
+<p>可以通过框架来改进shell，让其拥有更友好的功能，包括但不限于向右对齐、命令语法高亮、历史子串查询、选项补全、智能补全、提示符主题等等，可以在网上自行了解，按需选取安装。</p>
+</section>
+</section>
+<section id="topic-6-git">
+<h2>Topic 6 版本控制(Git)<a class="headerlink" href="#topic-6-git" title="Link to this heading">¶</a></h2>
+<p>首先要明确，Git和GitHub完全是两回事！！</p>
+<p>版本控制系统 (VCSs) 是一类用于追踪源代码（或其他文件、文件夹）改动的工具。版本控制系统有很多， 其事实上的标准则是 <strong>Git</strong>。</p>
+<section id="git">
+<h3>Git 的数据模型<a class="headerlink" href="#git" title="Link to this heading">¶</a></h3>
+<p>先用伪代码的形式看下数据模型:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">// 文件就是一组数据
+</span><span data-line="2">type blob = array&lt;byte&gt;
+</span><span data-line="3">
+</span><span data-line="4">// 一个包含文件和目录的目录
+</span><span data-line="5">type tree = map&lt;string, tree | blob&gt;
+</span><span data-line="6">
+</span><span data-line="7">// 每个提交都包含一个父辈，元数据和顶层树
+</span><span data-line="8">type commit = struct {
+</span><span data-line="9">    parent: array&lt;commit&gt;
+</span><span data-line="10">    author: string
+</span><span data-line="11">    message: string
+</span><span data-line="12">    snapshot: tree
+</span><span data-line="13">}
+</span></pre></div>
+</div>
+<section id="blob-object">
+<h4>blob object<a class="headerlink" href="#blob-object" title="Link to this heading">¶</a></h4>
+<p>当我们提交一些文件的时候，git会创建第一类对像<strong>blob object</strong>，每一个<strong>blob object</strong>对应提交的每个文件。</p>
+</section>
+<section id="tree-object">
+<h4>tree object<a class="headerlink" href="#tree-object" title="Link to this heading">¶</a></h4>
+<p>另外，git会创建一种对象<strong>tree object</strong>，包含项目中所有文件的列表，其中包含分配的blob object的指针，通过这种机制，git将文件与blob object相关联。</p>
+</section>
+<section id="commit-object">
+<h4>commit object<a class="headerlink" href="#commit-object" title="Link to this heading">¶</a></h4>
+<p>最后git会创建一个对象<strong>commit object</strong>，具有指向它的tree object的指针以及一些其他信息。</p>
+</section>
+</section>
+<section id="id15">
+<h3>暂存区<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<p>暂存区允许我们指定下次快照中要包括哪些改动，比如你可以把需要提交的文件逐个放入暂存取，然后进行提交。通过这个机制，我们可以创建不同的独立提交。</p>
+</section>
+<section id="id16">
+<h3>Git的命令行基础<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<section id="id17">
+<h4>基本使用<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">help</span> <span class="pre">&lt;command&gt;</span></code>: 获取 git 命令的帮助信息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>: 创建一个新的 git 仓库，其数据会存放在一个名为 .git 的目录下</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>: 显示当前的仓库状态</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;filename&gt;</span></code>: 添加文件到暂存区</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>: 创建一个新的提</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>: 显示历史日志</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--all</span> <span class="pre">--graph</span> <span class="pre">--decorate</span></code>: 可视化历史记录（有向无环图）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">&lt;filename&gt;</span></code>: 显示与暂存区文件的差异</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">&lt;revision&gt;</span> <span class="pre">&lt;filename&gt;</span></code>: 显示某个文件两个版本之间的差异</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;revision&gt;</span></code>: 更新 HEAD 和目前的分支</p></li>
+</ul>
+</section>
+<section id="id18">
+<h4>分支和合并<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code>: 显示分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;name&gt;</span></code>: 创建分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;name&gt;</span></code>: 创建分支并切换到该分支</p>
+<ul>
+<li><p>相当于 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">&lt;name&gt;;</span> <span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;name&gt;</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">&lt;revision&gt;</span></code>: 合并到当前分支</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mergetool</span></code>: 使用工具来处理合并冲突</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span></code>: 将一系列补丁变基（rebase）为新的基线</p></li>
+</ul>
+</section>
+<section id="id19">
+<h4>远程操作<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span></code>: 列出远端</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">&lt;name&gt;</span> <span class="pre">&lt;url&gt;</span></code>: 添加一个远端</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">&lt;remote&gt;</span> <span class="pre">&lt;local</span> <span class="pre">branch&gt;:&lt;remote</span> <span class="pre">branch&gt;</span></code>: 将对象传送至远端并更新远端引用</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">--set-upstream-to=&lt;remote&gt;/&lt;remote</span> <span class="pre">branch&gt;</span></code>: 创建本地和远端分支的关联关系</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>: 从远端获取对象/索引</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>: 相当于 git fetch; git merge</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>: 从远端下载仓库</p></li>
+</ul>
+</section>
+<section id="id20">
+<h4>撤销<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code>: 编辑提交的内容或信息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD</span> <span class="pre">&lt;file&gt;</span></code>: 恢复暂存的文件</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--</span> <span class="pre">&lt;file&gt;</span></code>: 丢弃修改</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">restore</span></code>: git2.32版本后取代git reset 进行许多撤销操作</p></li>
+</ul>
+<p>Git也可以通过VS Code使用。</p>
+</section>
+</section>
+</section>
+<section id="topic-7">
+<h2>Topic 7 调试及性能分析<a class="headerlink" href="#topic-7" title="Link to this heading">¶</a></h2>
+<section id="id21">
+<h3>调试<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h3>
+<p>调试的第一种方法比较简单，在可能出现问题的地方添加一些打印语句，比如print、console等等，直到发现问题。</p>
+<p>第二种方法是使用日志，可以将日志写入文件，socket甚至是发送到远端服务器；日志可以支持严重等级，比如哪些是ERROR、哪些是WARN；另外，日志包含的信息很多，很有可能直接包含了问题信息。</p>
+<p>在与Web 服务器、数据库或消息代理等第三方依赖交互的时候，阅读日志非常重要。不过大多数的程序都会把日志保存在系统的某个地方。根据不同的系统有不同的保存位置。如果希望将日志加入到系统日志中，可以使用<code class="docutils literal notranslate"><span class="pre">logger</span></code>（一个shell程序）：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">logger</span> <span class="s2">&quot;Hello Logs&quot;</span>
+</span><span data-line="2"><span class="c1"># On macOS</span>
+</span><span data-line="3"><span class="n">log</span> <span class="n">show</span> <span class="o">--</span><span class="n">last</span> <span class="mi">1</span><span class="n">m</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Hello</span>
+</span><span data-line="4"><span class="c1"># On Linux</span>
+</span><span data-line="5"><span class="n">journalctl</span> <span class="o">--</span><span class="n">since</span> <span class="s2">&quot;1m ago&quot;</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Hello</span>
+</span></pre></div>
+</div>
+<p>如果通过打印已经不足以满足调试的需求了，可以使用调试器。调试器可以设置断点，从断点开始逐步执行程序，即时查看变量的值，满足条件时暂停程序等。</p>
+<p>这里介绍一下Python的调试器<code class="docutils literal notranslate"><span class="pre">pdb</span></code>。</p>
+<ul class="simple">
+<li><p><strong>l</strong>(ist) - 显示当前行附近的11行或继续执行之前的显示；</p></li>
+<li><p><strong>s</strong>(tep) - 执行当前行，并在第一个可能的地方停止；</p></li>
+<li><p><strong>n</strong>(ext) - 继续执行直到当前函数的下一条语句或者 return 语句；</p></li>
+<li><p><strong>b</strong>(reak) - 设置断点（基于传入的参数）；</p></li>
+<li><p><strong>p</strong>(rint) - 在当前上下文对表达式求值并打印结果。还有一个命令是pp ，它使用 pprint 打印；</p></li>
+<li><p><strong>r</strong>(eturn) - 继续执行直到当前函数返回；</p></li>
+<li><p><strong>q</strong>(uit) - 退出调试器。</p></li>
+</ul>
+<p>此外，针对不同的程序，可以使用不同的开发工具，请针对具体情况具体分析。</p>
+</section>
+<section id="id22">
+<h3>静态分析<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
+<p>静态分析会将程序的源码作为输入，基于编码规则对其进行分析，并对代码的正确性进行推理。可以使用静态分析工具。大多数的编辑器和 IDE 都支持在编辑界面显示这些工具的分析结果、高亮有警告和错误的位置。 这个过程通常称为 <strong>code linting</strong> 。风格检查或安全检查的结果同样也可以进行相应的显示。</p>
+<p>不同的开发工具有不同的静态分析工具，网上有很多优秀的静态分析工具和使用教程。</p>
+</section>
+<section id="id23">
+<h3>性能分析<a class="headerlink" href="#id23" title="Link to this heading">¶</a></h3>
+<p>如何将一个代码从”能跑“进化到”优秀的代码“呢？性能分析是其中很重要的一环。我们可以学习性能分析和监控工具，借此找到程序中最耗时、最耗资源的部分。</p>
+<p>通常来说，用户时间+系统时间代表了进程所消耗的实际CPU。</p>
+<ul class="simple">
+<li><p>真实时间 - 从程序开始到结束流失掉的真实时间，包括其他进程的执行时间以及阻塞消耗的时间（例如等待 I/O或网络）；</p></li>
+<li><p>User - CPU 执行用户代码所花费的时间；</p></li>
+<li><p>Sys - CPU 执行系统内核代码所花费的时间。</p></li>
+</ul>
+<p>性能分析工具通常指CPU性能分析工具。CPU 性能分析工具有两种：追踪分析器（tracing）及采样分析器（sampling）。追踪分析器 会记录程序的每一次函数调用，而采样分析器则只会周期性的监测（通常为每毫秒）程序并记录程序堆栈。比如Python使用的就是<code class="docutils literal notranslate"><span class="pre">cProfile</span></code>模块分析每次函数调用消耗的时间。</p>
+<p>对于分析器的可视化，采样分析器常见的显示 CPU 分析数据的形式是<strong>火焰图</strong>，火焰图会在 Y 轴显示函数调用关系，并在 X 轴显示其耗时的比例。火焰图同时还是可交互的，可以深入程序的某一具体部分，并查看其栈追踪。</p>
+<p>最后，有很多很多的工具可以监控不同的系统资源，比如CPU占用、内存使用、网络、磁盘使用等。</p>
+</section>
+</section>
+<section id="topic-8">
+<h2>Topic 8 安全和密码学<a class="headerlink" href="#topic-8" title="Link to this heading">¶</a></h2>
+<p>这部分会说明一些关于安全和密码学的简单概念。</p>
+<section id="id24">
+<h3>熵<a class="headerlink" href="#id24" title="Link to this heading">¶</a></h3>
+<p>熵的单位是<em>比特</em>。对于一个均匀分布的随机离散变量，熵等于log_2(所有可能的个数，即n)。例如 “correcthorsebatterystaple” 这个密码比 “Tr0ub4dor&amp;3” 更安全，因为前者有44比特的熵，后者只有28比特。假设每秒能进行1000次猜测，猜出前者的2^44种可能需要550年，而后者的2^28种可能只需要3天。</p>
+<p>大约40比特的熵足以对抗在线穷举攻击（受限于网络速度和应用认证机制）。 而对于离线穷举攻击（主要受限于计算速度）, 一般需要更强的密码 (比如80比特或更多)。</p>
+</section>
+<section id="id25">
+<h3>散列函数<a class="headerlink" href="#id25" title="Link to this heading">¶</a></h3>
+<p>密码散列函数 (Cryptographic hash function) 可以将任意大小的数据映射为一个固定大小的输出。</p>
+</section>
+<section id="id26">
+<h3>密钥生成函数<a class="headerlink" href="#id26" title="Link to this heading">¶</a></h3>
+<p>密钥生成函数 (Key Derivation Functions) 被应用于包括生成固定长度，可以使用在其他密码算法中的密钥等方面。 为了对抗穷举法攻击，密钥生成函数通常较慢。</p>
+</section>
+<section id="id27">
+<h3>对称加密与非对称加密<a class="headerlink" href="#id27" title="Link to this heading">¶</a></h3>
+<p>对称加密，也称为私钥加密，是指加密和解密使用相同密钥的加密算法。在大多数对称算法中，加密密钥和解密密钥是相同的，因此也称为秘密密钥算法或单密钥算法。对称加密要求发送方和接收方在安全通信之前商定一个密钥。优势在于加密效率高，因为加密和解密使用相同的算法和密钥。然而，对称加密的安全性较低，因为如果密文被拦截且密钥被破解，信息就很容易被破译。常见的对称加密算法包括DES、AES和3DES等。</p>
+<p>非对称加密，与对称加密不同，它使用一对密钥：公钥和私钥。公钥用于加密数据，而私钥用于解密数据。私钥只能由一方安全保管，不能外泄，而公钥可以发给任何请求它的人。非对称加密提供了更高的安全性，因为公钥和私钥是相互独立的，使用其中一个密钥加密的数据只能由另一个密钥解密。因此，不需要将私钥通过网络发送出去，安全性大大提高。目前最常用的非对称加密算法是RSA算法。</p>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>回到顶部</span>
+</button><div class="navigation flex print:hidden"></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2024, ezelab</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials"></div>
+    </div>
+  </div>
+</footer>
+      <script src="../_static/documentation_options.js?v=a1b8b494"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../_static/shibuya.js?v=3cc430e2"></script></body>
+</html>
