@@ -11,7 +11,7 @@ Welcome to Dev_zero_to_hero's documentation!
    :caption: Contents:
 
    notes/2024-summer-day1
-
+   notes/2024-summer-day2
 
 
 Indices and tables
