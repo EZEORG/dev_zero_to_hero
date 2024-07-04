@@ -161,6 +161,7 @@ Git的安装网址如下：
 ```
 git config --global user.name 你的用户名
 git config --global user.email 你的邮箱
+git config --global credential.helper cache
 ```
 这里的邮箱需要与你注册github的邮箱对应。为了方便，用户名和邮箱都使用Github的注册信息即可。
 
