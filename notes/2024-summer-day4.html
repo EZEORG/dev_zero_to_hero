@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh" data-accent-color="violet" data-content_root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day 4 - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="prev" title="The Missing Semester of Your CS Education" href="2024-summer-day2.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=0e780e79" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+    <meta property="og:type" content="website"/><meta property="og:title" content="Day 4"/>
+<meta name="twitter:card" content="summary"/>
+  </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../index.html">
+      
+      
+      <strong>Dev_zero_to_hero</strong>
+    </a>
+    <div class="sy-head-nav" id="HeadNav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="搜索" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials flex items-center">
+</div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="切换到亮色模式"
+data-aria-light="切换到暗色模式"
+data-aria-dark="切换到自动模式">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2 -translate-x-2"></span>
+          <span class="hamburger_3 -translate-x-1"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="sy-page sy-container flex mx-auto">
+  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
+    <div class="sy-lside-inner md:sticky">
+      <div class="sy-scrollbar p-6">
+        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="2024-summer-day1.html">Day1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2024-summer-day2.html">The Missing Semester of Your CS Education</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 4</a></li>
+</ul>
+
+        </div>
+      </div></div>
+  </aside>
+  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
+  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
+    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
+      <i class="i-lucide close"></i>
+    </button>
+    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>该页内容</h3><ul>
+<li><a class="reference internal" href="#windowsssh">Windows&#31995;&#32479;&#19979;&#30340;ssh&#23494;&#38053;</a></li>
+<li><a class="reference internal" href="#django">Django</a><ul>
+<li><a class="reference internal" href="#id1">&#25968;&#25454;&#24211;</a></li>
+<li><a class="reference internal" href="#id2">&#31649;&#29702;&#21592;&#36134;&#21495;</a></li>
+</ul>
+</li>
+</ul>
+</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
+  </aside>
+  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
+  <main class="sy-main w-full max-sm:max-w-full print:pt-6"><div class="sy-breadcrumbs" role="navigation">
+  <div class="sy-breadcrumbs-inner flex items-center">
+    <div class="md:hidden mr-3">
+      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
+        <i class="i-lucide menu"></i>
+      </button>
+    </div>
+    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html"><span itemprop="name">Dev_zero_to_hero</span></a>
+        <span>/</span>
+        <meta itemprop="position" content="1" />
+      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <strong itemprop="name">Day 4</strong>
+        <meta itemprop="position" content="2" />
+      </li></ol>
+    <div class="xl:hidden ml-1">
+      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
+        aria-expanded="false">
+        <i class="i-lucide outdent"></i>
+      </button>
+    </div>
+  </div>
+</div><div class="flex flex-col break-words justify-between">
+      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+        <article class="yue" role="main">
+          <section id="day-4">
+<h1>Day 4<a class="headerlink" href="#day-4" title="Link to this heading">¶</a></h1>
+<section id="windowsssh">
+<h2>Windows系统下的ssh密钥<a class="headerlink" href="#windowsssh" title="Link to this heading">¶</a></h2>
+<p>为了避免每次登录服务器都需要输密码的这个麻烦的问题，可以使用以下方法解决。</p>
+<p>如果你的系统是mac，那么这个问题将会变的很简单，使用命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="n">userid</span><span class="nd">@服务器地址</span>
+</span></pre></div>
+</div>
+</section>
+<section id="django">
+<h2>Django<a class="headerlink" href="#django" title="Link to this heading">¶</a></h2>
+<p>首先进入服务器之后，先安装Django</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span>
+</span></pre></div>
+</div>
+<p>安装好之后，使用命令创建一个项目</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">startproject</span> <span class="n">项目名</span>
+</span></pre></div>
+</div>
+<p>然后简单介绍一下项目的框架，以下的项目名都是mysite：</p>
+<ul class="simple">
+<li><p>最外层的 <strong>mysite/</strong> 根目录只是你项目的容器， 根目录名称对 Django 没有影响，你可以将它重命名为任何你喜欢的名称。</p></li>
+<li><p><strong>manage.py</strong>: 一个让你用各种方式管理 Django 项目的命令行工具。</p></li>
+<li><p>里面一层的 <strong>mysite/</strong> 目录包含你的项目，它是一个纯 Python 包。它的名字就是当你引用它内部任何东西时需要用到的 Python 包名。 (比如 mysite.urls).</p></li>
+<li><p><strong>mysite/<strong>init</strong>.py</strong>：一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包。</p></li>
+<li><p><strong>mysite/settings.py</strong>：Django 项目的配置文件。</p></li>
+<li><p><strong>mysite/urls.py</strong>：Django 项目的 URL 声明，就像你网站的“目录”。</p></li>
+<li><p><strong>mysite/asgi.py</strong>：作为你的项目的运行在 ASGI 兼容的 Web 服务器上的入口。</p></li>
+<li><p><strong>mysite/wsgi.py</strong>：作为你的项目的运行在 WSGI 兼容的Web服务器上的入口。</p></li>
+</ul>
+<p>现在可以用</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span> <span class="mi">0</span><span class="p">:</span><span class="mi">30009</span>
+</span></pre></div>
+</div>
+<p>运行你的项目，我这里的示例端口是30009，<strong>请选择不要冲突的端口</strong>。</p>
+<p>于是这里可以进入<code class="docutils literal notranslate"><span class="pre">http://0.0.0.0:30009</span></code>查看你的网页，但是应该会出现一个不太友好的界面。</p>
+<p><img alt="" src="https://files.mdnice.com/user/58281/56ac833b-e8b4-4a7e-95d2-56c1679798a7.png" /></p>
+<p>需要修改项目文件里的<strong>settings.py</strong>，将<code class="docutils literal notranslate"><span class="pre">ALLOWED_HOSTS</span> <span class="pre">=</span> <span class="pre">[]</span></code>修改为<code class="docutils literal notranslate"><span class="pre">ALLOWED_HOSTS</span> <span class="pre">=</span> <span class="pre">[&quot;*&quot;]</span></code></p>
+<p>再次进入你的端口</p>
+<p><img alt="" src="https://files.mdnice.com/user/58281/fd4f5efb-285a-46d5-932f-1b3a08a16933.png" /></p>
+<p>出现了一个小火箭，说明运行成功了。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">startapp</span> <span class="n">polls</span>
+</span></pre></div>
+</div>
+<p>现在我们创建了一个名为polls的投票项目，项目的文件夹下面多出了一个名为polls的文件夹。</p>
+<p><img alt="" src="https://files.mdnice.com/user/58281/2e6a7682-8440-4f4b-a25c-29c3cc36b899.png" /></p>
+<p>打开polls目录下的views.py文件，添加这段代码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+</span><span data-line="2">
+</span><span data-line="3">
+</span><span data-line="4"><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+</span><span data-line="5">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Hello, world. You&#39;re at the polls index.&quot;</span><span class="p">)</span>
+</span><span data-line="6">
+</span></pre></div>
+</div>
+<p><img alt="" src="https://files.mdnice.com/user/58281/d066fcce-7afb-4aa2-97bb-0846b299cf59.png" /></p>
+<p>这是编写的第一个视图，要将第一个URL映射到它。对应的index是路径下需要渲染的https，第一个需要修改应用的url。</p>
+<p>然后，在这个目录下创建一个urls.py文件，添加以下内容</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+</span><span data-line="6">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">),</span>
+</span><span data-line="7"><span class="p">]</span>
+</span></pre></div>
+</div>
+<p><img alt="" src="https://files.mdnice.com/user/58281/b9e06d75-e4e1-483d-8c83-c7e9f3dca06e.png" /></p>
+<p>捕获了url为空，调用views.index函数，上面编写的。</p>
+<p>然后在 mysite/urls.py 文件的 urlpatterns 列表里插入一个 include()，或者直接替换里面所有的内容为以下内容</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+</span><span data-line="2"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+</span><span data-line="3">
+</span><span data-line="4"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+</span><span data-line="5">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;polls/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;polls.urls&quot;</span><span class="p">)),</span>
+</span><span data-line="6">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;admin/&quot;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+</span><span data-line="7"><span class="p">]</span>
+</span></pre></div>
+</div>
+<p>但第一个url不够，需要在大的项目上定义。这一步把刚才的全部抓到大项目的主要部分。
+<img alt="" src="https://files.mdnice.com/user/58281/3d1cf009-fa58-4c84-b3c3-94de12456eeb.png" /></p>
+<p>这里我连接的服务器是spider1.utlab.ltd，在30009端口上开启，所以这里我在浏览器打开<code class="docutils literal notranslate"><span class="pre">http://spider1.utlab.ltd:30009/polls/</span></code></p>
+<p><img alt="" src="https://files.mdnice.com/user/58281/bd4b3197-68b5-45f7-b7ea-037ffdce6791.png" /></p>
+<p>成功出现了hello world。</p>
+<section id="id1">
+<h3>数据库<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>Django默认的数据库是SQLite。项目的根目录下已经有了这个文件</p>
+<p><img alt="" src="https://files.mdnice.com/user/58281/977638b7-4bf8-428b-9e66-393f860ca95a.png" /></p>
+<p>目前先不考虑使用别的数据库，因为需要添加一些额外的设置。先不管时区，如果以后需要上线再进行修改。</p>
+<p>使用</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+</span></pre></div>
+</div>
+<p>启用数据库</p>
+<p><img alt="" src="https://files.mdnice.com/user/58281/d60ee21d-fe40-4a72-bb2a-a2986047dcc8.png" /></p>
+<p>使用这个命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">sqlite3</span> <span class="n">db</span><span class="o">.</span><span class="n">sqlite3</span>
+</span></pre></div>
+</div>
+<p>就可以进入数据库，使用一些SQL语句了。</p>
+<p>编辑模型polls/models.py</p>
+<p>from django.db import models</p>
+<p>class Question(models.Model):
+question_text = models.CharField(max_length=200)
+pub_date = models.DateTimeField(&quot;date published&quot;)</p>
+<p>class Choice(models.Model):
+question = models.ForeignKey(Question, on_delete=models.CASCADE)
+choice_text = models.CharField(max_length=200)
+votes = models.IntegerField(default=0)</p>
+<p>编辑 polls/apps.py 中</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+</span><span data-line="2">    <span class="s2">&quot;polls.apps.PollsConfig&quot;</span><span class="p">,</span>
+</span><span data-line="3">    <span class="s2">&quot;django.contrib.admin&quot;</span><span class="p">,</span>
+</span><span data-line="4">    <span class="s2">&quot;django.contrib.auth&quot;</span><span class="p">,</span>
+</span><span data-line="5">    <span class="s2">&quot;django.contrib.contenttypes&quot;</span><span class="p">,</span>
+</span><span data-line="6">    <span class="s2">&quot;django.contrib.sessions&quot;</span><span class="p">,</span>
+</span><span data-line="7">    <span class="s2">&quot;django.contrib.messages&quot;</span><span class="p">,</span>
+</span><span data-line="8">    <span class="s2">&quot;django.contrib.staticfiles&quot;</span><span class="p">,</span>
+</span><span data-line="9"><span class="p">]</span>
+</span></pre></div>
+</div>
+<p>添加了<code class="docutils literal notranslate"><span class="pre">&quot;polls.apps.PollsConfig&quot;,</span></code>这一行</p>
+<p>运行以下的这两行代码迁移并同步管理你的数据库结构：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">sqlmigrate</span> <span class="n">polls</span> <span class="mi">0001</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span> 
+</span></pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>管理员账号<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p>python manage.py createsuperuser</p>
+<p>Username: admin</p>
+<p>Email address: admin&#64;example.com</p>
+<p>然后输入密码，如果你的密码过于简单会被警告，这里如果不想管他，输入y即可。接下来，你已经成为了网站管理员了！</p>
+<p>这里启动开发服务器的前提下，转到本地的目录，还是以我的url为例</p>
+<p>http://spider1.utlab.ltd:30009/admin/</p>
+<p><img alt="" src="https://files.mdnice.com/user/58281/656822cf-3a14-4539-9655-1c4534d32c3a.png" /></p>
+<p>现在来到了一个登录页面，输入账号密码之后即可登录。</p>
+<p><img alt="" src="https://files.mdnice.com/user/58281/18ccd2cb-a65f-46cc-aa25-a43cfce960e2.png" /></p>
+<p>打开 polls/admin.py 文件，把它编辑成下面这样</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Question</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>现在在网站的管理界面上已经有了POLLS里面的Questions类，可以使用了。</p>
+<p>接下来按照教程，开始创建接口</p>
+<p>向 polls/views.py 里添加更多视图</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+</span><span data-line="2">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;You&#39;re looking at question </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">question_id</span><span class="p">)</span>
+</span><span data-line="3">
+</span><span data-line="4">
+</span><span data-line="5"><span class="k">def</span> <span class="nf">results</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+</span><span data-line="6">    <span class="n">response</span> <span class="o">=</span> <span class="s2">&quot;You&#39;re looking at the results of question </span><span class="si">%s</span><span class="s2">.&quot;</span>
+</span><span data-line="7">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">response</span> <span class="o">%</span> <span class="n">question_id</span><span class="p">)</span>
+</span><span data-line="8">
+</span><span data-line="9">
+</span><span data-line="10"><span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+</span><span data-line="11">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;You&#39;re voting on question </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">question_id</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>把这些新视图添加进 polls.urls 模块里</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+</span><span data-line="6">    <span class="c1"># ex: /polls/</span>
+</span><span data-line="7">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">),</span>
+</span><span data-line="8">    <span class="c1"># ex: /polls/5/</span>
+</span><span data-line="9">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&lt;int:question_id&gt;/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">detail</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;detail&quot;</span><span class="p">),</span>
+</span><span data-line="10">    <span class="c1"># ex: /polls/5/results/</span>
+</span><span data-line="11">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&lt;int:question_id&gt;/results/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">results</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;results&quot;</span><span class="p">),</span>
+</span><span data-line="12">    <span class="c1"># ex: /polls/5/vote/</span>
+</span><span data-line="13">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&lt;int:question_id&gt;/vote/&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">vote</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;vote&quot;</span><span class="p">),</span>
+</span><span data-line="14"><span class="p">]</span>
+</span></pre></div>
+</div>
+<p>修改polls/views.py</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span>
+</span><span data-line="4">
+</span><span data-line="5">
+</span><span data-line="6"><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+</span><span data-line="7">    <span class="n">latest_question_list</span> <span class="o">=</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;-pub_date&quot;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+</span><span data-line="8">    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">q</span><span class="o">.</span><span class="n">question_text</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">latest_question_list</span><span class="p">])</span>
+</span><span data-line="9">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span><span data-line="10">
+</span><span data-line="11">
+</span><span data-line="12"><span class="c1"># Leave the rest of the views (detail, results, vote) unchanged</span>
+</span></pre></div>
+</div>
+<p>现在，在polls 目录里创建一个 templates 目录。在你刚刚创建的 templates 目录里，再创建一个目录 polls，然后在其中新建一个文件 index.html 。</p>
+<p>输入以下代码</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">latest_question_list</span> <span class="o">%</span><span class="p">}</span>
+</span><span data-line="2">    <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span data-line="3">    <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">latest_question_list</span> <span class="o">%</span><span class="p">}</span>
+</span><span data-line="4">        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;/polls/{{ question.id }}/&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">question</span><span class="o">.</span><span class="n">question_text</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span data-line="5">    <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+</span><span data-line="6">    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span data-line="7"><span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span>
+</span><span data-line="8">    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">No</span> <span class="n">polls</span> <span class="n">are</span> <span class="n">available</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span data-line="9"><span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>更新一下 polls/views.py 里的 index 视图</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">from django.http import HttpResponse
+</span><span data-line="2">from django.template import loader
+</span><span data-line="3">
+</span><span data-line="4">from .models import Question
+</span><span data-line="5">
+</span><span data-line="6">
+</span><span data-line="7">def index(request):
+</span><span data-line="8">    latest_question_list = Question.objects.order_by(&quot;-pub_date&quot;)[:5]
+</span><span data-line="9">    template = loader.get_template(&quot;polls/index.html&quot;)
+</span><span data-line="10">    context = {
+</span><span data-line="11">        &quot;latest_question_list&quot;: latest_question_list,
+</span><span data-line="12">    }
+</span><span data-line="13">    return HttpResponse(template.render(context, request))
+</span><span data-line="14">
+</span><span data-line="15">![](https://files.mdnice.com/user/58281/65333fc4-4ec7-455a-9275-c38cb20949bd.png)
+</span><span data-line="16">
+</span></pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article><button class="back-to-top" type="button">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+  </svg>
+  <span>回到顶部</span>
+</button><div class="navigation flex print:hidden"><div class="navigation-prev">
+    <a href="2024-summer-day2.html">
+      <i class="i-lucide chevron-left"></i>
+      <div class="page-info">
+        <span>上一章</span><div class="title">The Missing Semester of Your CS Education</div></div>
+    </a>
+  </div></div></div>
+    </div>
+  </main>
+</div>
+<footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2024, ezelab</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials"></div>
+    </div>
+  </div>
+</footer>
+      <script src="../_static/documentation_options.js?v=a1b8b494"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../_static/shibuya.js?v=3cc430e2"></script></body>
+</html>
