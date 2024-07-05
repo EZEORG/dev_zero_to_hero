@@ -1,4 +1,4 @@
-# The Missing Semester of Your CS Education
+# Day2 The Missing Semester of Your CS Education
 
 ## Topic 1 Shell
 
