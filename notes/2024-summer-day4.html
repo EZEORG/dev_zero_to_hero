@@ -119,6 +119,16 @@ data-aria-dark="切换到自动模式">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="n">userid</span><span class="nd">@服务器地址</span>
 </span></pre></div>
 </div>
+<p>如果你的系统是Windows，那么先在Powershell里面输入</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span>
+</span></pre></div>
+</div>
+<p>然后一路回车，直到看到生成了一些“奇怪的图形”，命令行也可以再次输入了。这时候输入</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">type $env:USERPROFILE\.ssh\id_rsa.pub | ssh xxx@spider1.utlab.ltd &quot;cat &gt;&gt; ~/.ssh/authorized_keys&quot;
+</span></pre></div>
+</div>
+<p>将这里的xxx换成你的名字，如果你的服务器地址不一样，自行更改即可。</p>
+<p>从现在开始，你再登录你的服务器，就不需要输密码了。</p>
 </section>
 <section id="django">
 <h2>Django<a class="headerlink" href="#django" title="Link to this heading">¶</a></h2>

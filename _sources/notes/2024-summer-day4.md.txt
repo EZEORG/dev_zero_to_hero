@@ -10,7 +10,22 @@
 ```
 ssh-copy-id userid@服务器地址
 ```
- 
+
+如果你的系统是Windows，那么先在Powershell里面输入
+
+```
+ssh-keygen
+```
+
+然后一路回车，直到看到生成了一些“奇怪的图形”，命令行也可以再次输入了。这时候输入
+
+```
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh xxx@spider1.utlab.ltd "cat >> ~/.ssh/authorized_keys"
+```
+
+将这里的xxx换成你的名字，如果你的服务器地址不一样，自行更改即可。
+
+从现在开始，你再登录你的服务器，就不需要输密码了。
 
 ## Django
 
