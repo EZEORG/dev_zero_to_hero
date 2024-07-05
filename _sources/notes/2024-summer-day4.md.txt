@@ -1,4 +1,4 @@
-# Day 4
+# Day 4 SSH与Django
 
 ## Windows系统下的ssh密钥
 
@@ -316,6 +316,8 @@ def index(request):
 ![](https://files.mdnice.com/user/58281/65333fc4-4ec7-455a-9275-c38cb20949bd.png)
 
 ```
+
+到这里为止，才只到了Django官方文档的很小一部分。这份文档号称编程界最顶级的文档之一（黄老师说的，别问我是不是真的），建议有时间时，每个人都可以看一看。
 
 
 
