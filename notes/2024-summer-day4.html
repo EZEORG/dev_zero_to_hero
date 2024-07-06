@@ -224,14 +224,20 @@ data-aria-dark="切换到自动模式">
 </div>
 <p>就可以进入数据库，使用一些SQL语句了。</p>
 <p>编辑模型polls/models.py</p>
-<p>from django.db import models</p>
-<p>class Question(models.Model):
-question_text = models.CharField(max_length=200)
-pub_date = models.DateTimeField(&quot;date published&quot;)</p>
-<p>class Choice(models.Model):
-question = models.ForeignKey(Question, on_delete=models.CASCADE)
-choice_text = models.CharField(max_length=200)
-votes = models.IntegerField(default=0)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+</span><span data-line="2">
+</span><span data-line="3">
+</span><span data-line="4"><span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span data-line="5">    <span class="n">question_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</span><span data-line="6">    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s2">&quot;date published&quot;</span><span class="p">)</span>
+</span><span data-line="7">
+</span><span data-line="8">
+</span><span data-line="9"><span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span data-line="10">    <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+</span><span data-line="11">    <span class="n">choice_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</span><span data-line="12">    <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></pre></div>
+</div>
 <p>编辑 polls/apps.py 中</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
 </span><span data-line="2">    <span class="s2">&quot;polls.apps.PollsConfig&quot;</span><span class="p">,</span>
@@ -254,12 +260,16 @@ votes = models.IntegerField(default=0)</p>
 </section>
 <section id="id2">
 <h3>管理员账号<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
-<p>python manage.py createsuperuser</p>
-<p>Username: admin</p>
-<p>Email address: admin&#64;example.com</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">createsuperuser</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="n">Username</span><span class="p">:</span> <span class="n">admin</span>
+</span><span data-line="4">
+</span><span data-line="5"><span class="n">Email</span> <span class="n">address</span><span class="p">:</span> <span class="n">admin</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+</span></pre></div>
+</div>
 <p>然后输入密码，如果你的密码过于简单会被警告，这里如果不想管他，输入y即可。接下来，你已经成为了网站管理员了！</p>
 <p>这里启动开发服务器的前提下，转到本地的目录，还是以我的url为例</p>
-<p>http://spider1.utlab.ltd:30009/admin/</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://spider1.utlab.ltd:30009/admin/</span></code></p>
 <p><img alt="" src="https://files.mdnice.com/user/58281/656822cf-3a14-4539-9655-1c4534d32c3a.png" /></p>
 <p>现在来到了一个登录页面，输入账号密码之后即可登录。</p>
 <p><img alt="" src="https://files.mdnice.com/user/58281/18ccd2cb-a65f-46cc-aa25-a43cfce960e2.png" /></p>
