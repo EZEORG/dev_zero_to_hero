@@ -159,6 +159,7 @@ sqlite3 db.sqlite3
 
 编辑模型polls/models.py
 
+```
 from django.db import models
 
 
@@ -171,6 +172,7 @@ class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+```
     
 编辑 polls/apps.py 中
 
@@ -198,17 +200,19 @@ python manage.py migrate
 
 ### 管理员账号
 
+```
 python manage.py createsuperuser
 
 Username: admin
 
 Email address: admin@example.com
+```
 
 然后输入密码，如果你的密码过于简单会被警告，这里如果不想管他，输入y即可。接下来，你已经成为了网站管理员了！
 
 这里启动开发服务器的前提下，转到本地的目录，还是以我的url为例
 
-http://spider1.utlab.ltd:30009/admin/
+`http://spider1.utlab.ltd:30009/admin/`
 
 ![](https://files.mdnice.com/user/58281/656822cf-3a14-4539-9655-1c4534d32c3a.png)
 
