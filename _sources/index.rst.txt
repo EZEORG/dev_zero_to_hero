@@ -14,6 +14,7 @@ Welcome to Dev_zero_to_hero's documentation!
    notes/2024-summer-day2
    notes/2024-summer-day3
    notes/2024-summer-day4
+   notes/2024-summer-day5
 
 
 Indices and tables
