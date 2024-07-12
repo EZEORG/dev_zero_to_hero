@@ -8,3 +8,4 @@ And some notes:
 * [2024-summer-day3-Python虚拟环境与Requests爬虫](./source/notes/2024-summer-day3.md)
 * [2024-summer-day4-SSH与Django](./source/notes/2024-summer-day4.md)
 * [2024-summer-day5-Docker与小红书爬虫项目](./source/notes/2024-summer-day5.md)
+* [2024-summer-day6-Markdown入门](./source/notes/2024-summer-day6.md)
