@@ -1,4 +1,4 @@
-# Day 4 SSH与Django
+# Day4 SSH与Django
 
 ## Windows系统下的ssh密钥
 
