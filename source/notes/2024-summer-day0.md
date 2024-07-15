@@ -19,15 +19,13 @@ title: Day0-Markdown
 
 ```{notes}
 使用markdown的场景包括但不局限于：
-
-1. 项目交流: Github Issues
-2. 文档书写: [^Pytorch-Docs]
+1. 项目交流
+2. 文档书写
 3. 写书
 4. 做笔记
 5. 发公众号
 
 ```
-
 
 
 以下的一些资料将会有利于快速上手有一些常见的语法: 
@@ -57,11 +55,15 @@ sequenceDiagram
 
 
 
+## Examples:
+
+1. 项目交流：[Report a bug for pytorch](https://github.com/pytorch/pytorch/issues/130666)
+2. 文档书写：[Pytorch Docs Github](https://github.com/pytorch/pytorch/tree/main/docs)
+3. 写书： [动手学深度学习][https://github.com/d2l-ai/d2l-zh)
+4. 做笔记
+5. 发公众号
 
 
 ## Referenes:
-
-[Pytorch-Docs]： [Pytorch Docs Github](https://github.com/pytorch/pytorch/tree/main/docs)
-[^markdown]: [The MyST Syntax Guide](https://myst-parser.readthedocs.io/en/v0.17.1/syntax/syntax.html#)
-[^MyST]: [MyST Syntax Guide](https://myst-parser.readthedocs.io/en/v0.17.1/syntax/syntax.html#)
+[^MyST]: [MyST Syntax Guide](https://myst-parser.readthedocs.io/en/latest/index.html)
 
