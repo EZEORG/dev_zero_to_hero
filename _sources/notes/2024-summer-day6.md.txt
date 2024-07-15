@@ -55,8 +55,6 @@ Man！What can I say？Mamba Out！
 #### 四级标题
 ```
 
-# 一级标题
-
 ## 二级标题
     
 ### 三级标题

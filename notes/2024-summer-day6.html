@@ -6,7 +6,7 @@
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=0e780e79" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=301e5329" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
@@ -37,8 +37,7 @@
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="搜索" />
   <kbd>/</kbd>
-</form><div class="sy-head-socials flex items-center">
-</div></div>
+</form><div class="sy-head-socials"></div></div>
     </div>
     <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
 data-aria-auto="切换到亮色模式"
@@ -67,7 +66,6 @@ data-aria-dark="切换到自动模式">
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day4.html">Day4 SSH与Django</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day5.html">Day5 Docker与小红书爬虫项目</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Day6 Markdown入门</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id4">一级标题</a></li>
 </ul>
 
         </div>
@@ -79,30 +77,24 @@ data-aria-dark="切换到自动模式">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>该页内容</h3><ul>
-<li><a class="reference internal" href="#">Day6 Markdown入门</a><ul>
-<li><a class="reference internal" href="#id1">前言</a></li>
-<li><a class="reference internal" href="#id2">排版</a></li>
-<li><a class="reference internal" href="#id3">标题</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id4">一级标题</a><ul>
-<li><a class="reference internal" href="#id5">二级标题</a><ul>
-<li><a class="reference internal" href="#id6">三级标题</a><ul>
-<li><a class="reference internal" href="#id7">四级标题</a></li>
+<li><a class="reference internal" href="#id1">&#21069;&#35328;</a></li>
+<li><a class="reference internal" href="#id2">&#25490;&#29256;</a></li>
+<li><a class="reference internal" href="#id3">&#26631;&#39064;</a></li>
+<li><a class="reference internal" href="#id4">&#20108;&#32423;&#26631;&#39064;</a><ul>
+<li><a class="reference internal" href="#id5">&#19977;&#32423;&#26631;&#39064;</a><ul>
+<li><a class="reference internal" href="#id6">&#22235;&#32423;&#26631;&#39064;</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id8">列表</a></li>
-<li><a class="reference internal" href="#id9">引用</a></li>
-<li><a class="reference internal" href="#id13">斜体和粗体</a></li>
-<li><a class="reference internal" href="#id14">链接</a></li>
-<li><a class="reference internal" href="#id15">分割线和删除线</a></li>
-<li><a class="reference internal" href="#id16">表格</a></li>
-<li><a class="reference internal" href="#id17">代码块</a></li>
-<li><a class="reference internal" href="#id18">结语</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#id7">&#21015;&#34920;</a></li>
+<li><a class="reference internal" href="#id8">&#24341;&#29992;</a></li>
+<li><a class="reference internal" href="#id12">&#26012;&#20307;&#21644;&#31895;&#20307;</a></li>
+<li><a class="reference internal" href="#id13">&#38142;&#25509;</a></li>
+<li><a class="reference internal" href="#id14">&#20998;&#21106;&#32447;&#21644;&#21024;&#38500;&#32447;</a></li>
+<li><a class="reference internal" href="#id15">&#34920;&#26684;</a></li>
+<li><a class="reference internal" href="#id16">&#20195;&#30721;&#22359;</a></li>
+<li><a class="reference internal" href="#id17">&#32467;&#35821;</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -176,21 +168,18 @@ data-aria-dark="切换到自动模式">
 </span></pre></div>
 </div>
 </section>
-</section>
 <section id="id4">
-<h1>一级标题<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h1>
+<h2>二级标题<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <section id="id5">
-<h2>二级标题<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<h3>三级标题<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
 <section id="id6">
-<h3>三级标题<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
-<section id="id7">
-<h4>四级标题<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
+<h4>四级标题<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
 <p>一定要记得，井号后面一定要给一个空格，这样才会识别成标题。</p>
 </section>
 </section>
 </section>
-<section id="id8">
-<h2>列表<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<section id="id7">
+<h2>列表<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
 <p>我们知道，列表分有序列表和无序列表。其实也很简单，往下的教程我就只写语法吧，没有什么需要解释的，熟能生巧。</p>
 <p>列表如果需要写子列表，通常使用<strong>缩进</strong>控制。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="o">-</span> <span class="n">无序列表</span> <span class="mi">1</span>
@@ -219,8 +208,8 @@ data-aria-dark="切换到自动模式">
 <li><p>有序列表 3</p></li>
 </ol>
 </section>
-<section id="id9">
-<h2>引用<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
+<section id="id8">
+<h2>引用<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">一级引用如下：
 </span><span data-line="2">
 </span><span data-line="3">&gt; ### 一级引用示例
@@ -242,13 +231,13 @@ data-aria-dark="切换到自动模式">
 </div>
 <p>一级引用如下：</p>
 <blockquote>
-<div><h3 class="rubric" id="id10">一级引用示例</h3>
+<div><h3 class="rubric" id="id9">一级引用示例</h3>
 <p>读一本好书。 <strong>——歌德</strong></p>
 </div></blockquote>
 <p>二级引用如下：</p>
 <blockquote>
 <div><blockquote>
-<div><h3 class="rubric" id="id11">二级引用示例</h3>
+<div><h3 class="rubric" id="id10">二级引用示例</h3>
 <p>读一本好书。 <strong>——歌德</strong></p>
 </div></blockquote>
 </div></blockquote>
@@ -256,14 +245,14 @@ data-aria-dark="切换到自动模式">
 <blockquote>
 <div><blockquote>
 <div><blockquote>
-<div><h3 class="rubric" id="id12">三级引用示例</h3>
+<div><h3 class="rubric" id="id11">三级引用示例</h3>
 <p>读一本好书。<strong>——歌德</strong></p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
 </section>
-<section id="id13">
-<h2>斜体和粗体<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
+<section id="id12">
+<h2>斜体和粗体<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="o">**</span><span class="n">这个是粗体</span><span class="o">**</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="o">*</span><span class="n">这个是斜体</span><span class="o">*</span>
@@ -275,8 +264,8 @@ data-aria-dark="切换到自动模式">
 <p><em>这个是斜体</em></p>
 <p><em><strong>这个是粗体加斜体</strong></em></p>
 </section>
-<section id="id14">
-<h2>链接<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
+<section id="id13">
+<h2>链接<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">[</span><span class="n">EZEORG</span><span class="o">-</span><span class="n">dev_zero_to_hero</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">EZEORG</span><span class="o">/</span><span class="n">dev_zero_to_hero</span><span class="p">)</span>
 </span></pre></div>
 </div>
@@ -289,8 +278,8 @@ data-aria-dark="切换到自动模式">
 <li><p><a class="reference external" href="https://github.com/EZEORG/dev_zero_to_hero">EZEORG-dev_zero_to_hero</a></p></li>
 </ul>
 </section>
-<section id="id15">
-<h2>分割线和删除线<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
+<section id="id14">
+<h2>分割线和删除线<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="o">---</span>
 </span></pre></div>
 </div>
@@ -302,8 +291,8 @@ data-aria-dark="切换到自动模式">
 </div>
 <p>~~这是要被删除的内容。~~</p>
 </section>
-<section id="id16">
-<h2>表格<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
+<section id="id15">
+<h2>表格<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
 <p>这个其实我用的也不多，但是项目主页，这个超级实用。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">| 姓名       | 年龄 |         工作 |
 </span><span data-line="2">| :--------- | :--: | -----------: |
@@ -337,8 +326,8 @@ data-aria-dark="切换到自动模式">
 </table>
 </div>
 </section>
-<section id="id17">
-<h2>代码块<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
+<section id="id16">
+<h2>代码块<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="c1">// FileName: HelloWorld.java</span>
 </span><span data-line="2"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">HelloWorld</span><span class="w"> </span><span class="p">{</span>
 </span><span data-line="3"><span class="w">  </span><span class="c1">// Java 入口程序，程序从此入口</span>
@@ -376,8 +365,8 @@ data-aria-dark="切换到自动模式">
 </div>
 <p>这是我的行内代码<code class="docutils literal notranslate"><span class="pre">python</span></code></p>
 </section>
-<section id="id18">
-<h2>结语<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h2>
+<section id="id17">
+<h2>结语<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
 <p>这里我们再讲讲用什么玩意写md，其实VSCODE就很不错，记得安装插件，搜Markdown之后的第二个<strong>Markdown Preview Enhanced</strong>，别下错了。这样你就可以在VSCODE中预览你写的Markdown了。我本人用的是网上其他的编辑器，因为有些快捷键习惯了，如果你有中意的也可以，但这里只做VSCODE的推荐。</p>
 <p>还有，在不同的页面上你可能会看到一些很帅的文档，其实它们也是md，但是采用了一些主题，就理解成游戏里的皮肤吧。如果喜欢，可以自己看看咋整。</p>
 <p>好了，其实差不多也就到这了，会一点基础的，写一个简单的README肯定是没问题了（~~只是好不好看的问题~~）。祝学习顺利！</p>
