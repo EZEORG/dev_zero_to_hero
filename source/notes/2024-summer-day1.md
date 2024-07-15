@@ -1,3 +1,12 @@
+---
+blogpost: true
+tags: Summary
+author: WinstonCHEN1
+date: June, 30, 2024
+title: Linux、VScode与Git
+---
+
+
 # Day1 Linux、VScode与Git
 
 ## 一、Basic Linux
@@ -85,10 +94,6 @@ ip a
 scp file.txt username@remotehost:/path/to/destination/
 ```
 
-运行bash脚本进行安装
-```
-bash install.sh
-```
 
 ### 6. VIM快捷键
 向下移动
@@ -102,14 +107,18 @@ K
 ```
 退出VIM（组合键）
 ```
+esc
 :q
 ```
 
 ### 7. Python和虚拟环境管理
 创建Python虚拟环境，用于隔离项目的依赖环境
 ```
-virtualenv myenv
+virtualenv venv
+source activate venv/bin/activate
+
 ```
+
 
 ## 二、VScode
 
@@ -119,6 +128,9 @@ virtualenv myenv
 
 #### 1.Remote
 安装Remote插件, 然后进行服务器的登录操作
+
+
+
 ![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925146461-f8bf3229-c1d0-4082-88ee-6c9464920a62.png#averageHue=%23303942&clientId=ud3b6b92c-252e-4&from=paste&height=72&id=u7f5c4d03&originHeight=72&originWidth=249&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5064&status=done&style=none&taskId=ube1af80b-f928-494d-9411-5ab3a601e82&title=&width=249)
 
 
@@ -163,7 +175,7 @@ VSCode中Python开发环境支持的插件
 首先请确保你的电脑已经安装了Git！
 
 Git的安装网址如下：
-[https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
+[git-scm](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)
 
 如果你是MacOS系统，可以使用brew进行安装。
 
@@ -171,9 +183,26 @@ Git的安装网址如下：
 ```
 git config --global user.name 你的用户名
 git config --global user.email 你的邮箱
-git config --global credential.helper cache
 ```
 这里的邮箱需要与你注册github的邮箱对应。为了方便，用户名和邮箱都使用Github的注册信息即可。
+
+````{note}
+
+如果你不想要重复输入密码，可以考虑使用:
+
+cache 10800秒，之后失效, 默认15分钟
+
+```bash
+git config --global credential.helper 'cache --timeout=10800'
+```
+store, 永久有效，安全性欠佳
+
+```bash
+git config --global credential.helper store
+```
+````
+
+
 
 
 ### 命令行操作
@@ -226,7 +255,7 @@ git push
 将代码推送到GitHub，如果失败是网络问题。如果你要将你修改的代码提交到别人的repo中，第一次，要用到
 
 ```
-git push--set-upstream origin
+git push --set-upstream origin
 ```
 
 推送远程仓库，第一次可能需要登录。如果GitHub的仓库更新了，比如和别人共同协作一个repo，他提交了代码，你要同步

@@ -1,4 +1,19 @@
+---
+title: Tutorial for Missing MIT
+tags: Markdown, Notes
+author: WinstonCHEN1
+date: July, 03, 2024
+title: Day2-Missing MIT Semester
+---
+
+
 # Day2 The Missing Semester of Your CS Education
+
+
+```{note}
+This notes is translated from [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/), 更多详情请参看原文。
+```
+
 
 ## Topic 1 Shell
 
