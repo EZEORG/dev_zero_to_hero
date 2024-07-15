@@ -1,9 +1,9 @@
 ---
 blogpost: true
-tags: summary
+tags: Summary
 author: WinstonCHEN1
 date: June, 30, 2024
-title: 2024-middle-summary
+title: Linux、VScode与Git
 ---
 
 

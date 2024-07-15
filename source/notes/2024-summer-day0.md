@@ -21,7 +21,7 @@ title: Day0-Markdown
 使用markdown的场景包括但不局限于：
 
 1. 项目交流: Github Issues
-2. 文档书写: [Pytorch Docs](https://pytorch.org/docs/stable/nn.html)
+2. 文档书写: [^Pytorch-Docs]
 3. 写书
 4. 做笔记
 5. 发公众号
@@ -61,7 +61,7 @@ sequenceDiagram
 
 ## Referenes:
 
-1. [GitHub Flow](https://gitbeijing.com/github_flow.html)
-2. [^markdown]: [The MyST Syntax Guide](https://myst-parser.readthedocs.io/en/v0.17.1/syntax/syntax.html#)
-3. [^MyST]: [MyST Syntax Guide](https://myst-parser.readthedocs.io/en/v0.17.1/syntax/syntax.html#)
+[Pytorch-Docs]： [Pytorch Docs Github](https://github.com/pytorch/pytorch/tree/main/docs)
+[^markdown]: [The MyST Syntax Guide](https://myst-parser.readthedocs.io/en/v0.17.1/syntax/syntax.html#)
+[^MyST]: [MyST Syntax Guide](https://myst-parser.readthedocs.io/en/v0.17.1/syntax/syntax.html#)
 
