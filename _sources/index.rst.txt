@@ -10,12 +10,12 @@ Welcome to Dev_zero_to_hero's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   notes/2024-summer-day0
    notes/2024-summer-day1
    notes/2024-summer-day2
    notes/2024-summer-day3
    notes/2024-summer-day4
    notes/2024-summer-day5
-   notes/2024-summer-day6
 
 Indices and tables
 ==================

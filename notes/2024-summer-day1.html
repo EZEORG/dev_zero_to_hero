@@ -2,7 +2,7 @@
 <html lang="zh" data-accent-color="violet" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day1 Linux、VScode与Git - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Day2 The Missing Semester of Your CS Education" href="2024-summer-day2.html" /><link rel="prev" title="Welcome to Dev_zero_to_hero&#39;s documentation!" href="../index.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day1 Linux、VScode与Git - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Day2 The Missing Semester of Your CS Education" href="2024-summer-day2.html" /><link rel="prev" title="Day0 Markdown" href="2024-summer-day0.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
@@ -60,12 +60,12 @@ data-aria-dark="切换到自动模式">
       <div class="sy-scrollbar p-6">
         <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="2024-summer-day0.html">Day0 Markdown</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Day1 Linux、VScode与Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day2.html">Day2 The Missing Semester of Your CS Education</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2024-summer-day3.html">Day3 Python虚拟环境与Requests爬虫</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2024-summer-day3.html">Day3 Python 开发环境搭载</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day4.html">Day4 SSH与Django</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day5.html">Day5 Docker与小红书爬虫项目</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2024-summer-day6.html">Day6 Markdown入门</a></li>
 </ul>
 
         </div>
@@ -203,10 +203,6 @@ data-aria-dark="切换到自动模式">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">scp</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span> <span class="n">username</span><span class="nd">@remotehost</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">destination</span><span class="o">/</span>
 </span></pre></div>
 </div>
-<p>运行bash脚本进行安装</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">bash</span> <span class="n">install</span><span class="o">.</span><span class="n">sh</span>
-</span></pre></div>
-</div>
 </section>
 <section id="vim">
 <h3>6. VIM快捷键<a class="headerlink" href="#vim" title="Link to this heading">¶</a></h3>
@@ -219,14 +215,17 @@ data-aria-dark="切换到自动模式">
 </span></pre></div>
 </div>
 <p>退出VIM（组合键）</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">:</span><span class="n">q</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">esc</span>
+</span><span data-line="2"><span class="p">:</span><span class="n">q</span>
 </span></pre></div>
 </div>
 </section>
 <section id="python">
 <h3>7. Python和虚拟环境管理<a class="headerlink" href="#python" title="Link to this heading">¶</a></h3>
 <p>创建Python虚拟环境，用于隔离项目的依赖环境</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">virtualenv</span> <span class="n">myenv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">virtualenv</span> <span class="n">venv</span>
+</span><span data-line="2"><span class="n">source</span> <span class="n">activate</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</span><span data-line="3">
 </span></pre></div>
 </div>
 </section>
@@ -237,8 +236,8 @@ data-aria-dark="切换到自动模式">
 <h3>Extension<a class="headerlink" href="#extension" title="Link to this heading">¶</a></h3>
 <section id="remote">
 <h4>1.Remote<a class="headerlink" href="#remote" title="Link to this heading">¶</a></h4>
-<p>安装Remote插件, 然后进行服务器的登录操作
-<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925146461-f8bf3229-c1d0-4082-88ee-6c9464920a62.png#averageHue=%23303942&amp;clientId=ud3b6b92c-252e-4&amp;from=paste&amp;height=72&amp;id=u7f5c4d03&amp;originHeight=72&amp;originWidth=249&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5064&amp;status=done&amp;style=none&amp;taskId=ube1af80b-f928-494d-9411-5ab3a601e82&amp;title=&amp;width=249" /></p>
+<p>安装Remote插件, 然后进行服务器的登录操作</p>
+<p><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925146461-f8bf3229-c1d0-4082-88ee-6c9464920a62.png#averageHue=%23303942&amp;clientId=ud3b6b92c-252e-4&amp;from=paste&amp;height=72&amp;id=u7f5c4d03&amp;originHeight=72&amp;originWidth=249&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5064&amp;status=done&amp;style=none&amp;taskId=ube1af80b-f928-494d-9411-5ab3a601e82&amp;title=&amp;width=249" /></p>
 </section>
 <section id="id6">
 <h4>2.简体中文<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
@@ -274,15 +273,26 @@ data-aria-dark="切换到自动模式">
 <h2>三、Git<a class="headerlink" href="#git" title="Link to this heading">¶</a></h2>
 <p>首先请确保你的电脑已经安装了Git！</p>
 <p>Git的安装网址如下：
-<a class="reference external" href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git">https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git</a></p>
+<a class="reference external" href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git">git-scm</a></p>
 <p>如果你是MacOS系统，可以使用brew进行安装。</p>
 <p>首次使用需要在命令行对个人信息进行初始化：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="n">你的用户名</span>
 </span><span data-line="2"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="n">你的邮箱</span>
-</span><span data-line="3"><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">credential</span><span class="o">.</span><span class="n">helper</span> <span class="n">cache</span>
 </span></pre></div>
 </div>
 <p>这里的邮箱需要与你注册github的邮箱对应。为了方便，用户名和邮箱都使用Github的注册信息即可。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>如果你不想要重复输入密码，可以考虑使用:</p>
+<p>cache 10800秒，之后失效, 默认15分钟</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span><span class="s1">&#39;cache --timeout=10800&#39;</span>
+</span></pre></div>
+</div>
+<p>store, 永久有效，安全性欠佳</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>credential.helper<span class="w"> </span>store
+</span></pre></div>
+</div>
+</div>
 <section id="id9">
 <h3>命令行操作<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
 <p>如果你要把Github上的项目克隆到本地，分两种情况，操作都大同小异。</p>
@@ -316,7 +326,7 @@ data-aria-dark="切换到自动模式">
 </span></pre></div>
 </div>
 <p>将代码推送到GitHub，如果失败是网络问题。如果你要将你修改的代码提交到别人的repo中，第一次，要用到</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">push</span><span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span>
 </span></pre></div>
 </div>
 <p>推送远程仓库，第一次可能需要登录。如果GitHub的仓库更新了，比如和别人共同协作一个repo，他提交了代码，你要同步</p>
@@ -390,10 +400,10 @@ data-aria-dark="切换到自动模式">
   </svg>
   <span>回到顶部</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="../index.html">
+    <a href="2024-summer-day0.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>上一章</span><div class="title">首页</div></div>
+        <span>上一章</span><div class="title">Day0 Markdown</div></div>
     </a>
   </div><div class="navigation-next">
     <a href="2024-summer-day2.html">
