@@ -37,6 +37,6 @@ pip install requests lxml
 如果你更新了oh my bash，可能会出现终端配置清除的情况。这里影响最大的就是conda的配置，所以可以用这行命令：
 
 ```
-anaconda3/bin/conda init
+~/anaconda3/bin/conda init
 ```
 

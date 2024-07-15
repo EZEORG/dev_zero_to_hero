@@ -1,3 +1,12 @@
+---
+blogpost: true
+tags: summary
+author: WinstonCHEN1
+date: June, 30, 2024
+title: 2024-middle-summary
+---
+
+
 # Day1 Linux、VScode与Git
 
 ## 一、Basic Linux
@@ -85,10 +94,6 @@ ip a
 scp file.txt username@remotehost:/path/to/destination/
 ```
 
-运行bash脚本进行安装
-```
-bash install.sh
-```
 
 ### 6. VIM快捷键
 向下移动
@@ -102,14 +107,18 @@ K
 ```
 退出VIM（组合键）
 ```
+esc
 :q
 ```
 
 ### 7. Python和虚拟环境管理
 创建Python虚拟环境，用于隔离项目的依赖环境
 ```
-virtualenv myenv
+virtualenv venv
+source activate venv/bin/activate
+
 ```
+
 
 ## 二、VScode
 
@@ -119,6 +128,9 @@ virtualenv myenv
 
 #### 1.Remote
 安装Remote插件, 然后进行服务器的登录操作
+
+
+
 ![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925146461-f8bf3229-c1d0-4082-88ee-6c9464920a62.png#averageHue=%23303942&clientId=ud3b6b92c-252e-4&from=paste&height=72&id=u7f5c4d03&originHeight=72&originWidth=249&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5064&status=done&style=none&taskId=ube1af80b-f928-494d-9411-5ab3a601e82&title=&width=249)
 
 
