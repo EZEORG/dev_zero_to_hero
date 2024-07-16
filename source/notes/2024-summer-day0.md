@@ -52,6 +52,10 @@ sequenceDiagram
   Bob-->John: Jolly good!
 ```
 
+
+{octicon}`logo-github;1em;sd-text-info` is awesome!
+
+
 ::::{tab-set}
 
 :::{tab-item} MacOS
@@ -65,6 +69,8 @@ sequenceDiagram
 ::::
 
 
+
+
 :::{card} Card Title
 Header
 ^^^
@@ -74,13 +80,24 @@ Footer
 :::
 
 
+:::{card} Card Title
+Header
+^^^
+Card content
++++
+Footer
+:::
+
+
+
 ## Awesome Examples:
 
 1. 项目交流：[Report a bug for pytorch](https://github.com/pytorch/pytorch/issues/130666)
 2. 文档书写：[Pytorch Docs Github](https://github.com/pytorch/pytorch/tree/main/docs)
 3. 写书： [动手学深度学习](https://github.com/d2l-ai/d2l-zh)
-4. 做笔记or写博客 [Chris Holdgraf](https://chrisholdgraf.com/)
-5. 发公众号 [Doocs](https://doocs.github.io/md/)
+4. 做笔记or写博客: [Chris Holdgraf](https://chrisholdgraf.com/)
+5. 发公众号: [Doocs](https://doocs.github.io/md/)
+
 
 欢迎添加更多的例子，我们会尽快加入列表
 
