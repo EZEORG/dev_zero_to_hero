@@ -52,6 +52,8 @@ sequenceDiagram
   Bob-->John: Jolly good!
 ```
 
+{octicon}`logo-github;1em;sd-text-info` is awesome!
+
 ::::{tab-set}
 
 :::{tab-item} MacOS
