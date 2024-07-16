@@ -28,6 +28,13 @@ extensions = [
   "sphinx_design",
   "sphinx_comments"
 ]
+myst_enable_extensions=['colon_fence']
+comments_config = {
+   "utterances": {
+      "repo": "EZEORG/dev_zero_to_hero",
+      "optional": "config",
+   }
+}
 
 templates_path = ['_templates']
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']
