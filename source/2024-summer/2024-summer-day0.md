@@ -1,9 +1,9 @@
 ---
 title: Tutorial for markdown
 tags: Markdown, Notes
-author: WinstonCHEN1
-date: June, 30, 2024
-title: Day0-Markdown
+author: eze-root
+date: July, 16, 2024
+title: Markdown
 ---
 
 # Day0 Markdown
@@ -36,7 +36,12 @@ title: Day0-Markdown
 
 
 ## Advanced Usages
-正如前文提到，Markdown可以很好的用来写文档。因此除了标准语法外，[^MyST] 也提供了很多的高级功能，比如画流程图：
+正如前文提到，Markdown可以很好的用来写文档。因此除了标准语法外，[^MyST] 也提供了很多的高级功能, 举例如下：
+
+> [!NOTE]
+> 高级用法需要用到sphinx，因此可能渲染需要用[^MyST]才有效果。
+
+### 流程图
 
 ```{mermaid}
 sequenceDiagram
@@ -52,9 +57,27 @@ sequenceDiagram
   Bob-->John: Jolly good!
 ```
 
+### 柄图
+
+```{mermaid}
+
+   pie title Pets adopted by volunteers
+     "Dogs" : 386
+     "Cats" : 85
+     "Rats" : 15
+```
+
+
+### 添加Logo
+
+> {octicon}`logo-github;1em;sd-text-info` is awesome!
 
 {octicon}`logo-github;1em;sd-text-info` is awesome!
 
+
+### Sphinx-Design
+
+[sphinx-design](https://sphinx-design.readthedocs.io/en/latest/index.html)
 
 ::::{tab-set}
 
@@ -80,17 +103,7 @@ Footer
 :::
 
 
-:::{card} Card Title
-Header
-^^^
-Card content
-+++
-Footer
-:::
-
-
-
-## Awesome Examples:
+## Awesome Usaegs:
 
 1. 项目交流：[Report a bug for pytorch](https://github.com/pytorch/pytorch/issues/130666)
 2. 文档书写：[Pytorch Docs Github](https://github.com/pytorch/pytorch/tree/main/docs)
@@ -98,8 +111,7 @@ Footer
 4. 做笔记or写博客: [Chris Holdgraf](https://chrisholdgraf.com/)
 5. 发公众号: [Doocs](https://doocs.github.io/md/)
 
-
-欢迎添加更多的例子，我们会尽快加入列表
+欢迎添加更多的例子, 在下面的评论区，我们会尽快加入列表
 
 
 ## Referenes:
