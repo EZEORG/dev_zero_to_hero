@@ -42,7 +42,7 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 > 另一方面，任何人都可以直接向开发者的仓库的公开副本提交贡献。对于软件开发来说， 这是一个更加开放的策略，但可能会让人对哪个副本才是项目的起点感到困惑。
 
 ```{note}
-当然，一定要正确的区分：Git是一个软件，用来进行版本控制。Github只是一个托管平台，除了Github，还有GitLab，Gitee等。
+当然，正确的区分Glossary：Git是一个软件，用来进行版本控制。Github只是一个托管平台，除了Github，还有GitLab，Gitee等。
 ```
 
 
@@ -108,7 +108,7 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 这个非常认同，项目的推进本来就需要每个人花费在攻克难题上，而不是与人协同，相互等待。。。
 
 
-## 第5章-单人团队
+## 第5章-单人团队 (Important for beginner)
 
 基于issue的版本控制， 无论你是在开发一个新功能，修复一个bug，重构旧的代码，还是在尝试新的想法，都应该记录如下的一些问题
 
@@ -118,12 +118,49 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 2. 原因: 我感觉原因是什么？
 3. 质量保证测试： 怎么保证我已经修复了这个bug？
 
+开发的过程中，按照工程化 思维：
 
-| 命令                                              | 用途                                                     |
-|-------------------------------------------------|--------------------------------------------------------|
-| git clone URL                                    | 下载一份远程仓库的副本                                            |
-| git init                                         | 将当前目录转换成一个新的 Git 仓库                                  |
-| git status                                       | 获取仓库状态报告                                             |
+1. 创建工单 issue_number-description
+2. 完成工作描述
+3. 测试工作
+4. 添加修改文件到仓库
+5. 推送到远程备用服务器
+6. 测试满意，并入到主分支
+7. 将工单标记为完成，关闭
+
+![](./imgs/Snipaste_2024-11-19_19-45-41.png)
+
+
+
++ 克隆分支: ```git clone xxx```
++ 初始化: ```git init```
++ 检查状态: ```git status```
++ 添加所有文件至暂存区: ```git add --all```
++ 将所有暂存文件提交到仓库: ```git commit -m 'xxx'```
++ 查看仓库历史记录: ```git log```
++ 列出分支: ```git branch --list```
++ 列出所有分支: ```git branch --all```
++ 获取更新的列表和所有远程分支的内容: ```git fetch```
++ 使用  checkout  命令切换分支: ```git checkout --track ```
++ 添加已更改文件到仓库: ```git add xx ```
++ 将选中的修改交互式的添加到仓库中: ```git add --patch filename```
++ 将文件移除暂存区: ```git rest HEAD xxx```
++ 提交更完整的说明: ```git commit --amend```
++ 使用 show 命令显示单个提交的日志消息和文本 diff: ```git log && git show xxx```
++ 为某个提交对象添加一个新的标签import: ```git tag import xxx```
++ 列出所有标签: ```git tag```
++ 添加远程分支: ```git remote add origin xxx```
++ 使用push命令上传分支: ```git push```
++ 将工单分支并入主分支: ```git checkout main && git merge 1-process_notes```
++ 删除分支副本: ```git branch --delete 1-process_notes```
++ 删除远程分支：```git push --delete xxx 1-porcess_notes```
+
+
+| 命令                                             | 用途                                                            |
+|--------------------------------------------------|-----------------------------------------------------------------|
+| git clone URL                                    | 下载一份远程仓库的副本                                          |
+| git init                                         | 将当前目录转换成一个新的 Git 仓库                      |
+| git status                                       | 获取仓库状态报告                                       |
 | git add --all                                    | 将所有修改过的文件和新文件添加至仓库的暂存区                                |
 | git commit -m "message"                          | 将所有暂存的文件提交至仓库                                        |
 | git log                                          | 查看项目历史                                               |
@@ -154,6 +191,126 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 ## 第6章-回滚、还原、重置和变基
 
 ```{note}
-这章其实有点难，
+这章其实有点难， 但是掌握这一章节，将会真正的理解Git的使用。
+然后再也不会害怕出现代码丢失的情况了。并且在那之后，代码的编写也不再会是 xxx_v1.py 的方式了。
 ```
 
+
+![](./imgs/Snipaste_2024-11-19_19-59-53.png)
+
+
+
+
+| 你想要……                                       | 备注                              | 解决方案               |
+|------------------------------------------------|-----------------------------------|------------------------|
+| 舍弃工作目录中对一个文件的修改                 | 修改的文件未被暂存或提交          | `checkout -- filename` |
+| 舍弃工作目录中所有未保存的变更                          | 文件已暂存，但未被提交                     | `reset --hard`         |
+| 合并与某个特定提交（但不含）之间的多个提交              |                                  | `reset commit`         |
+| 移除所有未保存的变更，包含未跟踪的文件                    | 修改的文件未被提交                       | `clean -fd`            |
+| 移除所有已暂存的变更和在某个提交之前提交的工作，但不移除工作目录中的新文件                   |                   | `reset --hard commit`                      |
+| 移除之前的工作，但完整保留提交历史记录（“前进式回滚”）                                                                     | 分支已经被发布，工作目录是干净的                   | `revert commit`                            |
+| 从分支历史记录中移除一个单独的提交                                                                           | 修改的文件已经被提交，工作目录是干净的，分支尚未进行发布 | `rebase --interactive commit`              |
+| 保留之前的工作，但与另一提交合并                                                                           | 选择 squash（压缩）选项                       | `rebase --interactive commit`              |
+
+### rebase
+
+#### 例子1: 文件删除造成的变基冲突
+
+假设文件ch10.asciidoc在源分支master中被删除了，但我们在feature上继续对它进行修改，如果这个时候rebase便会报错。
+
+处理方式：
+
+1. `git mergetool ch10.asciidoc`
+2. `git rebase --continue`
+3. `git reset HEAD ch10.asciidoc`
+4. `git add ch10.asciidoc`
+5. `git rebase --continue`
+
+
+这个过程中，如果报错了，可以使用git rebase --abort 退回到前面。当然，也可以考虑看看message信息进行修订。
+
+#### 例子2：交互式变基修改提交
+
+假设最近的历史提交如下：
+
+```
+d1dc647 Revert "Adding office hours reminder." 
+50605a1 Correcting joke about horses and baths. 
+eed5023 Joke: What goes 'ha ha bonk'? 
+77c00e2 Adding an Easter egg of bad jokes. 
+0f187d8 Added information about additional people to be thanked. 
+c546720 Adding office hours reminder. 
+3184b5d Switching back to BADCamp version of the deck. 
+bd5c178 Added feedback request; formatting updates to pro-con lists 
+876e951 Removing feedback request; added Twitter handle.
+```
+
+现在需要将3个Joke相关的提交压缩成一个单独的提交。
+
+1. `git rebase --interactive 0f187d8`
+2. 编辑我们是需要pick还是squash，然后对合并后的消息进行编辑。
+
+
+#### 例子：移除错误的历史
+
+如果运气不好，将一些重要的信息（例如包含密码的文件）提交到了远程分支。
+
+需要使用 git filter-brach操作对历史进行重写。例如，希望删除文件 SECRET.md, 那么命令如下：
+
+```
+git filter-brach --index-filter \
+  'git rm --cache --ignore-unmatch SECRET.md' HEAD
+```
+
+此外，为了保证能永久地从仓库中删除这些内容（目前仍然可能会通过 git reflog找到），这是需要通过清除本地历史，并且执行一次垃圾回收（GC）将这些提交从系统中丢弃。
+
+```
+git reflog expire --expire=now --all
+git gc --prune=now
+```
+
+这个时候已经清理完成了，可以通过force操作完成强制的推送。
+
+```
+git push origin --fore --all --tags
+```
+
+此时，其他的合作者可以通过
+
+```
+git pull --rebase=preserve
+```
+
+
+### 命令指南
+
+
+| 命令                            | 用途                                   |
+|---------------------------------|----------------------------------------|
+| git checkout -b branch          | 创建一个名为 branch 的分支                |
+| git add filename(s)             | 暂存文件，准备提交至仓库                     |
+| git commit                      | 将暂存的变更保存至仓库                      |
+| git checkout branch             | 切换到指定分支                            |
+| git merge branch                | 将 branch 中的提交并入当前分支               |
+| git branch --delete                                | 移除本地分支                                             |
+| git branch -D                                      | 移除不包含并入其他分支的本地分支                         |
+| git clone URL                                      | 下载一份远程仓库的副本                                   |
+| git log                                            | 查看项目历史记录                                         |
+| git reflog                                         | 查看分支的详细历史记录                                   |
+| git checkout commit                                | 切换到另一个本地分支                                     |
+| git cherry-pick commit                             | 将提交从一个分支复制到另一个分支                         |
+| git reset --merge ORIG_HEAD                        | 移除当前分支中所有在最近一次合并中引入的提交             |
+| git checkout --filename                            | 还原已更改但尚未提交的文件                               |
+| git reset HEAD filename                            | 从暂存区移除指定的文件修改                               |
+| git reset --hard HEAD                              | 将所有已变更的文件还原到之前保存的状态                   |
+| git reset commit                                   | 取消暂存在这个提交之前的所有相关的更改                   |
+| git rebase --interactive commit                    | 编辑、或压缩指定所有的提交                               |
+| git rebase --continue                              | 在解决合并冲突后，继续变基过程                           |
+| git revert commit                                  | 取消应用指定提交的变更，创建一个共享友好的历史记录还原   |
+| git log --oneline --graph                          | 显示分支的图形化历史记录                                 |
+| git revert --mainline 1 commit                     | 反转一个合并提交                                         |
+| git branch --contains commit                       | 列出所有包含指定提交的分支                               |
+| git revert --no-commit last_commit_to_keep...      | 使用一个提交交替“组提交”，而不是为每个撤销的提交创建单独的对象 |
+| git filter-branch                                  | 从仓库中永久移除文件                                     |
+| git reflog expire                                  | 忽略详细历史记录，仅使用存储的提交消息                   |
+| git gc --prune=now                                 | 运行垃圾回收器并确保所有未提交的变更从本地内存中移除     |

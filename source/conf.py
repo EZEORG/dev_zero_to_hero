@@ -22,7 +22,6 @@ extensions = [
   "sphinx.ext.todo",
   "sphinx.ext.viewcode",
   "sphinxcontrib.mermaid",
-  "sphinx_tabs.tabs",
   "sphinxemoji.sphinxemoji",
   "sphinx_copybutton",
   "sphinx_design",
