@@ -10,6 +10,7 @@ Welcome to Dev_zero_to_hero's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   tutorial/git.md
    2024-summer/2024-summer-day0
    2024-summer/2024-summer-day1
    2024-summer/2024-summer-day2
