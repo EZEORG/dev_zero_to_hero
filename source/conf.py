@@ -52,3 +52,24 @@ html_css_files = [
  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
 ]
 
+latex_engine = 'xelatex'
+latex_elements = {
+    'passoptionstopackages': r'''
+\PassOptionsToPackage{svgnames}{xcolor}
+''',
+    'fontpkg': r'''
+\usepackage{fontspec}
+''',
+    'preamble': r'''
+\usepackage[titles]{tocloft}
+\cftsetpnumwidth {1.25cm}\cftsetrmarg{1.5cm}
+\setlength{\cftchapnumwidth}{0.75cm}
+\setlength{\cftsecindent}{\cftchapnumwidth}
+\setlength{\cftsecnumwidth}{1.25cm}
+''',
+    'sphinxsetup': 'TitleColor=DarkGoldenrod',
+    'fncychap': r'\usepackage[Bjornstrup]{fncychap}',
+    'printindex': r'\footnotesize\raggedright\printindex',
+}
+latex_show_urls = 'footnote'
+
