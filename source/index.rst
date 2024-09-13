@@ -16,6 +16,7 @@ Welcome to Dev_zero_to_hero's documentation!
    2024-summer/2024-summer-day3
    2024-summer/2024-summer-day4
    2024-summer/2024-summer-day5
+   2024-autumn/2024-autumn-day1
 
 Indices and tables
 ==================

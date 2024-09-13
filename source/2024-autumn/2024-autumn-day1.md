@@ -1,3 +1,13 @@
+---
+title: Tips on how to use prompts with ChatGPT
+tags: prompt
+author: WinstonCHEN1
+date: September, 14, 2024
+title: Day1-Tips on how to use prompts with ChatGPT
+---
+
+# Day1-Tips on how to use prompts with ChatGPT
+
 如何高效的使用ChatGPT？
 
 对于用户来说，提示词就是与GPT等大模型交互的过程中最重要的一环。写好提示词，对于使用效率和准确程度有着极大的提升。
