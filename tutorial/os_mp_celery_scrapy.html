@@ -62,7 +62,6 @@ data-aria-dark="切换到自动模式">
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git for Teams</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Scrapy + Celery + Multiprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#id5">总结</a></li>
 </ul>
 <p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -84,21 +83,18 @@ data-aria-dark="切换到自动模式">
       <i class="i-lucide close"></i>
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>该页内容</h3><ul>
-<li><a class="reference internal" href="#">Scrapy + Celery + Multiprocessing</a><ul>
 <li><a class="reference internal" href="#backgrounds">Backgrounds</a></li>
 <li><a class="reference internal" href="#scrapy-run-spider">Scrapy Run Spider</a></li>
 <li><a class="reference internal" href="#celery">Celery</a></li>
 <li><a class="reference internal" href="#celery-multiprocessing">Celery + Multiprocessing</a><ul>
-<li><a class="reference internal" href="#multiprocessing">1. 使用 <cite>multiprocessing</cite></a></li>
-<li><a class="reference internal" href="#billiard">2. 使用 <cite>billiard</cite></a></li>
-<li><a class="reference internal" href="#subprocess">3. 使用 <cite>subprocess</cite></a></li>
-<li><a class="reference internal" href="#spawn">4. 使用 <cite>spawn</cite></a></li>
-<li><a class="reference internal" href="#processexecutor">5. 使用 <cite>ProcessExecutor</cite></a></li>
+<li><a class="reference internal" href="#multiprocessing">1. &#20351;&#29992; <cite>multiprocessing</cite></a></li>
+<li><a class="reference internal" href="#billiard">2. &#20351;&#29992; <cite>billiard</cite></a></li>
+<li><a class="reference internal" href="#subprocess">3. &#20351;&#29992; <cite>subprocess</cite></a></li>
+<li><a class="reference internal" href="#spawn">4. &#20351;&#29992; <cite>spawn</cite></a></li>
+<li><a class="reference internal" href="#processexecutor">5. &#20351;&#29992; <cite>ProcessExecutor</cite></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id5">总结</a></li>
+<li><a class="reference internal" href="#id5">&#24635;&#32467;</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -327,9 +323,8 @@ data-aria-dark="切换到自动模式">
 <p>这部分的代码便能很好的完成本文的需求。</p>
 </section>
 </section>
-</section>
 <section id="id5">
-<h1>总结<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h1>
+<h2>总结<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <p>在本文中，我们尝试了很多的方案实现 Celery + Django + Scrapy ， 并且爬虫需要定期多个同时并发执行。
 最终的解决solution是使用 <a class="reference external" href="https://docs.python.org/3/library/concurrent.futures.html#processpoolexecutor">ProcessExecutor</a> , 配合使用 <cite>spawn</cite> 实现的。</p>
 <div role="list" class="citation-list">
@@ -339,6 +334,7 @@ data-aria-dark="切换到自动模式">
 <p><a class="reference external" href="https://docs.scrapy.org/en/latest/topics/practices.html">Common Practices in Scrapy</a></p>
 </div>
 </div>
+</section>
 </section>
 
         </article><button class="back-to-top" type="button">
