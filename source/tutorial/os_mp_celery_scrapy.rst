@@ -260,7 +260,7 @@ Celery + Multiprocessing
 
 
 总结
-====
+----
 
 在本文中，我们尝试了很多的方案实现 Celery + Django + Scrapy ， 并且爬虫需要定期多个同时并发执行。
 最终的解决solution是使用 `ProcessExecutor`_ , 配合使用 `spawn` 实现的。
