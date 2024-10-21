@@ -6,9 +6,8 @@
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=36d120a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -59,8 +58,13 @@ data-aria-dark="切换到自动模式">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
         <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/git.html">Git for Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/os_mp_celery_scrapy.html">Scrapy + Celery + Multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/os_mp_celery_scrapy.html#id5">总结</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day0.html">Day0 Markdown</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Day1 Linux、VScode与Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day2.html">Day2 The Missing Semester of Your CS Education</a></li>
@@ -70,7 +74,8 @@ data-aria-dark="切换到自动模式">
 </ul>
 
         </div>
-      </div></div>
+      </div>
+    </div>
   </aside>
   <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
   <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
@@ -237,8 +242,8 @@ data-aria-dark="切换到自动模式">
 <h3>Extension<a class="headerlink" href="#extension" title="Link to this heading">¶</a></h3>
 <section id="remote">
 <h4>1.Remote<a class="headerlink" href="#remote" title="Link to this heading">¶</a></h4>
-<p>安装Remote插件, 然后进行服务器的登录操作</p>
-<p><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925146461-f8bf3229-c1d0-4082-88ee-6c9464920a62.png#averageHue=%23303942&amp;clientId=ud3b6b92c-252e-4&amp;from=paste&amp;height=72&amp;id=u7f5c4d03&amp;originHeight=72&amp;originWidth=249&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=5064&amp;status=done&amp;style=none&amp;taskId=ube1af80b-f928-494d-9411-5ab3a601e82&amp;title=&amp;width=249" /></p>
+<p>安装Remote插件, 然后进行服务器的登录操作
+<img alt="image-1.png" src="../_images/image-1.png" /></p>
 </section>
 <section id="id6">
 <h4>2.简体中文<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
@@ -436,7 +441,7 @@ data-aria-dark="切换到自动模式">
   </div>
 </footer>
       <script src="../_static/documentation_options.js?v=a1b8b494"></script>
-      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -475,5 +480,5 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=c5fc9e80"></script></body>
+      <script src="../_static/shibuya.js?v=e2e99575"></script></body>
 </html>

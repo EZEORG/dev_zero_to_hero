@@ -2,13 +2,12 @@
 <html lang="zh" data-accent-color="violet" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day0 Markdown - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Day1 Linux、VScode与Git" href="2024-summer-day1.html" /><link rel="prev" title="Git for Teams" href="../tutorial/git.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day0 Markdown - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Day1 Linux、VScode与Git" href="2024-summer-day1.html" /><link rel="prev" title="Scrapy + Celery + Multiprocessing" href="../tutorial/os_mp_celery_scrapy.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=36d120a7" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=a5c4661c" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
@@ -59,8 +58,13 @@ data-aria-dark="切换到自动模式">
     <div class="sy-lside-inner md:sticky">
       <div class="sy-scrollbar p-6">
         <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/git.html">Git for Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/os_mp_celery_scrapy.html">Scrapy + Celery + Multiprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/os_mp_celery_scrapy.html#id5">总结</a></li>
+</ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
+<ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Day0 Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day1.html">Day1 Linux、VScode与Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2024-summer-day2.html">Day2 The Missing Semester of Your CS Education</a></li>
@@ -70,7 +74,8 @@ data-aria-dark="切换到自动模式">
 </ul>
 
         </div>
-      </div></div>
+      </div>
+    </div>
   </aside>
   <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
   <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
@@ -118,6 +123,10 @@ data-aria-dark="切换到自动模式">
         <article class="yue" role="main">
           <section id="day0-markdown">
 <h1>Day0 Markdown<a class="headerlink" href="#day0-markdown" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>除了本文的内容外，也可以参考某同学写的<a class="reference internal" href="2024-summer-day0-1.html"><span class="std std-doc">学习心得</span></a></p>
+</div>
 <p>目前，大部分的Github项目都是通过markdown进行轻量标注和沟通交流。
 因此，掌握必要的语法，有利于进行沟通交流。</p>
 <p>日常学习工作中， 避免不了使用别人的代码或者出现Bug, 需要上下游开发者帮助修复。提供较好的日志信息，将会推进项目的高效沟通。</p>
@@ -148,8 +157,8 @@ data-aria-dark="切换到自动模式">
 </div></blockquote>
 <section id="id3">
 <h3>流程图<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
-<div class="mermaid">
-            sequenceDiagram
+<pre  class="mermaid">
+        sequenceDiagram
   participant Alice
   participant Bob
   Alice-&gt;John: Hello John, how are you?
@@ -160,15 +169,15 @@ data-aria-dark="切换到自动模式">
   John--&gt;Alice: Great!
   John-&gt;Bob: How about you?
   Bob--&gt;John: Jolly good!
-        </div></section>
+    </pre></section>
 <section id="id4">
 <h3>柄图<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
-<div class="mermaid">
-               pie title Pets adopted by volunteers
+<pre  class="mermaid">
+           pie title Pets adopted by volunteers
      &quot;Dogs&quot; : 386
      &quot;Cats&quot; : 85
      &quot;Rats&quot; : 15
-        </div></section>
+    </pre></section>
 <section id="logo">
 <h3>添加Logo<a class="headerlink" href="#logo" title="Link to this heading">¶</a></h3>
 <blockquote>
@@ -237,10 +246,10 @@ Card Title</div>
   </svg>
   <span>回到顶部</span>
 </button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="../tutorial/git.html">
+    <a href="../tutorial/os_mp_celery_scrapy.html">
       <i class="i-lucide chevron-left"></i>
       <div class="page-info">
-        <span>上一章</span><div class="title">Git for Teams</div></div>
+        <span>上一章</span><div class="title">Scrapy + Celery + Multiprocessing</div></div>
     </a>
   </div><div class="navigation-next">
     <a href="2024-summer-day1.html">
@@ -272,7 +281,7 @@ Card Title</div>
   </div>
 </footer>
       <script src="../_static/documentation_options.js?v=a1b8b494"></script>
-      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
       <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -311,7 +320,13 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=c5fc9e80"></script>
-      <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
-      <script>mermaid.initialize({startOnLoad:true});</script></body>
+      <script src="../_static/shibuya.js?v=e2e99575"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script></body>
 </html>
