@@ -128,10 +128,7 @@ source activate venv/bin/activate
 
 #### 1.Remote
 安装Remote插件, 然后进行服务器的登录操作
-
-
-
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925146461-f8bf3229-c1d0-4082-88ee-6c9464920a62.png#averageHue=%23303942&clientId=ud3b6b92c-252e-4&from=paste&height=72&id=u7f5c4d03&originHeight=72&originWidth=249&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5064&status=done&style=none&taskId=ube1af80b-f928-494d-9411-5ab3a601e82&title=&width=249)
+![image-1.png](./imgs/image-1.png)
 
 
 #### 2.简体中文

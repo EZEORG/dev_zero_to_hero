@@ -8,6 +8,12 @@ title: Markdown
 
 # Day0 Markdown
 
+```{note}
+除了本文的内容外，也可以参考某同学写的[学习心得](./2024-summer-day0-1.md)
+
+```
+
+
 
 目前，大部分的Github项目都是通过markdown进行轻量标注和沟通交流。
 因此，掌握必要的语法，有利于进行沟通交流。
