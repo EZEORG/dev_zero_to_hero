@@ -39,3 +39,5 @@ pip install virtualenv
 - 退出虚拟环境：`deactivate`
   - 有些虚拟环境管理工具不支持 `deactivate` 命令，可以用`source deactivate`
   
+
+## Python虚拟环境之Anaconda3

@@ -112,6 +112,3 @@ python3 -m playwright install
 装好了内核之后就可以codegen,启动这个内核，比如`playwright codegen https://www.baidu.com/`
 
 7. 接下来可以愉快的开始编写爬虫了，可以去playwright的官网copy一份模板。分析网页，编写代码。工程化一点的话，可以用虚拟环境，可以写`requirements.txt`里面放所需依赖，以后就可以直接`pip install -r requirements.txt`了。记得写版本！我们常用的库有time,lxml,bs4,ipdb（前提是同步）
-
- 
-

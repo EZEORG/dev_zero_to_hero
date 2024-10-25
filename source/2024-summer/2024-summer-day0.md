@@ -92,8 +92,6 @@ sequenceDiagram
 ::::
 
 
-
-
 :::{card} Card Title
 Header
 ^^^
