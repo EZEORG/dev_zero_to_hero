@@ -63,7 +63,8 @@ data-aria-dark="切换到自动模式">
 <li class="toctree-l1"><a class="reference internal" href="os_mp_celery_scrapy.html">Scrapy + Celery + Multiprocessing</a></li>
 </ul>
 <p class="caption" role="heading" aria-level="3"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Git for Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2024-summer/2024-summer-day0.html">Day0 Markdown</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2024-summer/2024-summer-day1.html">Day1 Linux、VScode与Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../2024-summer/2024-summer-day2.html">Day2 The Missing Semester of Your CS Education</a></li>
@@ -90,8 +91,17 @@ data-aria-dark="切换到自动模式">
 </li>
 <li><a class="reference internal" href="#id4">&#31532;3&#31456;-&#20998;&#25903;&#31574;&#30053;</a></li>
 <li><a class="reference internal" href="#id5">&#31532;4&#31456;-&#24037;&#20316;&#27969;</a></li>
-<li><a class="reference internal" href="#id6">&#31532;5&#31456;-&#21333;&#20154;&#22242;&#38431;</a></li>
-<li><a class="reference internal" href="#id7">&#31532;6&#31456;-&#22238;&#28378;&#12289;&#36824;&#21407;&#12289;&#37325;&#32622;&#21644;&#21464;&#22522;</a></li>
+<li><a class="reference internal" href="#important-for-beginner">&#31532;5&#31456;-&#21333;&#20154;&#22242;&#38431; (Important for beginner)</a></li>
+<li><a class="reference internal" href="#id6">&#31532;6&#31456;-&#22238;&#28378;&#12289;&#36824;&#21407;&#12289;&#37325;&#32622;&#21644;&#21464;&#22522;</a><ul>
+<li><a class="reference internal" href="#rebase">rebase</a><ul>
+<li><a class="reference internal" href="#id7">&#20363;&#23376;1: &#25991;&#20214;&#21024;&#38500;&#36896;&#25104;&#30340;&#21464;&#22522;&#20914;&#31361;</a></li>
+<li><a class="reference internal" href="#id8">&#20363;&#23376;2&#65306;&#20132;&#20114;&#24335;&#21464;&#22522;&#20462;&#25913;&#25552;&#20132;</a></li>
+<li><a class="reference internal" href="#id9">&#20363;&#23376;&#65306;&#31227;&#38500;&#38169;&#35823;&#30340;&#21382;&#21490;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id10">&#21629;&#20196;&#25351;&#21335;</a></li>
+</ul>
+</li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -157,7 +167,7 @@ data-aria-dark="切换到自动模式">
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>当然，一定要正确的区分：Git是一个软件，用来进行版本控制。Github只是一个托管平台，除了Github，还有GitLab，Gitee等。</p>
+<p>当然，正确的区分Glossary：Git是一个软件，用来进行版本控制。Github只是一个托管平台，除了Github，还有GitLab，Gitee等。</p>
 </div>
 </section>
 <section id="id2">
@@ -226,8 +236,8 @@ data-aria-dark="切换到自动模式">
 </div></blockquote>
 <p>这个非常认同，项目的推进本来就需要每个人花费在攻克难题上，而不是与人协同，相互等待。。。</p>
 </section>
-<section id="id6">
-<h2>第5章-单人团队<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<section id="important-for-beginner">
+<h2>第5章-单人团队 (Important for beginner)<a class="headerlink" href="#important-for-beginner" title="Link to this heading">¶</a></h2>
 <p>基于issue的版本控制， 无论你是在开发一个新功能，修复一个bug，重构旧的代码，还是在尝试新的想法，都应该记录如下的一些问题</p>
 <p>例如我有一个bug,</p>
 <ol class="arabic simple">
@@ -235,13 +245,339 @@ data-aria-dark="切换到自动模式">
 <li><p>原因: 我感觉原因是什么？</p></li>
 <li><p>质量保证测试： 怎么保证我已经修复了这个bug？</p></li>
 </ol>
+<p>开发的过程中，按照工程化 思维：</p>
+<ol class="arabic simple">
+<li><p>创建工单 issue_number-description</p></li>
+<li><p>完成工作描述</p></li>
+<li><p>测试工作</p></li>
+<li><p>添加修改文件到仓库</p></li>
+<li><p>推送到远程备用服务器</p></li>
+<li><p>测试满意，并入到主分支</p></li>
+<li><p>将工单标记为完成，关闭</p></li>
+</ol>
+<p><img alt="" src="../_images/Snipaste_2024-11-19_19-45-41.png" /></p>
+<ul class="simple">
+<li><p>克隆分支: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">xxx</span></code></p></li>
+<li><p>初始化: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code></p></li>
+<li><p>检查状态: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code></p></li>
+<li><p>添加所有文件至暂存区: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">--all</span></code></p></li>
+<li><p>将所有暂存文件提交到仓库: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'xxx'</span></code></p></li>
+<li><p>查看仓库历史记录: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p></li>
+<li><p>列出分支: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">--list</span></code></p></li>
+<li><p>列出所有分支: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">--all</span></code></p></li>
+<li><p>获取更新的列表和所有远程分支的内容: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code></p></li>
+<li><p>使用  checkout  命令切换分支: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--track</span> </code></p></li>
+<li><p>添加已更改文件到仓库: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">xx</span> </code></p></li>
+<li><p>将选中的修改交互式的添加到仓库中: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">--patch</span> <span class="pre">filename</span></code></p></li>
+<li><p>将文件移除暂存区: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rest</span> <span class="pre">HEAD</span> <span class="pre">xxx</span></code></p></li>
+<li><p>提交更完整的说明: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code></p></li>
+<li><p>使用 show 命令显示单个提交的日志消息和文本 diff: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">show</span> <span class="pre">xxx</span></code></p></li>
+<li><p>为某个提交对象添加一个新的标签import: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">import</span> <span class="pre">xxx</span></code></p></li>
+<li><p>列出所有标签: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span></code></p></li>
+<li><p>添加远程分支: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">origin</span> <span class="pre">xxx</span></code></p></li>
+<li><p>使用push命令上传分支: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></li>
+<li><p>将工单分支并入主分支: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">main</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">merge</span> <span class="pre">1-process_notes</span></code></p></li>
+<li><p>删除分支副本: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">--delete</span> <span class="pre">1-process_notes</span></code></p></li>
+<li><p>删除远程分支：<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">--delete</span> <span class="pre">xxx</span> <span class="pre">1-porcess_notes</span></code></p></li>
+</ul>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>命令</p></th>
+<th class="head"><p>用途</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>git clone URL</p></td>
+<td><p>下载一份远程仓库的副本</p></td>
+</tr>
+<tr class="row-odd"><td><p>git init</p></td>
+<td><p>将当前目录转换成一个新的 Git 仓库</p></td>
+</tr>
+<tr class="row-even"><td><p>git status</p></td>
+<td><p>获取仓库状态报告</p></td>
+</tr>
+<tr class="row-odd"><td><p>git add --all</p></td>
+<td><p>将所有修改过的文件和新文件添加至仓库的暂存区</p></td>
+</tr>
+<tr class="row-even"><td><p>git commit -m &quot;message&quot;</p></td>
+<td><p>将所有暂存的文件提交至仓库</p></td>
+</tr>
+<tr class="row-odd"><td><p>git log</p></td>
+<td><p>查看项目历史</p></td>
+</tr>
+<tr class="row-even"><td><p>git log --oneline</p></td>
+<td><p>查看压缩过的项目历史</p></td>
+</tr>
+<tr class="row-odd"><td><p>git branch --list</p></td>
+<td><p>列出所有本地分支</p></td>
+</tr>
+<tr class="row-even"><td><p>git branch --all</p></td>
+<td><p>列出本地和远程分支</p></td>
+</tr>
+<tr class="row-odd"><td><p>git branch --remotes</p></td>
+<td><p>列出所有远程分支</p></td>
+</tr>
+<tr class="row-even"><td><p>git checkout --track remote_name/branch</p></td>
+<td><p>创建远程分支的副本，在本地使用</p></td>
+</tr>
+<tr class="row-odd"><td><p>git checkout branch</p></td>
+<td><p>切换到另一个本地分支</p></td>
+</tr>
+<tr class="row-even"><td><p>git checkout -b branch branch_parent</p></td>
+<td><p>从某个父分支创建一个新分支</p></td>
+</tr>
+<tr class="row-odd"><td><p>git add filename(s)</p></td>
+<td><p>仅保存并准备提交指定文件</p></td>
+</tr>
+<tr class="row-even"><td><p>git add --patch filename</p></td>
+<td><p>仅保存并准备提交某文件的一部分</p></td>
+</tr>
+<tr class="row-odd"><td><p>git reset HEAD filename</p></td>
+<td><p>从暂存区移除提交出的文件修改</p></td>
+</tr>
+<tr class="row-even"><td><p>git commit --amend</p></td>
+<td><p>使用当前暂存区的修改更新前一次的提交，并提供一个新的提交消息</p></td>
+</tr>
+<tr class="row-odd"><td><p>git show commit</p></td>
+<td><p>查看提交的详细信息</p></td>
+</tr>
+<tr class="row-even"><td><p>git tag tag commit</p></td>
+<td><p>为某个提交对象打上标签</p></td>
+</tr>
+<tr class="row-odd"><td><p>git tag</p></td>
+<td><p>列出所有标签</p></td>
+</tr>
+<tr class="row-even"><td><p>git show tag</p></td>
+<td><p>输出所有带标签提交的详细信息</p></td>
+</tr>
+<tr class="row-odd"><td><p>git remote add remote_name URL</p></td>
+<td><p>创建一个指向远程仓库的引用</p></td>
+</tr>
+<tr class="row-even"><td><p>git push</p></td>
+<td><p>将当前分支上的修改上传至远程仓库</p></td>
+</tr>
+<tr class="row-odd"><td><p>git remote --verbose</p></td>
+<td><p>列出所有可用远程连接中 <code class="docutils literal notranslate"><span class="pre">fetch</span></code> 和 <code class="docutils literal notranslate"><span class="pre">push</span></code> 命令使用的 URL</p></td>
+</tr>
+<tr class="row-even"><td><p>git push --set-upstream remote_name branch_local</p></td>
+<td><p>将本地分支的副本推送至远程服务器</p></td>
+</tr>
+<tr class="row-odd"><td><p>git merge branch</p></td>
+<td><p>将当前存储在另一分支的提交并入当前分支</p></td>
+</tr>
+<tr class="row-even"><td><p>git push --delete remote_name branch_remote</p></td>
+<td><p>在远程服务器中移除指定名称的分支</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="id7">
-<h2>第6章-回滚、还原、重置和变基<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
+<section id="id6">
+<h2>第6章-回滚、还原、重置和变基<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>这章其实有点难，</p>
+<p>这章其实有点难， 但是掌握这一章节，将会真正的理解Git的使用。
+然后再也不会害怕出现代码丢失的情况了。并且在那之后，代码的编写也不再会是 xxx_v1.py 的方式了。</p>
 </div>
+<p><img alt="" src="../_images/Snipaste_2024-11-19_19-59-53.png" /></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>你想要……</p></th>
+<th class="head"><p>备注</p></th>
+<th class="head"><p>解决方案</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>舍弃工作目录中对一个文件的修改</p></td>
+<td><p>修改的文件未被暂存或提交</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">checkout</span> <span class="pre">--</span> <span class="pre">filename</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>舍弃工作目录中所有未保存的变更</p></td>
+<td><p>文件已暂存，但未被提交</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reset</span> <span class="pre">--hard</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>合并与某个特定提交（但不含）之间的多个提交</p></td>
+<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reset</span> <span class="pre">commit</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>移除所有未保存的变更，包含未跟踪的文件</p></td>
+<td><p>修改的文件未被提交</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">clean</span> <span class="pre">-fd</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>移除所有已暂存的变更和在某个提交之前提交的工作，但不移除工作目录中的新文件</p></td>
+<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">commit</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>移除之前的工作，但完整保留提交历史记录（“前进式回滚”）</p></td>
+<td><p>分支已经被发布，工作目录是干净的</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">revert</span> <span class="pre">commit</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>从分支历史记录中移除一个单独的提交</p></td>
+<td><p>修改的文件已经被提交，工作目录是干净的，分支尚未进行发布</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rebase</span> <span class="pre">--interactive</span> <span class="pre">commit</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>保留之前的工作，但与另一提交合并</p></td>
+<td><p>选择 squash（压缩）选项</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rebase</span> <span class="pre">--interactive</span> <span class="pre">commit</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="rebase">
+<h3>rebase<a class="headerlink" href="#rebase" title="Link to this heading">¶</a></h3>
+<section id="id7">
+<h4>例子1: 文件删除造成的变基冲突<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
+<p>假设文件ch10.asciidoc在源分支master中被删除了，但我们在feature上继续对它进行修改，如果这个时候rebase便会报错。</p>
+<p>处理方式：</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">mergetool</span> <span class="pre">ch10.asciidoc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--continue</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD</span> <span class="pre">ch10.asciidoc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">ch10.asciidoc</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--continue</span></code></p></li>
+</ol>
+<p>这个过程中，如果报错了，可以使用git rebase --abort 退回到前面。当然，也可以考虑看看message信息进行修订。</p>
+</section>
+<section id="id8">
+<h4>例子2：交互式变基修改提交<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h4>
+<p>假设最近的历史提交如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1">d1dc647 Revert &quot;Adding office hours reminder.&quot; 
+</span><span data-line="2">50605a1 Correcting joke about horses and baths. 
+</span><span data-line="3">eed5023 Joke: What goes &#39;ha ha bonk&#39;? 
+</span><span data-line="4">77c00e2 Adding an Easter egg of bad jokes. 
+</span><span data-line="5">0f187d8 Added information about additional people to be thanked. 
+</span><span data-line="6">c546720 Adding office hours reminder. 
+</span><span data-line="7">3184b5d Switching back to BADCamp version of the deck. 
+</span><span data-line="8">bd5c178 Added feedback request; formatting updates to pro-con lists 
+</span><span data-line="9">876e951 Removing feedback request; added Twitter handle.
+</span></pre></div>
+</div>
+<p>现在需要将3个Joke相关的提交压缩成一个单独的提交。</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--interactive</span> <span class="pre">0f187d8</span></code></p></li>
+<li><p>编辑我们是需要pick还是squash，然后对合并后的消息进行编辑。</p></li>
+</ol>
+</section>
+<section id="id9">
+<h4>例子：移除错误的历史<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h4>
+<p>如果运气不好，将一些重要的信息（例如包含密码的文件）提交到了远程分支。</p>
+<p>需要使用 git filter-brach操作对历史进行重写。例如，希望删除文件 SECRET.md, 那么命令如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="nb">filter</span><span class="o">-</span><span class="n">brach</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="nb">filter</span> \
+</span><span data-line="2">  <span class="s1">&#39;git rm --cache --ignore-unmatch SECRET.md&#39;</span> <span class="n">HEAD</span>
+</span></pre></div>
+</div>
+<p>此外，为了保证能永久地从仓库中删除这些内容（目前仍然可能会通过 git reflog找到），这是需要通过清除本地历史，并且执行一次垃圾回收（GC）将这些提交从系统中丢弃。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">reflog</span> <span class="n">expire</span> <span class="o">--</span><span class="n">expire</span><span class="o">=</span><span class="n">now</span> <span class="o">--</span><span class="nb">all</span>
+</span><span data-line="2"><span class="n">git</span> <span class="n">gc</span> <span class="o">--</span><span class="n">prune</span><span class="o">=</span><span class="n">now</span>
+</span></pre></div>
+</div>
+<p>这个时候已经清理完成了，可以通过force操作完成强制的推送。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">fore</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">tags</span>
+</span></pre></div>
+</div>
+<p>此时，其他的合作者可以通过</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">rebase</span><span class="o">=</span><span class="n">preserve</span>
+</span></pre></div>
+</div>
+</section>
+</section>
+<section id="id10">
+<h3>命令指南<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>命令</p></th>
+<th class="head"><p>用途</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>git checkout -b branch</p></td>
+<td><p>创建一个名为 branch 的分支</p></td>
+</tr>
+<tr class="row-odd"><td><p>git add filename(s)</p></td>
+<td><p>暂存文件，准备提交至仓库</p></td>
+</tr>
+<tr class="row-even"><td><p>git commit</p></td>
+<td><p>将暂存的变更保存至仓库</p></td>
+</tr>
+<tr class="row-odd"><td><p>git checkout branch</p></td>
+<td><p>切换到指定分支</p></td>
+</tr>
+<tr class="row-even"><td><p>git merge branch</p></td>
+<td><p>将 branch 中的提交并入当前分支</p></td>
+</tr>
+<tr class="row-odd"><td><p>git branch --delete</p></td>
+<td><p>移除本地分支</p></td>
+</tr>
+<tr class="row-even"><td><p>git branch -D</p></td>
+<td><p>移除不包含并入其他分支的本地分支</p></td>
+</tr>
+<tr class="row-odd"><td><p>git clone URL</p></td>
+<td><p>下载一份远程仓库的副本</p></td>
+</tr>
+<tr class="row-even"><td><p>git log</p></td>
+<td><p>查看项目历史记录</p></td>
+</tr>
+<tr class="row-odd"><td><p>git reflog</p></td>
+<td><p>查看分支的详细历史记录</p></td>
+</tr>
+<tr class="row-even"><td><p>git checkout commit</p></td>
+<td><p>切换到另一个本地分支</p></td>
+</tr>
+<tr class="row-odd"><td><p>git cherry-pick commit</p></td>
+<td><p>将提交从一个分支复制到另一个分支</p></td>
+</tr>
+<tr class="row-even"><td><p>git reset --merge ORIG_HEAD</p></td>
+<td><p>移除当前分支中所有在最近一次合并中引入的提交</p></td>
+</tr>
+<tr class="row-odd"><td><p>git checkout --filename</p></td>
+<td><p>还原已更改但尚未提交的文件</p></td>
+</tr>
+<tr class="row-even"><td><p>git reset HEAD filename</p></td>
+<td><p>从暂存区移除指定的文件修改</p></td>
+</tr>
+<tr class="row-odd"><td><p>git reset --hard HEAD</p></td>
+<td><p>将所有已变更的文件还原到之前保存的状态</p></td>
+</tr>
+<tr class="row-even"><td><p>git reset commit</p></td>
+<td><p>取消暂存在这个提交之前的所有相关的更改</p></td>
+</tr>
+<tr class="row-odd"><td><p>git rebase --interactive commit</p></td>
+<td><p>编辑、或压缩指定所有的提交</p></td>
+</tr>
+<tr class="row-even"><td><p>git rebase --continue</p></td>
+<td><p>在解决合并冲突后，继续变基过程</p></td>
+</tr>
+<tr class="row-odd"><td><p>git revert commit</p></td>
+<td><p>取消应用指定提交的变更，创建一个共享友好的历史记录还原</p></td>
+</tr>
+<tr class="row-even"><td><p>git log --oneline --graph</p></td>
+<td><p>显示分支的图形化历史记录</p></td>
+</tr>
+<tr class="row-odd"><td><p>git revert --mainline 1 commit</p></td>
+<td><p>反转一个合并提交</p></td>
+</tr>
+<tr class="row-even"><td><p>git branch --contains commit</p></td>
+<td><p>列出所有包含指定提交的分支</p></td>
+</tr>
+<tr class="row-odd"><td><p>git revert --no-commit last_commit_to_keep...</p></td>
+<td><p>使用一个提交交替“组提交”，而不是为每个撤销的提交创建单独的对象</p></td>
+</tr>
+<tr class="row-even"><td><p>git filter-branch</p></td>
+<td><p>从仓库中永久移除文件</p></td>
+</tr>
+<tr class="row-odd"><td><p>git reflog expire</p></td>
+<td><p>忽略详细历史记录，仅使用存储的提交消息</p></td>
+</tr>
+<tr class="row-even"><td><p>git gc --prune=now</p></td>
+<td><p>运行垃圾回收器并确保所有未提交的变更从本地内存中移除</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 </section>
 
