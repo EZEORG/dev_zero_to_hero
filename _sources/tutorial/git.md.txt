@@ -314,3 +314,9 @@ git pull --rebase=preserve
 | git filter-branch                                  | 从仓库中永久移除文件                                     |
 | git reflog expire                                  | 忽略详细历史记录，仅使用存储的提交消息                   |
 | git gc --prune=now                                 | 运行垃圾回收器并确保所有未提交的变更从本地内存中移除     |
+
+
+## 其他参考资料
+
+
++ [git rebase 用法详解与工作原理](https://waynerv.com/posts/git-rebase-intro/)
