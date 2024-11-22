@@ -144,7 +144,7 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 + 使用  checkout  命令切换分支: ```git checkout --track ```
 + 添加已更改文件到仓库: ```git add xx ```
 + 将选中的修改交互式的添加到仓库中: ```git add --patch filename```
-+ 将文件移除暂存区: ```git rest HEAD xxx```
++ 将文件移除暂存区: ```git reset HEAD xxx```
 + 提交更完整的说明: ```git commit --amend```
 + 使用 show 命令显示单个提交的日志消息和文本 diff: ```git log && git show xxx```
 + 为某个提交对象添加一个新的标签import: ```git tag import xxx```
@@ -272,7 +272,7 @@ git gc --prune=now
 这个时候已经清理完成了，可以通过force操作完成强制的推送。
 
 ```
-git push origin --fore --all --tags
+git push origin --force --all --tags
 ```
 
 此时，其他的合作者可以通过
