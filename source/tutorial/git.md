@@ -227,7 +227,7 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 5. `git rebase --continue`
 
 
-这个过程中，如果报错了，可以使用git rebase --abort 退回到前面。当然，也可以考虑看看message信息进行修订。
+这个过程中，如果报错了，可以使用`git rebase --abort` 退回到前面。当然，也可以考虑看看message信息进行修订。
 
 #### 例子2：交互式变基修改提交
 
@@ -255,7 +255,7 @@ bd5c178 Added feedback request; formatting updates to pro-con lists
 
 如果运气不好，将一些重要的信息（例如包含密码的文件）提交到了远程分支。
 
-需要使用 git filter-brach操作对历史进行重写。例如，希望删除文件 SECRET.md, 那么命令如下：
+需要使用 `git filter-branch` 操作对历史进行重写。例如，希望删除文件 SECRET.md, 那么命令如下：
 
 ```
 git filter-brach --index-filter \
