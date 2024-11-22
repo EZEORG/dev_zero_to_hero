@@ -260,7 +260,7 @@ data-aria-dark="切换到自动模式">
 <li><p>使用  checkout  命令切换分支: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">--track</span> </code></p></li>
 <li><p>添加已更改文件到仓库: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">xx</span> </code></p></li>
 <li><p>将选中的修改交互式的添加到仓库中: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">--patch</span> <span class="pre">filename</span></code></p></li>
-<li><p>将文件移除暂存区: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rest</span> <span class="pre">HEAD</span> <span class="pre">xxx</span></code></p></li>
+<li><p>将文件移除暂存区: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD</span> <span class="pre">xxx</span></code></p></li>
 <li><p>提交更完整的说明: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code></p></li>
 <li><p>使用 show 命令显示单个提交的日志消息和文本 diff: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">show</span> <span class="pre">xxx</span></code></p></li>
 <li><p>为某个提交对象添加一个新的标签import: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">tag</span> <span class="pre">import</span> <span class="pre">xxx</span></code></p></li>
@@ -429,7 +429,7 @@ data-aria-dark="切换到自动模式">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">ch10.asciidoc</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--continue</span></code></p></li>
 </ol>
-<p>这个过程中，如果报错了，可以使用git rebase --abort 退回到前面。当然，也可以考虑看看message信息进行修订。</p>
+<p>这个过程中，如果报错了，可以使用<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--abort</span></code> 退回到前面。当然，也可以考虑看看message信息进行修订。</p>
 </section>
 <section id="id8">
 <h4>例子2：交互式变基修改提交<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h4>
@@ -454,7 +454,7 @@ data-aria-dark="切换到自动模式">
 <section id="id9">
 <h4>例子：移除错误的历史<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h4>
 <p>如果运气不好，将一些重要的信息（例如包含密码的文件）提交到了远程分支。</p>
-<p>需要使用 git filter-brach操作对历史进行重写。例如，希望删除文件 SECRET.md, 那么命令如下：</p>
+<p>需要使用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">filter-branch</span></code> 操作对历史进行重写。例如，希望删除文件 SECRET.md, 那么命令如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="nb">filter</span><span class="o">-</span><span class="n">brach</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="nb">filter</span> \
 </span><span data-line="2">  <span class="s1">&#39;git rm --cache --ignore-unmatch SECRET.md&#39;</span> <span class="n">HEAD</span>
 </span></pre></div>
@@ -465,7 +465,7 @@ data-aria-dark="切换到自动模式">
 </span></pre></div>
 </div>
 <p>这个时候已经清理完成了，可以通过force操作完成强制的推送。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">fore</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">tags</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">force</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">tags</span>
 </span></pre></div>
 </div>
 <p>此时，其他的合作者可以通过</p>
