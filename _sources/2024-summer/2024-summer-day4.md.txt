@@ -1,5 +1,15 @@
 # Day4 SSH与Django
 
+```{article-info}
+:avatar: https://avatars.githubusercontent.com/u/163944337
+:avatar-link: https://github.com/WinstonCHEN1/
+:avatar-outline: muted
+:author: [@WinstonCHEN1](https://github.com/WinstonCHEN1/)
+:date: June, 30, 2024
+:read-time: 10 min read 
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
+
 ## Windows系统下的ssh密钥
 
 为了避免每次登录服务器都需要输密码的这个麻烦的问题，可以使用以下方法解决。

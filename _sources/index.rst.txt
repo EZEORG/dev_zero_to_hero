@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Dev_zero_to_hero's documentation!
-============================================
+Welcome to Develop Zero to Hero
+===============================
 
 
 Tutorial with thoughts
@@ -19,25 +19,14 @@ Tutorial with thoughts
    tutorial/os_mp_celery_scrapy.rst
 
 
+Writing from learner
+---------------------
 
-.. 7 Days for beginner
-.. -------------------
-..
-.. .. toctree::
-..    :maxdepth: 2
-..    :caption: Contents:
-..
-..    tutorial/git.md
-..    2024-summer/2024-summer-day0
-..    2024-summer/2024-summer-day1
-..    2024-summer/2024-summer-day2
-..    2024-summer/2024-summer-day3
-..    2024-summer/2024-summer-day4
-..    2024-summer/2024-summer-day5
+.. toctree::
+   :maxdepth: 1
+   :caption: Articles:
 
-Indices and tables
-==================
+   2024-summer/readme.rst
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   
+

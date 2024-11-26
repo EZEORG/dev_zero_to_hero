@@ -6,7 +6,20 @@ date: July, 16, 2024
 title: Git
 ---
 
+
 # Git for Teams
+
+
+```{article-info}
+:avatar: https://avatars.githubusercontent.com/u/154419224
+:avatar-link: https://github.com/eze-root
+:avatar-outline: muted
+:author: Executable Books
+:date: 2024-11-27
+:read-time: "{sub-ref}`wordcount-minutes` min read"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
+
 
 ```{note}
 This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://www.oreilly.com/library/view/git-for-teams/9781491911204/), 更多详情请参看原文。

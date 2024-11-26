@@ -2,6 +2,19 @@
 Scrapy + Celery + Multiprocessing
 =================================
 
+
+.. article-info::
+    :avatar: https://avatars.githubusercontent.com/u/154419224
+    :avatar-link: https://github.com/eze-root
+    :avatar-outline: muted
+    :author: Executable Books
+    :date: 2024-11-27 
+    :read-time: 25 min read
+    :class-container: sd-p-2 sd-outline-muted sd-rounded-1
+
+
+
+
 Backgrounds
 -----------
 

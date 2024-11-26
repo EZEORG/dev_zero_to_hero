@@ -2,7 +2,7 @@
 <html lang="zh" data-accent-color="violet" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Git for Teams - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Scrapy + Celery + Multiprocessing" href="os_mp_celery_scrapy.html" /><link rel="prev" title="Welcome to Dev_zero_to_hero&#39;s documentation!" href="../index.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Git for Teams - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Scrapy + Celery + Multiprocessing" href="os_mp_celery_scrapy.html" /><link rel="prev" title="Welcome to Develop Zero to Hero" href="../index.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
@@ -62,6 +62,10 @@ data-aria-dark="切换到自动模式">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Git for Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="os_mp_celery_scrapy.html">Scrapy + Celery + Multiprocessing</a></li>
 </ul>
+<p class="caption" role="heading" aria-level="3"><span class="caption-text">Articles:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../2024-summer/readme.html">7 Days for beginner</a></li>
+</ul>
 
         </div>
       </div>
@@ -94,6 +98,26 @@ data-aria-dark="切换到自动模式">
 </li>
 <li><a class="reference internal" href="#id11">&#20854;&#20182;&#21442;&#32771;&#36164;&#26009;</a></li>
 </ul>
+</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/EZEORG/dev_zero_to_hero"
+  data-type="github" data-user="EZEORG" data-repo="dev_zero_to_hero">
+  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
+    <iconify-icon icon="simple-icons:github"></iconify-icon>
+  </span>
+  <span class="flex-grow px-2 break-all">
+    <span>EZEORG/dev_zero_to_hero</span>
+    <span class="flex text-sm repo-stats-count">
+      <span class="flex items-center pr-3">
+        <iconify-icon icon="lucide:star"></iconify-icon>
+        <strong class="js-repo-stars ml-1">0</strong>
+      </span>
+      <span class="flex items-center">
+        <iconify-icon icon="lucide:git-fork"></iconify-icon>
+        <strong class="js-repo-forks ml-1">0</strong>
+      </span>
+    </span>
+  </span>
+</a><div class="edit-this-page">
+  <a href="https://github.com/EZEORG/dev_zero_to_hero/blob/main/docs/tutorial/git.md">编辑此页面</a>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
   <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
@@ -122,8 +146,31 @@ data-aria-dark="切换到自动模式">
 </div><div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
-          <section id="git-for-teams">
+          <section class="tex2jax_ignore mathjax_ignore" id="git-for-teams">
 <h1>Git for Teams<a class="headerlink" href="#git-for-teams" title="Link to this heading">¶</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<a class="reference external image-reference" href="https://github.com/eze-root"><img alt="" class="sd-avatar-sm sd-outline-muted" src="https://avatars.githubusercontent.com/u/154419224" />
+</a>
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0">Executable Books</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-calendar" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"></path></svg></span>2024-11-27</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0"><span class="sd-pr-2"><svg version="1.1" width="16.0px" height="16.0px" class="sd-octicon sd-octicon-clock" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z"></path></svg></span>34 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>This notes is extract from <a class="reference external" href="https://www.oreilly.com/library/view/git-for-teams/9781491911204/">Git for Teams by Emma Jane Hogbin Westby</a>, 更多详情请参看原文。</p>
@@ -291,7 +338,7 @@ data-aria-dark="切换到自动模式">
 <tr class="row-odd"><td><p>git add --all</p></td>
 <td><p>将所有修改过的文件和新文件添加至仓库的暂存区</p></td>
 </tr>
-<tr class="row-even"><td><p>git commit -m &quot;message&quot;</p></td>
+<tr class="row-even"><td><p>git commit -m “message”</p></td>
 <td><p>将所有暂存的文件提交至仓库</p></td>
 </tr>
 <tr class="row-odd"><td><p>git log</p></td>
@@ -454,7 +501,7 @@ data-aria-dark="切换到自动模式">
 <section id="id9">
 <h4>例子：移除错误的历史<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h4>
 <p>如果运气不好，将一些重要的信息（例如包含密码的文件）提交到了远程分支。</p>
-<p>需要使用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">filter-branch</span></code> 操作对历史进行重写。例如，希望删除文件 SECRET.md, 那么命令如下：</p>
+<p>需要使用 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">filter-branch</span></code> 操作对历史进行重写。例如，希望删除文件 <a class="reference external" href="http://SECRET.md">SECRET.md</a>, 那么命令如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">git</span> <span class="nb">filter</span><span class="o">-</span><span class="n">brach</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="nb">filter</span> \
 </span><span data-line="2">  <span class="s1">&#39;git rm --cache --ignore-unmatch SECRET.md&#39;</span> <span class="n">HEAD</span>
 </span></pre></div>
@@ -553,7 +600,7 @@ data-aria-dark="切换到自动模式">
 <tr class="row-even"><td><p>git branch --contains commit</p></td>
 <td><p>列出所有包含指定提交的分支</p></td>
 </tr>
-<tr class="row-odd"><td><p>git revert --no-commit last_commit_to_keep...</p></td>
+<tr class="row-odd"><td><p>git revert --no-commit last_commit_to_keep…</p></td>
 <td><p>使用一个提交交替“组提交”，而不是为每个撤销的提交创建单独的对象</p></td>
 </tr>
 <tr class="row-even"><td><p>git filter-branch</p></td>
