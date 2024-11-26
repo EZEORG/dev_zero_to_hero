@@ -7,7 +7,7 @@ shibuya
 sphinxemoji
 sphinx-comments
 
-myst-parser
+myst-parser[linkify]
 sphinxcontrib-mermaid
 
 aiohttp

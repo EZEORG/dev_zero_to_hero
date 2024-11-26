@@ -9,6 +9,15 @@ title: Day2-Missing MIT Semester
 
 # Day2 The Missing Semester of Your CS Education
 
+```{article-info}
+:avatar: https://avatars.githubusercontent.com/u/163944337
+:avatar-link: https://github.com/WinstonCHEN1/
+:avatar-outline: muted
+:author: [@WinstonCHEN1](https://github.com/WinstonCHEN1/)
+:date: July, 03, 2024
+:read-time: 10 min read 
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
 
 ```{note}
 This notes is translated from [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/), 更多详情请参看原文。

@@ -9,6 +9,16 @@ title: Linux、VScode与Git
 
 # Day1 Linux、VScode与Git
 
+```{article-info}
+:avatar: https://avatars.githubusercontent.com/u/163944337
+:avatar-link: https://github.com/WinstonCHEN1/
+:avatar-outline: muted
+:author: [@WinstonCHEN1](https://github.com/WinstonCHEN1/)
+:date: June, 30, 2024
+:read-time: 10 min read 
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
+
 ## 一、Basic Linux
 
 
@@ -126,23 +136,6 @@ source activate venv/bin/activate
 ### Extension
 
 
-:::{tip} 
-可以使用质朴的API而不是OPENAI
-:::
-
-```{mermaid}
-flowchart LR
-  A[Jupyter Notebook] --> C
-  B[MyST Markdown] --> C
-  C(mystmd) --> D{AST}
-  D <--> E[LaTeX]
-  E --> F[PDF]
-  D --> G[Word]
-  D --> H[React]
-  D --> I[HTML]
-  D <--> J[JATS]
-```
-
 
 #### 1.Remote
 安装Remote插件, 然后进行服务器的登录操作
@@ -157,30 +150,30 @@ flowchart LR
 
 #### 3.Python
 VSCode中Python开发环境支持的插件
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925182463-3510f60a-9563-4f8e-9dc8-6de9941c932c.png#averageHue=%233d4956&clientId=ud3b6b92c-252e-4&from=paste&height=71&id=u566b79b5&originHeight=71&originWidth=247&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5240&status=done&style=none&taskId=u9f99da98-b4c1-4d1a-b2d1-1f86df7bd6e&title=&width=247)
+![image.png](./imgs/image-4.png)
 
 
 ### VSCode连接服务器
 在安装好remote插件后，就可以连接到服务器了。
 
 点击这个按钮：
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925705407-e7e0d283-4126-4bb4-b855-a1cdce5f9c7c.png#averageHue=%232c3136&clientId=u0c009d04-de1b-4&from=paste&height=55&id=u24a6a018&originHeight=55&originWidth=164&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3336&status=done&style=none&taskId=uab81b8ae-2e4a-4cc1-9cbe-92a3c297b5a&title=&width=164)
+![image.png](./imgs/image-5.png)
 
 左边栏空空如也，点击这个加号按钮：
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925731564-51dd461f-6546-40e1-aef5-cc00c29fb32d.png#averageHue=%23282f35&clientId=u0c009d04-de1b-4&from=paste&height=48&id=ud09127ca&originHeight=48&originWidth=246&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3328&status=done&style=none&taskId=u4f964cb4-0a8a-45fe-a5ca-28e9a4e5cb3&title=&width=246)
+![image.png](./imgs/image-6.png)
 
 输入ssh连接命令：
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925744839-d4d1594c-8a52-4063-8d82-cfda00fd79ba.png#averageHue=%232f363d&clientId=u0c009d04-de1b-4&from=paste&height=97&id=u3a339893&originHeight=97&originWidth=613&originalType=binary&ratio=1&rotation=0&showTitle=false&size=7818&status=done&style=none&taskId=u6976d1ea-efaf-4768-a97e-cc6ebea3797&title=&width=613)
+![image.png](./imgs/image-7.png)
 
 现在假设已经添加好了，点击刷新，左边就可以进行连接了。
 
 这里用挂在校园网上的服务器举例：
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925796677-203bef53-7b76-4044-9783-14ba887fdd8b.png#averageHue=%232c3237&clientId=u0c009d04-de1b-4&from=paste&height=59&id=u24eb3380&originHeight=59&originWidth=271&originalType=binary&ratio=1&rotation=0&showTitle=false&size=4920&status=done&style=none&taskId=u9047495b-2cfb-456e-b796-e9d40f52f74&title=&width=271)
+![image.png](./imgs/image-8.png)
 
 点击箭头，顶端搜索栏中会要求输入密码，输入正确后即可连接。
 
 此时点击左边的资源管理器，画面如下：
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925856335-809ad7af-34f3-4abb-84e7-2cf40c5615ec.png#averageHue=%23252d33&clientId=u0c009d04-de1b-4&from=paste&height=219&id=u8c025546&originHeight=219&originWidth=237&originalType=binary&ratio=1&rotation=0&showTitle=false&size=10188&status=done&style=none&taskId=u2491b072-0d78-45db-abb2-ea0e470d880&title=&width=237)
+![image.png](./imgs/image-9.png)
 
 点击打开文件夹，就可以进入服务器中的文件夹了。
 
@@ -238,7 +231,7 @@ git config --global credential.helper store
 #### 二、repo是别人的，你想搬运来用
 点击Fork按钮，将项目fork到你自己的repo中，随后在自己的repo中查看url并使用相同的命令。网址后的ID是你自己的才是正确的。
 
-举例：![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1716475568434-0fcba53d-4e2e-48f4-83a0-7989a3ef9acd.png#averageHue=%23d5d8d9&clientId=ub1b7a934-b487-4&from=paste&height=41&id=u93b3b16b&originHeight=82&originWidth=682&originalType=binary&ratio=2&rotation=0&showTitle=false&size=14834&status=done&style=none&taskId=u5ca81032-fbc7-4780-81a8-e40c54f6bb4&title=&width=341)
+举例：![image.png](./imgs/image-10.png)
 
 现在，你可以在本地对这个项目进行操作。
 
@@ -262,7 +255,7 @@ git status
 git commit -m "your message"
 ```
 
-将修改好的内容提交到工作区，your message部分是你的提交信息，日志会更新在这里![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1716475753120-747bb456-425c-4c5f-a8ac-e3115b07adbd.png#averageHue=%23fef8f7&clientId=ub1b7a934-b487-4&from=paste&height=45&id=u38d828e6&originHeight=90&originWidth=1790&originalType=binary&ratio=2&rotation=0&showTitle=false&size=26386&status=done&style=none&taskId=u904fbf6f-4a05-4b8d-a87b-4b4af143263&title=&width=895)
+将修改好的内容提交到工作区，your message部分是你的提交信息，日志会更新在这里![image.png](./imgs/image-11.png)
 
 ```
 git push
@@ -308,35 +301,35 @@ git remote add origin url
 
 ### VSCode中源代码管理
 
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925375990-e0bed7f5-c33c-4b5c-9fe3-5fb4400596a3.png#averageHue=%23272d33&clientId=ud3b6b92c-252e-4&from=paste&height=240&id=a759u&originHeight=240&originWidth=45&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3227&status=done&style=none&taskId=u7e767b32-88d4-4737-ad17-608f5120cbd&title=&width=45)
+![image.png](./imgs/image-12.png)
 
 页面的左侧工具栏自上往下第三个是源代码管理，在这里可以对你代码的修改提交进行管理。
 
 例如我对我的代码进行了修改，在源代码管理处就能看到我进行的修改。
 
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926119935-50dfbdf6-13e6-4aca-a877-c9b033e14773.png#averageHue=%23293138&clientId=u0c009d04-de1b-4&from=paste&height=243&id=WF74e&originHeight=243&originWidth=237&originalType=binary&ratio=1&rotation=0&showTitle=false&size=15871&status=done&style=none&taskId=uba9a29c1-81d2-42a0-b45b-9fa5fac7e3d&title=&width=237)
+![image.png](./imgs/image-13.png)
 
 点击修改文件右边的加号，把修改提交到暂存区。
 
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926140200-b830f9e8-5f94-4025-ba30-b836a1f206c1.png#averageHue=%23293036&clientId=u0c009d04-de1b-4&from=paste&height=229&id=pIyz1&originHeight=229&originWidth=237&originalType=binary&ratio=1&rotation=0&showTitle=false&size=15496&status=done&style=none&taskId=u4d894b74-8141-447a-9cf4-9ddd230d059&title=&width=237)
+![image.png](./imgs/image-14.png)
 
 在将所有需要提交的文件提交到暂存区后，请输入修改信息，例如：
 
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926188744-c5d00cfa-d873-4764-b744-5cf3a6fa971b.png#averageHue=%23263039&clientId=u0c009d04-de1b-4&from=paste&height=120&id=cvMsX&originHeight=120&originWidth=218&originalType=binary&ratio=1&rotation=0&showTitle=false&size=5560&status=done&style=none&taskId=uaeb577c6-bb26-43b9-88a6-c8ee8868e29&title=&width=218)
+![image.png](./imgs/image-15.png)
 
 这里的修改信息请遵守规范。
 
 编辑好信息后确认无误，请点击提交。
 
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926225878-19644134-dab2-4795-9bd4-9bdf074e021b.png#averageHue=%23262d32&clientId=u0c009d04-de1b-4&from=paste&height=168&id=Zlkpk&originHeight=168&originWidth=237&originalType=binary&ratio=1&rotation=0&showTitle=false&size=10373&status=done&style=none&taskId=u100bda21-bd81-46a3-8495-f3789f08181&title=&width=237)
+![image.png](./imgs/image-16.png)
 
 点击同步更改，即可将提交的更改进行推送。
 
 界面的最上面，会有这个图标，请善用：
 
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926277458-ca69a5af-106e-47c1-a5f6-8893725daf59.png#averageHue=%23252b31&clientId=u0c009d04-de1b-4&from=paste&height=33&id=OwqQI&originHeight=33&originWidth=235&originalType=binary&ratio=1&rotation=0&showTitle=false&size=2882&status=done&style=none&taskId=u72a4287d-4938-44bb-ada8-96834db09f2&title=&width=235)
+![image.png](./imgs/image-17.png)
 
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719926284537-27be0214-382d-4300-b35f-97ee735f6f21.png#averageHue=%23343b42&clientId=u0c009d04-de1b-4&from=paste&height=367&id=ETeIS&originHeight=367&originWidth=200&originalType=binary&ratio=1&rotation=0&showTitle=false&size=10087&status=done&style=none&taskId=ud66b78cf-69e9-4c50-84d4-e8993128eab&title=&width=200)
+![image.png](./imgs/image-18.png)
 
 这里简单进行一下解释，可以参考上文的命令行操作进行比对。
 

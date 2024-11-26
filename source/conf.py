@@ -27,13 +27,40 @@ extensions = [
   "sphinx_design",
   "sphinx_comments"
 ]
-myst_enable_extensions=['colon_fence']
+myst_enable_extensions=[
+    "amsmath",
+    "attrs_inline",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    "linkify",
+    "replacements",
+    "smartquotes",
+    "strikethrough",
+    "substitution",
+    "tasklist",
+]
+
+myst_words_per_minute = 10
+
 comments_config = {
    "utterances": {
       "repo": "EZEORG/dev_zero_to_hero",
       "optional": "config",
    }
 }
+
+
+html_context = {
+    "source_type": "github",
+    "source_user": "EZEORG",
+    "source_repo": "dev_zero_to_hero",
+    "source_version": "main",  # Optional
+}
+
 
 templates_path = ['_templates']
 exclude_patterns = ['build', 'Thumbs.db', '.DS_Store']

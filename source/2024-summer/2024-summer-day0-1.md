@@ -6,7 +6,17 @@ date: July, 16, 2024
 title: Markdown 入门
 ---
 
-# Day6 Markdown入门
+# Day0 Markdown入门
+
+```{article-info}
+:avatar: https://avatars.githubusercontent.com/u/163944337
+:avatar-link: https://github.com/WinstonCHEN1/
+:avatar-outline: muted
+:author: [@WinstonCHEN1](https://github.com/WinstonCHEN1/)
+:date: June, 30, 2024
+:read-time: 10 min read 
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
 
 ## 前言
 

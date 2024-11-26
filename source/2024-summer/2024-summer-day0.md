@@ -2,11 +2,23 @@
 title: Tutorial for markdown
 tags: Markdown, Notes
 author: eze-root
-date: July, 16, 2024
+date: 2024-07-16
 title: Markdown
 ---
 
 # Day0 Markdown
+
+```{article-info}
+:avatar: https://avatars.githubusercontent.com/u/154419224
+:avatar-link: https://github.com/eze-root
+:avatar-outline: muted
+:author: [@eze-root](https://github.com/eze-root)
+:date: 2024-07-16
+:read-time: "10 min read"
+:class-container: sd-p-2 sd-outline-muted sd-rounded-1
+```
+
+
 
 ```{note}
 除了本文的内容外，也可以参考某同学写的[学习心得](./2024-summer-day0-1.md)
