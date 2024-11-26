@@ -126,14 +126,33 @@ source activate venv/bin/activate
 ### Extension
 
 
+:::{tip} 
+可以使用质朴的API而不是OPENAI
+:::
+
+```{mermaid}
+flowchart LR
+  A[Jupyter Notebook] --> C
+  B[MyST Markdown] --> C
+  C(mystmd) --> D{AST}
+  D <--> E[LaTeX]
+  E --> F[PDF]
+  D --> G[Word]
+  D --> H[React]
+  D --> I[HTML]
+  D <--> J[JATS]
+```
+
+
 #### 1.Remote
 安装Remote插件, 然后进行服务器的登录操作
 ![image-1.png](./imgs/image-1.png)
 
 
+
 #### 2.简体中文
 如果不习惯看英文，可以安装简体中文的插件
-![image.png](https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925162642-0d700547-4947-4b13-ae13-f465b45fb658.png#averageHue=%232f373f&clientId=ud3b6b92c-252e-4&from=paste&height=74&id=ucc5e036b&originHeight=74&originWidth=250&originalType=binary&ratio=1&rotation=0&showTitle=false&size=6301&status=done&style=none&taskId=ub71f9b60-5f50-4ccf-8acb-607af93fa88&title=&width=250)
+![image.png](./imgs/image-3.png)
 
 
 #### 3.Python

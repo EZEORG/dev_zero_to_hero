@@ -10,3 +10,16 @@ And some notes:
 * [2024-summer-day4-SSH与Django](./source/notes/2024-summer-day4.md)
 * [2024-summer-day5-Docker与小红书爬虫项目](./source/notes/2024-summer-day5.md)
 * [2024-summer-day6-Markdown入门](./source/notes/2024-summer-day6.md)
+
+
+## Development
+
+
+### Install
+
+```python
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements-dev.txt
+```
+
