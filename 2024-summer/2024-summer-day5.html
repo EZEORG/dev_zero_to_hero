@@ -2,7 +2,7 @@
 <html lang="zh" data-accent-color="violet" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day5 Docker与小红书爬虫项目 - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day5 Docker与Scrapy爬虫项目 - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
@@ -20,7 +20,7 @@
   --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
 }
 </style>
-    <meta property="og:type" content="website"/><meta property="og:title" content="Day5 Docker与小红书爬虫项目"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content="Day5 Docker与Scrapy爬虫项目"/>
 <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="sy-head">
@@ -75,7 +75,7 @@ data-aria-dark="切换到自动模式">
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>该页内容</h3><ul>
 <li><a class="reference internal" href="#docker">Docker</a></li>
 <li><a class="reference internal" href="#docker-compose">Docker compose</a></li>
-<li><a class="reference internal" href="#id1">&#23567;&#32418;&#20070;&#29228;&#34411;</a></li>
+<li><a class="reference internal" href="#scrapy">Scrapy&#29228;&#34411;</a></li>
 </ul>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
   </aside>
@@ -92,7 +92,7 @@ data-aria-dark="切换到自动模式">
         <span>/</span>
         <meta itemprop="position" content="1" />
       </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name">Day5 Docker与小红书爬虫项目</strong>
+        <strong itemprop="name">Day5 Docker与Scrapy爬虫项目</strong>
         <meta itemprop="position" content="2" />
       </li></ol>
     <div class="xl:hidden ml-1">
@@ -105,8 +105,8 @@ data-aria-dark="切换到自动模式">
 </div><div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
-          <section id="day5-docker">
-<h1>Day5 Docker与小红书爬虫项目<a class="headerlink" href="#day5-docker" title="Link to this heading">¶</a></h1>
+          <section id="day5-dockerscrapy">
+<h1>Day5 Docker与Scrapy爬虫项目<a class="headerlink" href="#day5-dockerscrapy" title="Link to this heading">¶</a></h1>
 <section id="docker">
 <h2>Docker<a class="headerlink" href="#docker" title="Link to this heading">¶</a></h2>
 <p>为了避免换了不同的设备你仍然需要配置相同的开发环境，程序员们集思广益开发了<strong>Docker</strong>，这是一种轻量级的虚拟化技术，主要为了实现一个目标：无论你是什么系统、什么设备，我们都能在虚拟层面上获得一个相同的开发环境，而且能很好的实现扩容迁移。此外，Docker比较安全，即使Docker崩了也不影响你本身的操作系统。</p>
@@ -164,7 +164,7 @@ data-aria-dark="切换到自动模式">
 <h2>Docker compose<a class="headerlink" href="#docker-compose" title="Link to this heading">¶</a></h2>
 <p>我们可以通过docker compose很轻松的管理容器。</p>
 <p>比如，这是一个docker-compose.yml的示例程序</p>
-<p><img alt="" src="https://files.mdnice.com/user/58281/3c6a86aa-a990-4c10-88c2-9c0b1cca1e80.png" /></p>
+<p><img alt="" src="../_images/3c6a86aa-a990-4c10-88c2-9c0b1cca1e80.png" /></p>
 <p>这里注明了很多信息，比如容器的镜像服务，服务的细则。这里我拉取的是postgresql数据库的镜像，所以有管理员用户、密码等等。</p>
 <p>里面比较重要的是：</p>
 <ul class="simple">
@@ -179,8 +179,8 @@ data-aria-dark="切换到自动模式">
 </ul>
 <p>同样的，现在你可以使用<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>看看这个新容器有没有成功运行起来了。</p>
 </section>
-<section id="id1">
-<h2>小红书爬虫<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<section id="scrapy">
+<h2>Scrapy爬虫<a class="headerlink" href="#scrapy" title="Link to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>从零开始，新建一个repo。</p></li>
 <li><p>克隆repo到本地，django初始化一下，要利用django进行储存。</p></li>
@@ -208,7 +208,7 @@ data-aria-dark="切换到自动模式">
 </div>
 <p>装好了内核之后就可以codegen,启动这个内核，比如<code class="docutils literal notranslate"><span class="pre">playwright</span> <span class="pre">codegen</span> <span class="pre">https://www.baidu.com/</span></code></p>
 <ol class="arabic simple" start="7">
-<li><p>接下来可以愉快的开始编写爬虫了，可以去playwright的官网copy一份模板。分析网页，编写代码。工程化一点的话，可以用虚拟环境，可以写<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>里面放所需依赖，以后就可以直接<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>了。记得写版本！我们常用的库有time,lxml,bs4,ipdb（前提是同步）</p></li>
+<li><p>接下来可以愉快的开始编写爬虫了，可以去playwright的官网copy一份模板。分析网页，编写代码。工程化一点的话，可以用虚拟环境，可以写<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>里面放所需依赖，以后就可以直接<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>了。记得写版本！我们常用的库有<code class="docutils literal notranslate"><span class="pre">lxml,bs4,ipdb</span></code>（前提是同步）</p></li>
 </ol>
 </section>
 </section>

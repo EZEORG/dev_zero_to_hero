@@ -230,7 +230,22 @@ data-aria-dark="切换到自动模式">
 <h2>二、VScode<a class="headerlink" href="#vscode" title="Link to this heading">¶</a></h2>
 <section id="extension">
 <h3>Extension<a class="headerlink" href="#extension" title="Link to this heading">¶</a></h3>
-<section id="remote">
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>可以使用质朴的API而不是OPENAI</p>
+</div>
+<pre  class="mermaid">
+        flowchart LR
+  A[Jupyter Notebook] --&gt; C
+  B[MyST Markdown] --&gt; C
+  C(mystmd) --&gt; D{AST}
+  D &lt;--&gt; E[LaTeX]
+  E --&gt; F[PDF]
+  D --&gt; G[Word]
+  D --&gt; H[React]
+  D --&gt; I[HTML]
+  D &lt;--&gt; J[JATS]
+    </pre><section id="remote">
 <h4>1.Remote<a class="headerlink" href="#remote" title="Link to this heading">¶</a></h4>
 <p>安装Remote插件, 然后进行服务器的登录操作
 <img alt="image-1.png" src="../_images/image-1.png" /></p>
@@ -238,7 +253,7 @@ data-aria-dark="切换到自动模式">
 <section id="id6">
 <h4>2.简体中文<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
 <p>如果不习惯看英文，可以安装简体中文的插件
-<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2024/png/43076700/1719925162642-0d700547-4947-4b13-ae13-f465b45fb658.png#averageHue=%232f373f&amp;clientId=ud3b6b92c-252e-4&amp;from=paste&amp;height=74&amp;id=ucc5e036b&amp;originHeight=74&amp;originWidth=250&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=6301&amp;status=done&amp;style=none&amp;taskId=ub71f9b60-5f50-4ccf-8acb-607af93fa88&amp;title=&amp;width=250" /></p>
+<img alt="image.png" src="../_images/image-3.png" /></p>
 </section>
 <section id="id7">
 <h4>3.Python<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
@@ -456,5 +471,13 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=e2e99575"></script></body>
+      <script src="../_static/shibuya.js?v=e2e99575"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs"></script>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs"></script>
+      <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";import elkLayouts from "https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk@0.1.4/dist/mermaid-layout-elk.esm.min.mjs";mermaid.registerLayoutLoaders(elkLayouts);mermaid.initialize({startOnLoad:false});</script>
+      <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+      <script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.2.0/dist/mermaid.esm.min.mjs";
+window.addEventListener("load", () => mermaid.run());
+</script></body>
 </html>

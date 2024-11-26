@@ -1,4 +1,4 @@
-# Day5 Docker与小红书爬虫项目
+# Day5 Docker与Scrapy爬虫项目
 
 ## Docker
 
@@ -70,7 +70,7 @@ mongosh --host 127.0.0.1 --port 27017
 
 比如，这是一个docker-compose.yml的示例程序
 
-![](https://files.mdnice.com/user/58281/3c6a86aa-a990-4c10-88c2-9c0b1cca1e80.png)
+![](./imgs/3c6a86aa-a990-4c10-88c2-9c0b1cca1e80.png)
 
 这里注明了很多信息，比如容器的镜像服务，服务的细则。这里我拉取的是postgresql数据库的镜像，所以有管理员用户、密码等等。
 
@@ -87,7 +87,7 @@ mongosh --host 127.0.0.1 --port 27017
 
 同样的，现在你可以使用`docker ps`看看这个新容器有没有成功运行起来了。
 
-## 小红书爬虫
+## Scrapy爬虫
 
 1. 从零开始，新建一个repo。
 2. 克隆repo到本地，django初始化一下，要利用django进行储存。
@@ -111,4 +111,4 @@ python3 -m playwright install
 ```
 装好了内核之后就可以codegen,启动这个内核，比如`playwright codegen https://www.baidu.com/`
 
-7. 接下来可以愉快的开始编写爬虫了，可以去playwright的官网copy一份模板。分析网页，编写代码。工程化一点的话，可以用虚拟环境，可以写`requirements.txt`里面放所需依赖，以后就可以直接`pip install -r requirements.txt`了。记得写版本！我们常用的库有time,lxml,bs4,ipdb（前提是同步）
+7. 接下来可以愉快的开始编写爬虫了，可以去playwright的官网copy一份模板。分析网页，编写代码。工程化一点的话，可以用虚拟环境，可以写`requirements.txt`里面放所需依赖，以后就可以直接`pip install -r requirements.txt`了。记得写版本！我们常用的库有```lxml,bs4,ipdb```（前提是同步）
