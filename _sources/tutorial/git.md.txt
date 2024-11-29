@@ -22,13 +22,29 @@ title: Git
 
 
 ```{note}
+> 版本控制的重要性怎么强调都不为过。 我认为它的重要性不亚于黑板和书本的发明，因为它将众人的力量聚集在一起，从而创造了更大的价值。
+
 This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://www.oreilly.com/library/view/git-for-teams/9781491911204/), 更多详情请参看原文。
 ```
 
-> 版本控制的重要性怎么强调都不为过。 我认为它的重要性不亚于黑板和书本的发明，因为它将众人的力量聚集在一起，从而创造了更大的价值。
+## Resources
 
 
-## 第1章-团队作战
+### Github
+
+如果想要参与Github社区，非常建议阅读一下的资料，过一遍 [GitHub 入门文档](https://docs.github.com/zh/get-started)
+
+
++ [ ] [基本撰写和格式语法](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
++ [ ] [有关在 GitHub 上编写的快速入门](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github)
++ [ ] [使用高级格式](https://docs.github.com/zh/get-started/writing-on-github/working-with-advanced-formatting)
+
+
+
+
+## Notes for [Git for Teams by Emma Jane Hogbin Westby](https://www.oreilly.com/library/view/git-for-teams/9781491911204/)
+
+### 第1章-团队作战
 
 本章主要强调了在当代，软件工程的开发已经是团队作战，而非个人英雄主义。
 
@@ -59,7 +75,7 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 ```
 
 
-## 第2章-命令与控制
+### 第2章-命令与控制
 
 > 版权是在使用和分发作品时排他且可转让的法律权利。世界各地的版权法律的细节不尽相 同，但一般来说作者有权复制和分发自己的作品。在开源软件中，版权所有者同意将他 们的作品授权给更多人
 
@@ -75,14 +91,14 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 
 3. 技术评审委员会或项目管理委员: 这种一般是那种比较大的项目，并且有funding支持的，例如Rust
 
-### 日常的Git文件操作
+#### 日常的Git文件操作
 ![](../assets/images/2024-07-16-11.15.1721128546.jpg)
 
 
-### 社区驱动的Git
+#### 社区驱动的Git
 ![](../assets/images/2024-07-16-11.15.1721128520.jpg)
 
-## 第3章-分支策略
+### 第3章-分支策略
 
 > 在版本控制中，分支用于隔离一块代码上产生的不同想法。分支总是起源于代码库中的某 个特定节点。在第 2 章中我们谈到了派生和克隆仓库。分支类似于新工作开始时仓库内部 的分隔。创建分支时你可能想要将工作贡献回去，也可能想要隔离不同的工作。分支本身 并不关心跟踪的是什么更改！它们的职责仅仅是跟踪更改。 使用什么分支策略取决于你的发布管理流程。
 
@@ -92,8 +108,8 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 > 分支允许你更改项目工作目录中可见的文件， 并且一次只会有一个分支活跃。大多数分支策略是根据粗粒度的想法分隔项目中的工作。 这个想法可以是软件的版本，比如，版本 1、版本 2、版本 3。这些软件版本或许能使你联 想到分支上正在进行的工作。根据它们代表的功能名称，这些想法被分隔在不同分支。这 些想法可能是一个 bug 修复或是一个新的功能，但它们也可以表示一个完整的小想法。
 
 关于分支，就是从一个点切出去，然后开发自己的代码或者想法，甚至快速进行bug修复等。
-> 约定是大家认同如何做一件事的标准
 
+> 约定是大家认同如何做一件事的标准
 > 一种约定包含了两类分支：
 
 + **长期活跃的公开分支**： 长期活跃的分支扮演了代码中介的角色，并入大量开发者的贡献。
@@ -114,14 +130,14 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 
 这里其实也和你自己的`git pull`的config有关。
 
-## 第4章-工作流
+### 第4章-工作流
 
 > 在这个过程中，可能会 有一些争吵和妥协，但最终大家能在最基本的流程上达成一致。每个人回到自己的桌前， 思考自己要做的方向，并迅速发问“我应该怎么开始呢”。你给团队更多的提示来开始工 作，他们就能将更多的精力花在攻克难题上。版本控制永远不应该是一个难题。
 
 这个非常认同，项目的推进本来就需要每个人花费在攻克难题上，而不是与人协同，相互等待。。。
 
 
-## 第5章-单人团队 (Important for beginner)
+### 第5章-单人团队 (Important for beginner)
 
 基于issue的版本控制， 无论你是在开发一个新功能，修复一个bug，重构旧的代码，还是在尝试新的想法，都应该记录如下的一些问题
 
@@ -133,7 +149,7 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 
 开发的过程中，按照工程化 思维：
 
-1. 创建工单 issue_number-description
+1. 创建工单 issue_number-description 
 2. 完成工作描述
 3. 测试工作
 4. 添加修改文件到仓库
@@ -169,39 +185,39 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 + 删除远程分支：```git push --delete xxx 1-porcess_notes```
 
 
-| 命令                                             | 用途                                                            |
-|--------------------------------------------------|-----------------------------------------------------------------|
-| git clone URL                                    | 下载一份远程仓库的副本                                          |
-| git init                                         | 将当前目录转换成一个新的 Git 仓库                      |
-| git status                                       | 获取仓库状态报告                                       |
-| git add --all                                    | 将所有修改过的文件和新文件添加至仓库的暂存区                                |
-| git commit -m "message"                          | 将所有暂存的文件提交至仓库                                        |
-| git log                                          | 查看项目历史                                               |
-| git log --oneline                                | 查看压缩过的项目历史                                           |
-| git branch --list                                | 列出所有本地分支                                             |
-| git branch --all                                 | 列出本地和远程分支                                            |
-| git branch --remotes                             | 列出所有远程分支                                             |
-| git checkout --track remote_name/branch          | 创建远程分支的副本，在本地使用                                      |
-| git checkout branch                              | 切换到另一个本地分支                                           |
-| git checkout -b branch branch_parent             | 从某个父分支创建一个新分支                                        |
-| git add filename(s)                              | 仅保存并准备提交指定文件                                         |
-| git add --patch filename                         | 仅保存并准备提交某文件的一部分                                      |
-| git reset HEAD filename                          | 从暂存区移除提交出的文件修改                                       |
-| git commit --amend                               | 使用当前暂存区的修改更新前一次的提交，并提供一个新的提交消息                      |
-| git show commit                                  | 查看提交的详细信息                                            |
-| git tag tag commit                               | 为某个提交对象打上标签                                           |
-| git tag                                          | 列出所有标签                                               |
-| git show tag                                     | 输出所有带标签提交的详细信息                                        |
-| git remote add remote_name URL                   | 创建一个指向远程仓库的引用                                         |
-| git push                                         | 将当前分支上的修改上传至远程仓库                                     |
-| git remote --verbose                             | 列出所有可用远程连接中 `fetch` 和 `push` 命令使用的 URL              |
-| git push --set-upstream remote_name branch_local | 将本地分支的副本推送至远程服务器                                      |
-| git merge branch                                 | 将当前存储在另一分支的提交并入当前分支                                     |
-| git push --delete remote_name branch_remote      | 在远程服务器中移除指定名称的分支                                        |
+| 命令                                             | 用途                                                                             |
+|--------------------------------------------------|----------------------------------------------------------------------------------|
+| git clone URL                                    | 下载一份远程仓库的副本                                                           |
+| git init                                         | 将当前目录转换成一个新的 Git 仓库                                                |
+| git status                                       | 获取仓库状态报告                                                                 |
+| git add --all                                    | 将所有修改过的文件和新文件添加至仓库的暂存区                                     |
+| git commit -m "message"                          | 将所有暂存的文件提交至仓库                                                       |
+| git log                                          | 查看项目历史                                                                     |
+| git log --oneline                                | 查看压缩过的项目历史                                                             |
+| git branch --list                                | 列出所有本地分支                                                                 |
+| git branch --all                                 | 列出本地和远程分支                                                               |
+| git branch --remotes                             | 列出所有远程分支                                                                 |
+| git checkout --track remote_name/branch          | 创建远程分支的副本，在本地使用                                                   |
+| git checkout branch                              | 切换到另一个本地分支                                                             |
+| git checkout -b branch branch_parent             | 从某个父分支创建一个新分支                                                       |
+| git add filename(s)                              | 仅保存并准备提交指定文件                                                         |
+| git add --patch filename                         | 仅保存并准备提交某文件的一部分                                                   |
+| git reset HEAD filename                          | 从暂存区移除提交出的文件修改                                                     |
+| git commit --amend                               | 使用当前暂存区的修改更新前一次的提交，并提供一个新的提交消息                     |
+| git show commit                                  | 查看提交的详细信息                                                               |
+| git tag tag commit                               | 为某个提交对象打上标签                                                           |
+| git tag                                          | 列出所有标签                                                                     |
+| git show tag                                     | 输出所有带标签提交的详细信息                                                     |
+| git remote add remote_name URL                   | 创建一个指向远程仓库的引用                                                       |
+| git push                                         | 将当前分支上的修改上传至远程仓库                                                 |
+| git remote --verbose                             | 列出所有可用远程连接中 `fetch` 和 `push` 命令使用的 URL                          |
+| git push --set-upstream remote_name branch_local | 将本地分支的副本推送至远程服务器                                                 |
+| git merge branch                                 | 将当前存储在另一分支的提交并入当前分支                                           |
+| git push --delete remote_name branch_remote      | 在远程服务器中移除指定名称的分支                                                 |
 
 
 
-## 第6章-回滚、还原、重置和变基
+### 第6章-回滚、还原、重置和变基
 
 ```{note}
 这章其实有点难， 但是掌握这一章节，将会真正的理解Git的使用。
@@ -214,20 +230,20 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 
 
 
-| 你想要……                                       | 备注                              | 解决方案               |
-|------------------------------------------------|-----------------------------------|------------------------|
-| 舍弃工作目录中对一个文件的修改                 | 修改的文件未被暂存或提交          | `checkout -- filename` |
-| 舍弃工作目录中所有未保存的变更                          | 文件已暂存，但未被提交                     | `reset --hard`         |
-| 合并与某个特定提交（但不含）之间的多个提交              |                                  | `reset commit`         |
+| 你想要……                                                  | 备注                              | 解决方案               |
+|-----------------------------------------------------------|-----------------------------------|------------------------|
+| 舍弃工作目录中对一个文件的修改                            | 修改的文件未被暂存或提交          | `checkout -- filename` |
+| 舍弃工作目录中所有未保存的变更                            | 文件已暂存，但未被提交                     | `reset --hard`         |
+| 合并与某个特定提交（但不含）之间的多个提交                |                                  | `reset commit`         |
 | 移除所有未保存的变更，包含未跟踪的文件                    | 修改的文件未被提交                       | `clean -fd`            |
 | 移除所有已暂存的变更和在某个提交之前提交的工作，但不移除工作目录中的新文件                   |                   | `reset --hard commit`                      |
-| 移除之前的工作，但完整保留提交历史记录（“前进式回滚”）                                                                     | 分支已经被发布，工作目录是干净的                   | `revert commit`                            |
+| 移除之前的工作，但完整保留提交历史记录（“前进式回滚”）    | 分支已经被发布，工作目录是干净的                   | `revert commit`                            |
 | 从分支历史记录中移除一个单独的提交                                                                           | 修改的文件已经被提交，工作目录是干净的，分支尚未进行发布 | `rebase --interactive commit`              |
 | 保留之前的工作，但与另一提交合并                                                                           | 选择 squash（压缩）选项                       | `rebase --interactive commit`              |
 
-### rebase
+#### rebase
 
-#### 例子1: 文件删除造成的变基冲突
+##### 例子1: 文件删除造成的变基冲突
 
 假设文件ch10.asciidoc在源分支master中被删除了，但我们在feature上继续对它进行修改，如果这个时候rebase便会报错。
 
@@ -242,7 +258,7 @@ This notes is extract from [Git for Teams by Emma Jane Hogbin Westby](https://ww
 
 这个过程中，如果报错了，可以使用`git rebase --abort` 退回到前面。当然，也可以考虑看看message信息进行修订。
 
-#### 例子2：交互式变基修改提交
+##### 例子2：交互式变基修改提交
 
 假设最近的历史提交如下：
 
@@ -264,7 +280,7 @@ bd5c178 Added feedback request; formatting updates to pro-con lists
 2. 编辑我们是需要pick还是squash，然后对合并后的消息进行编辑。
 
 
-#### 例子：移除错误的历史
+##### 例子：移除错误的历史
 
 如果运气不好，将一些重要的信息（例如包含密码的文件）提交到了远程分支。
 
@@ -295,7 +311,7 @@ git pull --rebase=preserve
 ```
 
 
-### 命令指南
+#### 命令指南
 
 
 | 命令                            | 用途                                   |
@@ -329,7 +345,7 @@ git pull --rebase=preserve
 | git gc --prune=now                                 | 运行垃圾回收器并确保所有未提交的变更从本地内存中移除     |
 
 
-## 其他参考资料
+### 其他参考资料
 
 
 + [git rebase 用法详解与工作原理](https://waynerv.com/posts/git-rebase-intro/)
