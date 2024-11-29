@@ -11,6 +11,13 @@
 
 ## My Recommendation
 
+
+### Reason
+
 First, I am widely using this project to build my markdown (and reStructureText) documentation/blog.
 
+
+### Inspiration
+
+1. Try to use emoji 🚀 in git commit message
 

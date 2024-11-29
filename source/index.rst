@@ -19,8 +19,20 @@ Tutorial with thoughts
    tutorial/os_mp_celery_scrapy.rst
 
 
-Writing from learner
----------------------
+Learning others project
+-----------------------
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Project:
+   
+   engineer/sphinx_design
+
+   
+
+
+Writing from beginner
+--------------------
 
 .. toctree::
    :maxdepth: 1
