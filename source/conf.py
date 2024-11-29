@@ -27,6 +27,7 @@ extensions = [
   "sphinx_design",
   "sphinx_comments"
 ]
+
 myst_enable_extensions=[
     "amsmath",
     "attrs_inline",
@@ -42,6 +43,7 @@ myst_enable_extensions=[
     "strikethrough",
     "substitution",
     "tasklist",
+
 ]
 
 myst_words_per_minute = 10
