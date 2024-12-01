@@ -78,7 +78,6 @@ data-aria-dark="切换到自动模式">
     </button>
     <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>该页内容</h3><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#methodology">Methodology</a></li>
 <li><a class="reference internal" href="#experiments-and-results">Experiments and Results</a></li>
 <li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 <li><a class="reference internal" href="#future-works">Future Works</a></li>
@@ -137,20 +136,18 @@ data-aria-dark="切换到自动模式">
 <a class="reference external" href="https://arxiv.org/pdf/2411.02959">https://arxiv.org/pdf/2411.02959</a></p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
-<p>LLMs have demonstrated remarkable capabilities in natural language processing tasks. However, they often struggle with forgetting long-tailed knowledge, providing outdated information, and hallucination.<br />
-<img alt="Information loss in HTML to plain text conversion" src="../_images/HTMLRAG-2.png" />
-RAG systems address these issues by incorporating external knowledge. Traditionally, RAG systems convert HTML to plain text, losing crucial structural and semantic information. This paper introduces HtmlRAG, a novel approach that utilizes HTML as the format for retrieved knowledge, preserving more information and improving RAG system performance.</p>
-</section>
-<section id="methodology">
-<h2>Methodology<a class="headerlink" href="#methodology" title="Link to this heading">¶</a></h2>
-<p><img alt="HTML for RAG pipeline overview" src="../_images/HTMLRAG-1.png" />
-HtmlRAG tackles the challenge of excessive input length and noisy context in HTML documents. The methodology involves two main steps:<br />
-<strong>1. HTML Cleaning</strong><br />
-<img alt="" src="../_images/HTMLRAG-4.png" /></p>
-<ul class="simple">
-<li><p>Removes irrelevant content like CSS, JavaScript, and comments.</p></li>
-<li><p>Merges redundant HTML structures without losing semantic information.</p></li>
-</ul>
+<p>LLMs have demonstrated remarkable capabilities in natural language processing tasks. However, they often struggle with forgetting long-tailed knowledge, providing outdated information, and hallucination.</p>
+<div style="text-align:center">
+<img src="./imgs/HTMLRAG-2.png" width="500" style="text-align:center"/>  
+</div>
+RAG systems address these issues by incorporating external knowledge. Traditionally, RAG systems convert HTML to plain text, losing crucial structural and semantic information. This paper introduces HtmlRAG, a novel approach that utilizes HTML as the format for retrieved knowledge, preserving more information and improving RAG system performance.
+## Methodology
+![HTML for RAG pipeline overview](./imgs/HTMLRAG-1.png)
+HtmlRAG tackles the challenge of excessive input length and noisy context in HTML documents. The methodology involves two main steps:  
+**1. HTML Cleaning**  
+![](./imgs/HTMLRAG-4.png)
+- Removes irrelevant content like CSS, JavaScript, and comments.
+- Merges redundant HTML structures without losing semantic information.  
 <p>For example, simplify the following</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>some  text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></pre></div>
@@ -161,10 +158,12 @@ HtmlRAG tackles the challenge of excessive input length and noisy context in HTM
 </div>
 <p><strong>2. HTML Pruning</strong></p>
 <ul class="simple">
-<li><p><strong>Building a Block Tree</strong>: Transforms the DOM tree into a block tree for efficient pruning.<br />
-<img alt="" src="../_images/HTMLRAG-5.png" />
-Suppose we have the following documents:</p></li>
+<li><p><strong>Building a Block Tree</strong>: Transforms the DOM tree into a block tree for efficient pruning.</p></li>
 </ul>
+<div style="text-align:center">
+<img src="./imgs/HTMLRAG-5.png" width="400" style="text-align:center"/>  
+</div>
+Suppose we have the following documents:  
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 </span><span data-line="2"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span data-line="3"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -187,13 +186,23 @@ Suppose we have the following documents:</p></li>
 </span></pre></div>
 </div>
 <p>The detailed pruning algorithm is as follows:<br />
-<img alt="" src="../_images/HTMLRAG-3.png" /></p>
+<a class="reference internal" href="../_images/HTMLRAG-3.png"><img alt="../_images/HTMLRAG-3.png" src="../_images/HTMLRAG-3.png" style="width: 380px;" /></a></p>
 <ul class="simple">
-<li><p><strong>Pruning Blocks based on Text Embedding</strong>: Removes blocks with low similarity to the user’s query.<br />
-<img alt="" src="../_images/HTMLRAG-6.png" /></p></li>
-<li><p><strong>Generative Fine-Grained Block Pruning</strong>: Further refines the block tree using a generative model.<br />
-<img alt="" src="../_images/HTMLRAG-7.png" /></p></li>
+<li><p><strong>Pruning Blocks based on Text Embedding</strong>: Removes blocks with low similarity to the user’s query.</p></li>
 </ul>
+<div style="text-align:center">
+<img src="./imgs/HTMLRAG-6.png" width="380" style="text-align:center"/>  
+</div>  
+<p>The approach involves extracting plain text from HTML blocks and calculating similarity scores with the user’s query using text embeddings. A greedy algorithm is applied to prune the block tree by removing low-similarity blocks, while preserving higher ones. The pruning continues until the total length of the HTML documents fits within the set context window. Afterward, redundant HTML structures are removed, and nested tags are merged and empty tags are eliminated.</p>
+<ul class="simple">
+<li><p><strong>Generative Fine-Grained Block Pruning</strong>: Further refines the block tree using a generative model.<br />
+<img alt="" src="../_images/HTMLRAG-7.png" /><br />
+The prompt for this step using a generative model is as follows:</p></li>
+</ul>
+<div style="text-align:center">
+<img src="./imgs/HTMLRAG-8.png" width="380" style="text-align:center"/>  
+</div>  
+To achieve finer granularity in block pruning, this paper expands the leaf nodes of the pruned block tree to obtain a finer-grained block tree. Given the limitations of embedding-based pruning, the paper proposes using a ** generative model **, as it can handle the entire block tree and is not limited to modeling one block at a time. However, directly processing the cleaned HTML (averaging 60K) with the generative model is impractical due to high computational costs. Inspired by CFIC, the paper uses a sequence of tags to identify a block, where the sequence starts from the root tag and ends at the block's tag, referred to as the "block path." During inference, the generative model calculates block scores based on the structure of the block tree.  
 </section>
 <section id="experiments-and-results">
 <h2>Experiments and Results<a class="headerlink" href="#experiments-and-results" title="Link to this heading">¶</a></h2>
