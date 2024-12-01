@@ -3,7 +3,7 @@
 """
 @author: eze-root
 @file: cli.py
-@time: 2024/11/27
+@time: 2024/12/07
 """
 
 import os
@@ -23,9 +23,11 @@ from typing import Tuple
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DRAFT_DIR = os.path.join(BASE_DIR, 'templates')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dirpath', default=BASE_DIR, help='Current Dir')
+parser.add_argument('--add_draft', default=BASE_DIR, help='Your Draft Name')
 args = parser.parse_args()
 
 def get_local_github_account_info() -> Tuple[str, str]:
@@ -42,12 +44,14 @@ def get_local_github_account_info() -> Tuple[str, str]:
     return user_name, user_email
 
 
+def add_a_draft():
+    draft_fpath = os.path.join(DRAFT_DIR, 'draft.md')
+
+    pass
+
+
 def main():
-    user_name, user_email = get_local_github_account_info()
-
-
+    pass
 
 if __name__ == "__main__":
     main()
-
-

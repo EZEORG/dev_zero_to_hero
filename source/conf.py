@@ -15,6 +15,7 @@ release = '0.0.1'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+  "ablog",
   "myst_parser",
   "sphinx.ext.autodoc",
   "sphinx.ext.intersphinx",
