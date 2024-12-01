@@ -133,7 +133,7 @@ data-aria-dark="切换到自动模式">
         <article class="yue" role="main">
           <section class="tex2jax_ignore mathjax_ignore" id="htmlrag-html-is-better-than-plain-text-for-modeling-retrieved-knowledge-in-rag-systems">
 <h1>HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems<a class="headerlink" href="#htmlrag-html-is-better-than-plain-text-for-modeling-retrieved-knowledge-in-rag-systems" title="Link to this heading">¶</a></h1>
-<p><a class="reference external" href="https://scholar.google.com/citations?user=qHzX-cMAAAAJ&amp;amp;hl=en&amp;amp;oi=sra">Jiejun Tan</a>, <a class="reference external" href="http://playbigdata.ruc.edu.cn/dou/">Zhicheng Dou</a>, Wen Wang, Mang Wang, Weipeng Chen, Ji-Rong Wen<br />
+<p><a class="reference external" href="https://scholar.google.com/citations?user=qHzX-cMAAAAJ&amp;amp;hl=en&amp;amp;oi=sra">Jiejun Tan</a>, <a class="reference external" href="http://playbigdata.ruc.edu.cn/dou/">Zhicheng Dou</a>, Wen Wang, Mang Wang, Weipeng Chen, Ji-Rong We<br />
 <a class="reference external" href="https://arxiv.org/pdf/2411.02959">https://arxiv.org/pdf/2411.02959</a></p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
@@ -145,21 +145,54 @@ RAG systems address these issues by incorporating external knowledge. Traditiona
 <h2>Methodology<a class="headerlink" href="#methodology" title="Link to this heading">¶</a></h2>
 <p><img alt="HTML for RAG pipeline overview" src="../_images/HTMLRAG-1.png" />
 HtmlRAG tackles the challenge of excessive input length and noisy context in HTML documents. The methodology involves two main steps:<br />
-<strong>1. HTML Cleaning</strong></p>
+<strong>1. HTML Cleaning</strong><br />
+<img alt="" src="../_images/HTMLRAG-4.png" /></p>
 <ul class="simple">
 <li><p>Removes irrelevant content like CSS, JavaScript, and comments.</p></li>
 <li><p>Merges redundant HTML structures without losing semantic information.</p></li>
 </ul>
+<p>For example, simplify the following</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span>some  text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></pre></div>
+</div>
+<p>as</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>some text<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></pre></div>
+</div>
 <p><strong>2. HTML Pruning</strong></p>
 <ul class="simple">
-<li><p><strong>Building a Block Tree</strong>: Transforms the DOM tree into a block tree for efficient pruning.
-‘’‘python
-print</p></li>
+<li><p><strong>Building a Block Tree</strong>: Transforms the DOM tree into a block tree for efficient pruning.<br />
+<img alt="" src="../_images/HTMLRAG-5.png" />
+Suppose we have the following documents:</p></li>
 </ul>
-<p>’‘’</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span data-line="2"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span><span data-line="3"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span data-line="4">  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span data-line="5">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span data-line="6">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a paragraph.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span data-line="7">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is another paragraph.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span data-line="8">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span data-line="9">  <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span data-line="10">    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Subtitle<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span data-line="11">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>This is a subparagraph.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span data-line="12">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span data-line="13"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span data-line="14"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></pre></div>
+</div>
+<p>After the block tree is constructed, the block tree structure is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">Block</span> <span class="mi">1</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Title</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">paragraph</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">This</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">paragraph</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</span><span data-line="2"><span class="n">Block</span> <span class="mi">2</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">Subtitle</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">subparagraph</span><span class="o">.&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</span></pre></div>
+</div>
+<p>The detailed pruning algorithm is as follows:<br />
+<img alt="" src="../_images/HTMLRAG-3.png" /></p>
 <ul class="simple">
-<li><p><strong>Pruning Blocks based on Text Embedding</strong>: Removes blocks with low similarity to the user’s query.</p></li>
-<li><p><strong>Generative Fine-Grained Block Pruning</strong>: Further refines the block tree using a generative model.</p></li>
+<li><p><strong>Pruning Blocks based on Text Embedding</strong>: Removes blocks with low similarity to the user’s query.<br />
+<img alt="" src="../_images/HTMLRAG-6.png" /></p></li>
+<li><p><strong>Generative Fine-Grained Block Pruning</strong>: Further refines the block tree using a generative model.<br />
+<img alt="" src="../_images/HTMLRAG-7.png" /></p></li>
 </ul>
 </section>
 <section id="experiments-and-results">
