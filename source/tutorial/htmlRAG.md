@@ -1,5 +1,5 @@
 # HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems
-[Jiejun Tan](https://scholar.google.com/citations?user=qHzX-cMAAAAJ&hl=en&oi=sra), [Zhicheng Dou](http://playbigdata.ruc.edu.cn/dou/), Wen Wang, Mang Wang, Weipeng Chen, Ji-Rong Wen
+[Jiejun Tan](https://scholar.google.com/citations?user=qHzX-cMAAAAJ&hl=en&oi=sra), [Zhicheng Dou](http://playbigdata.ruc.edu.cn/dou/), Wen Wang, Mang Wang, Weipeng Chen, Ji-Rong We  
 https://arxiv.org/pdf/2411.02959
 ## Introduction
 LLMs have demonstrated remarkable capabilities in natural language processing tasks. However, they often struggle with forgetting long-tailed knowledge, providing outdated information, and hallucination. RAG systems address these issues by incorporating external knowledge. Traditionally, RAG systems convert HTML to plain text, losing crucial structural and semantic information. This paper introduces HtmlRAG, a novel approach that utilizes HTML as the format for retrieved knowledge, preserving more information and improving RAG system performance.
