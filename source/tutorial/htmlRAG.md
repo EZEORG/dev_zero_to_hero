@@ -1,5 +1,5 @@
 # HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems
-[Jiejun Tan](https://scholar.google.com/citations?user=qHzX-cMAAAAJ&hl=en&oi=sra), [Zhicheng Dou](http://playbigdata.ruc.edu.cn/dou/), Wen Wang, Mang Wang, Weipeng Chen, Ji-Rong Wen  
+[Jiejun Tan](https://scholar.google.com/citations?user=qHzX-cMAAAAJ&hl=en&oi=sra), [Zhicheng Dou](http://playbigdata.ruc.edu.cn/dou/), Wen Wang, Mang Wang, Weipeng Chen, Ji-Rong We  
 https://arxiv.org/pdf/2411.02959
 ## Introduction
 LLMs have demonstrated remarkable capabilities in natural language processing tasks. However, they often struggle with forgetting long-tailed knowledge, providing outdated information, and hallucination.  
@@ -9,17 +9,49 @@ RAG systems address these issues by incorporating external knowledge. Traditiona
 ![HTML for RAG pipeline overview](./imgs/HTMLRAG-1.png)
 HtmlRAG tackles the challenge of excessive input length and noisy context in HTML documents. The methodology involves two main steps:  
 **1. HTML Cleaning**  
+![](./imgs/HTMLRAG-4.png)
 - Removes irrelevant content like CSS, JavaScript, and comments.
 - Merges redundant HTML structures without losing semantic information.  
 
+For example, simplify the following
+```html
+<div><div><p>some  text</p></div></div>
+```
+as
+```html
+<p>some text</p>
+```
 **2. HTML Pruning**
-- **Building a Block Tree**: Transforms the DOM tree into a block tree for efficient pruning.
-‘’‘python
-print
-
-’‘’
-- **Pruning Blocks based on Text Embedding**: Removes blocks with low similarity to the user's query.
-- **Generative Fine-Grained Block Pruning**: Further refines the block tree using a generative model.
+- **Building a Block Tree**: Transforms the DOM tree into a block tree for efficient pruning.  
+![](./imgs/HTMLRAG-5.png)
+Suppose we have the following documents:
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <div>
+    <h1>Title</h1>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+  </div>
+  <div>
+    <h2>Subtitle</h2>
+    <p>This is a subparagraph.</p>
+  </div>
+</body>
+</html>
+```
+After the block tree is constructed, the block tree structure is as follows:
+```
+Block 1: <div><h1>Title</h1><p>This is a paragraph.</p><p>This is another paragraph.</p></div>
+Block 2: <div><h2>Subtitle</h2><p>This is a subparagraph.</p></div>
+```
+The detailed pruning algorithm is as follows:  
+![](./imgs/HTMLRAG-3.png)
+- **Pruning Blocks based on Text Embedding**: Removes blocks with low similarity to the user's query.  
+![](./imgs/HTMLRAG-6.png)
+- **Generative Fine-Grained Block Pruning**: Further refines the block tree using a generative model.  
+![](./imgs/HTMLRAG-7.png)
 ## Experiments and Results
 HtmlRAG was tested on six QA datasets, including:  
 - **ASQA**: a QA dataset consists of ambiguous questions that can be answered by multiple  answers supported by different knowledge sources;
