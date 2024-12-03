@@ -21,12 +21,11 @@ bash cuda_12.6.3_560.35.05_linux.run --silent --override --toolkit --toolkitpath
 安装好之后，刷新一下目录，有时候不刷新显示不出来。接下来需要设置环境变量，安装产生的文件都存放在cuda12文件夹中。获取该文件夹的位置，环境变量设置如下：
 
 ```
-export PATH=/home/houyikang/cuda12/bin:$PATH
-export CPATH=/home/houyikang/cuda12/include:$CPATH
-export LD_LIBRARY_PATH=/home/houyikang/cuda12/lib
-64:$LD_LIBRARY_PATH
+echo "export PATH=/home/houyikang/cuda12/bin:$PATH" >> ~/.bashrc
+echo "export CPATH=/home/houyikang/cuda12/include:$CPATH" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=/home/houyikang/cuda12/lib64:$LD_LIBRARY_PATH">> ~/.bashrc
 
-source ~/.bashrc #使其生效，否则设置的环境变量只是暂时的
+
 ```
-使用nvcc --version 查看是否安装成功,安装成功会显示类似下图的结果。
+使用nvcc --version 查看是否安装成功,安装成功会显示类似下图的结果
 ![success](./imgs/nvcc3.png)
