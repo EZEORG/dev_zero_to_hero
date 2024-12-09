@@ -4,6 +4,8 @@ sphinx-tabs
 sphinx_design
 shibuya
 
+
+ablog
 sphinxemoji
 sphinx-comments
 

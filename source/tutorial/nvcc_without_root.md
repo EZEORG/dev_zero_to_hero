@@ -1,4 +1,5 @@
 # 解决在没有root权限时，安装CUDA
+
 ## 前言
 cuda是我们经常用到的工具，在没有root权限时，我们是无法使用sudo apt install nvidia-cuda-toolkit进行安装的。
 ![problem](./imgs/nvcc1.jpg)

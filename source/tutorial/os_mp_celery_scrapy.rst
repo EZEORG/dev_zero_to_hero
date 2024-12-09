@@ -72,15 +72,17 @@ Celery
 
 具体的配置包括:
 
-.. tabs::
 
-  .. tab:: Python Install
+
+.. tab-set::
+
+  .. tab-item:: Python Install
   
     .. code-block:: bash
     
       pip install redis django-celery-beat django-celery-results
 
-  .. tab:: docker-compose.yml
+  .. tab-item:: docker-compose.yml
 
     .. code-block:: docker-compose.yml
 
@@ -123,7 +125,7 @@ Celery
             - redis
             - web
     
-  .. tab:: celery.py
+  .. tab-item:: celery.py
 
     .. code-block:: bash
     
