@@ -2,7 +2,7 @@
 <html lang="zh" data-accent-color="violet" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sphinx_design - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="7 Days for beginner" href="../2024-summer/readme.html" /><link rel="prev" title="Scrapy + Celery + Multiprocessing" href="../tutorial/os_mp_celery_scrapy.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>解决CUDA与GCC不兼容问题 - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
@@ -53,31 +53,16 @@ data-aria-dark="切换到自动模式">
 </div><div class="sy-container mx-auto body">
     <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
       <article class="yue" role="main">
-         <section class="tex2jax_ignore mathjax_ignore" id="sphinx-design">
-<h1>Sphinx_design<a class="headerlink" href="#sphinx-design" title="Link to this heading">¶</a></h1>
-<section id="information">
-<h2>Information<a class="headerlink" href="#information" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Link: <a class="reference external" href="https://github.com/executablebooks/sphinx-design">Github</a></p></li>
-<li><p>Language: Python</p></li>
-<li><p>LICENSE: MIT License</p></li>
-<li><p>Documentation: <a class="reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/">https://sphinx-design.readthedocs.io/en/furo-theme/</a></p></li>
-<li><p>Test: <a class="reference external" href="https://github.com/executablebooks/sphinx-design/tree/main/tests">https://github.com/executablebooks/sphinx-design/tree/main/tests</a></p></li>
-</ul>
-</section>
-<section id="my-recommendation">
-<h2>My Recommendation<a class="headerlink" href="#my-recommendation" title="Link to this heading">¶</a></h2>
-<section id="reason">
-<h3>Reason<a class="headerlink" href="#reason" title="Link to this heading">¶</a></h3>
-<p>First, I am widely using this project to build my markdown (and reStructureText) documentation/blog.</p>
-</section>
-<section id="inspiration">
-<h3>Inspiration<a class="headerlink" href="#inspiration" title="Link to this heading">¶</a></h3>
-<ol class="arabic simple">
-<li><p>Try to use emoji 🚀 in git commit message</p></li>
-</ol>
-</section>
-</section>
+         <section class="tex2jax_ignore mathjax_ignore" id="cudagcc">
+<h1>解决CUDA与GCC不兼容问题<a class="headerlink" href="#cudagcc" title="Link to this heading">¶</a></h1>
+<p>在装环境时，我需要用cmake进行编译，我的cuda版本是12.1，而系统提供的是13.2，CUDA版本和GCC版本是不兼容的，下面提供了一个对应的版本，以供参考。
+<img alt="version" src="../_images/cuda_gcc1.png" /></p>
+<p>由于没有管理员权限，只能使用conda命令安装，从上图中可以看到，CUDA12.1能够兼容的GCC最高版本是12.2，我选择的是gcc11版本。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">conda</span> <span class="n">install</span> <span class="n">gcc</span><span class="o">=</span><span class="mi">11</span> <span class="n">gxx</span><span class="o">=</span><span class="mi">11</span>
+</span></pre></div>
+</div>
+<p>安装之后，输入gcc --version，我们可以看到和图片中类似的结果，说明安装成功。
+<img alt="success" src="../_images/cuda_gcc2.png" /></p>
 </section>
 
 <div class="section ablog__blog_comments">

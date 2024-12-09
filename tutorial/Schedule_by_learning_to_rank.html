@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh" data-accent-color="violet" data-content_root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Efficient LLM Scheduling by Learning to Rank - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><script>
+    function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
+    setColorMode(localStorage._theme||"auto");
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sy-f-text: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+  --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
+}
+</style>
+        </head>
+<body><div class="sy-head">
+  <div class="sy-head-blur"></div>
+  <div class="sy-head-inner sy-container mx-auto">
+    <a class="sy-head-brand" href="../index.html">
+      
+      
+      <strong>Dev_zero_to_hero</strong>
+    </a>
+    <div class="sy-head-nav" id="HeadNav">
+      <nav class="sy-head-links"></nav>
+      <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
+  <input type="text" name="q" placeholder="搜索" />
+  <kbd>/</kbd>
+</form><div class="sy-head-socials"></div></div>
+    </div>
+    <div class="sy-head-actions flex items-center shrink-0 print:hidden"><button class="js-theme theme-switch flex items-center"
+data-aria-auto="切换到亮色模式"
+data-aria-light="切换到暗色模式"
+data-aria-dark="切换到自动模式">
+<i class="i-lucide theme-icon"></i>
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+        <div class="hamburger">
+          <span class="hamburger_1"></span>
+          <span class="hamburger_2 -translate-x-2"></span>
+          <span class="hamburger_3 -translate-x-1"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div><div class="sy-container mx-auto body">
+    <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
+      <article class="yue" role="main">
+         <section class="tex2jax_ignore mathjax_ignore" id="efficient-llm-scheduling-by-learning-to-rank">
+<h1>Efficient LLM Scheduling by Learning to Rank<a class="headerlink" href="#efficient-llm-scheduling-by-learning-to-rank" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://scholar.google.com/citations?user=2zCW8IUAAAAJ">Yichao Fu</a>,Siqi Zhu,Runlong Su,Aurick Qiao,Ion Stoica,<a class="reference external" href="https://scholar.google.com/citations?user=H1d4BS8AAAAJ&amp;amp;hl=en">Hao Zhang</a></p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<p>Large language models (LLMs) are essential to modern Internet services, but as demand grows, efficient scheduling becomes crucial to maintain low latency and high throughput. Traditional scheduling methods like First-Come-First-Serve (FCFS) often lead to Head-Of-Line (HOL) blocking, causing high latencies, especially when long requests block shorter ones. While Shortest-Job-First (SJF) and Shortest-Remaining-Time-First (SRTF) can reduce latency, they require accurate knowledge of request lengths, which is challenging to predict.</p>
+<div style="text-align:center">
+<img src="./imgs/schedule-1.png" width="500" style="text-align:center"/>  
+</div>
+This paper proposes that instead of knowing exact generation lengths, it is sufficient to understand their relative order. The Kendall rank correlation coefficient (Kendall’s Tau) is introduced to measure the similarity between predicted schedules and the ideal SJF/SRTF schedule, showing that higher similarity leads to lower latency. A learning-to-rank approach is then used to rank requests by their generation lengths, enabling on-the-fly scheduling with minimal overhead.
+<p>The proposed method significantly improves performance, reducing p90 latency by 2.8× for chatbot serving and increasing throughput for batch data generation by 6.5×, offering a simple and effective solution for LLM scheduling.</p>
+</section>
+<section id="method">
+<h2>Method<a class="headerlink" href="#method" title="Link to this heading">¶</a></h2>
+<p><strong>1.Problem Formulation</strong></p>
+<p>The goal is to approximate SJF/SRTF scheduling by predicting the ranking order of request generation lengths, rather than predicting the exact lengths. The ranking list is evaluated using Kendall’s Tau, where a higher Tau indicates a better alignment with the ground truth, leading to improved scheduling and lower latency. Since Kendall’s Tau is difficult to optimize directly, ListMLE, a listwise ranking loss, is used to train the predictor, ensuring a holistic evaluation of the ranking order and better correlation with the ideal SJF/SRTF execution.</p>
+<p><strong>2.Generation length ranking predictor</strong></p>
+<p>The proposed method uses a small OPT model as a predictor to rank prompts by their generation length for LLM scheduling. Instead of predicting exact lengths, the model predicts the relative ranking of requests. A linear layer is added to the OPT model to output a ranking score. Training data is generated by feeding prompts into a target LLM to obtain the full generation and its length, which is then ranked and used as the training label. To handle randomness in LLM generation, generation lengths are bucketed by increments of 10 to make the labels more robust. The OPT model is trained using ListMLE loss, optimizing for ranking rather than exact predictions. This approach improves robustness to noise, avoids issues with imbalanced datasets, and reduces overfitting risks compared to traditional classification-based methods.</p>
+<p><strong>3.Request scheduling with rankings</strong></p>
+<ul class="simple">
+<li><p><strong>Rank scheduler</strong></p></li>
+</ul>
+<p>The proposed algorithm schedules requests using ranking information. For each iteration, the predictor model scores the new requests, which are then sorted by their predicted generation lengths. A batch is formed based on the sorted list, respecting memory or batch size constraints. To prevent starvation of long requests, additional mechanisms are implemented. This ranking-based scheduling method is compatible with existing LLM serving techniques, such as continuous batching and PagedAttention.
+<img alt="algorithm" src="../_images/schedule-2.png" /></p>
+<ul class="simple">
+<li><p><strong>Starvation Prevention</strong></p></li>
+</ul>
+<p>Scheduling algorithms such as SJF/SRTF may cause starvation for long requests, resulting in prolonged wait times for users. To address this issue, a <strong>max_waiting_time fairness</strong> metric is proposed, which evaluates fairness at the per-request level, reflecting user satisfaction.</p>
+<p>The <strong>max_waiting_time</strong> is defined as the maximum of <strong>Time To First Token (TTFT)</strong> and <strong>Time Per Output Token (TPOT)</strong>:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\text{max\_waiting\_time} = \max(\text{TTFT}, \max(\text{TPOT}))
+\]</div>
+</div>
+<p>This metric characterizes the maximum time interval between receiving two tokens after a request is sent. A higher max_waiting_time indicates more severe starvation, implying longer wait times for the user to receive a response.</p>
+<p>To prevent starvation, a <strong>starvation count</strong> is maintained for each request. If a request is not executed during a scheduling step, its starvation count increases. Once the count exceeds a predefined threshold, the request’s priority is promoted by allocating a “quantum” to it. After the allocated quantum is exhausted, the request is demoted back to its original priority.</p>
+<p>This mechanism helps mitigate starvation, reduces <strong>max_waiting_time</strong>, and ensures better user satisfaction.</p>
+</section>
+<section id="result">
+<h2>Result<a class="headerlink" href="#result" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Chatbot Serving Scheduling</strong></p></li>
+</ul>
+<p>The proposed ranking method is compared with four baseline methods on the ShareGPT and LMSYS-Chat-1M datasets, evaluating latency under increasing arrival rates. At a rate of 64 requests per second, the proposed method improves the mean latency by up to 6.9× compared to FCFS, and by 1.5×–1.9× compared to PO. Methods like MLFQ and PO experience significant Head-Of-Line (HOL) blocking, as they require running all requests for a certain duration to gather scheduling information. PO needs to execute all requests with the LLM to generate length predictions, while MLFQ runs all requests before progressing to the next priority. Unlike classification methods, which optimize for accuracy rather than ranking, the proposed method focuses on ranking, leading to better optimization. While both classification and the proposed method process all requests to obtain predictions, the OPT model used in the proposed method incurs less than 2% of the overhead, significantly reducing HOL blocking.
+<img alt="result" src="../_images/schedule-3.png" /></p>
+<p><strong>Handling buristiness</strong>. The proposed ranking method is evaluated against baselines under a burst of 2,000 requests, a common workload scenario in prior works. The results, presented in Table 1, demonstrate a significant improvement in latency. The proposed method reduces the mean latency by up to 2.0× and improves the P90 latency by up to 2.8× compared to the PO baseline.
+<img alt="result" src="../_images/schedule-4.png" /></p>
+<ul class="simple">
+<li><p><strong>Synthetic Data Generation Scheduling</strong></p></li>
+</ul>
+<section id="synthetic-data-generation-sdg">
+<h3>Synthetic Data Generation (SDG)<a class="headerlink" href="#synthetic-data-generation-sdg" title="Link to this heading">¶</a></h3>
+<p>Synthetic data generation (SDG) has become a critical inference workload for LLMs, particularly due to their high data requirements. In SDG, short responses are often preferred for practical reasons, including cost efficiency and to mitigate evaluation metric bias caused by long generations. To address this, samples with shorter generation lengths are prioritized for training in specific scenarios.</p>
+<p>The proposed method demonstrates improvements in generation throughput in scenarios where short responses are favored. Two experiments were conducted:</p>
+<ol class="arabic simple">
+<li><p><strong>Quantity Limit</strong>: With a quantity limit of 1,000 requests to evaluate how long schedulers take to generate responses for 10,000 prompts.</p></li>
+<li><p><strong>Time Limit</strong>: With a time limit of 5 minutes to assess how many samples can be generated within that timeframe.</p></li>
+</ol>
+<p>The results, shown in Table 2, reveal that the classification method fails to outperform FCFS due to its extra preprocessing cost and low ranking ability to recognize short requests. In contrast, the proposed method effectively prioritizes short requests, reducing generation time by 2.4×–6.5× for 1,000 requests and improving throughput by up to 3.2× in 5 minutes. However, in settings where short generations are not preferred, the improvement is less significant.
+<img alt="result" src="../_images/schedule-5.png" /></p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<p>This paper presents a method for training a predictor to learn the generation length ordering of LLM requests using learning to rank. A rank-based scheduler is implemented on top of vLLM, demonstrating substantial improvements across various tasks: a 2.8x reduction in latency for chatbot serving and a 6.5x increase in throughput for synthetic data generation. Due to its simplicity and low computational cost, the proposed method can be easily integrated into production-level LLM serving systems, helping to reduce serving costs while improving service quality.</p>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+   
+</div>
+
+      </article>
+      
+    </main>
+  </div><footer class="sy-foot">
+  <div class="sy-foot-inner sy-container mx-auto">
+    <div class="sy-foot-reserved md:flex justify-between items-center">
+      <div class="sy-foot-copyright"><p>2024, ezelab</p>
+  
+  <p>
+    Made with
+    
+    <a href="https://www.sphinx-doc.org/">Sphinx</a> and
+    
+    <a href="https://shibuya.lepture.com">Shibuya theme</a>.
+  </p>
+</div>
+      <div class="sy-foot-socials"></div>
+    </div>
+  </div>
+</footer>
+      <script src="../_static/documentation_options.js?v=a1b8b494"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "EZEORG/dev_zero_to_hero");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+      <script src="../_static/shibuya.js?v=e2e99575"></script>
+      <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="zh" data-accent-color="violet" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sphinx_design - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="7 Days for beginner" href="../2024-summer/readme.html" /><link rel="prev" title="Scrapy + Celery + Multiprocessing" href="../tutorial/os_mp_celery_scrapy.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>解决在没有root权限时，安装CUDA - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
@@ -53,30 +53,35 @@ data-aria-dark="切换到自动模式">
 </div><div class="sy-container mx-auto body">
     <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
       <article class="yue" role="main">
-         <section class="tex2jax_ignore mathjax_ignore" id="sphinx-design">
-<h1>Sphinx_design<a class="headerlink" href="#sphinx-design" title="Link to this heading">¶</a></h1>
-<section id="information">
-<h2>Information<a class="headerlink" href="#information" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p>Link: <a class="reference external" href="https://github.com/executablebooks/sphinx-design">Github</a></p></li>
-<li><p>Language: Python</p></li>
-<li><p>LICENSE: MIT License</p></li>
-<li><p>Documentation: <a class="reference external" href="https://sphinx-design.readthedocs.io/en/furo-theme/">https://sphinx-design.readthedocs.io/en/furo-theme/</a></p></li>
-<li><p>Test: <a class="reference external" href="https://github.com/executablebooks/sphinx-design/tree/main/tests">https://github.com/executablebooks/sphinx-design/tree/main/tests</a></p></li>
-</ul>
+         <section class="tex2jax_ignore mathjax_ignore" id="root-cuda">
+<h1>解决在没有root权限时，安装CUDA<a class="headerlink" href="#root-cuda" title="Link to this heading">¶</a></h1>
+<section id="id1">
+<h2>前言<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>cuda是我们经常用到的工具，在没有root权限时，我们是无法使用sudo apt install nvidia-cuda-toolkit进行安装的。
+<img alt="problem" src="../_images/nvcc1.jpg" /></p>
 </section>
-<section id="my-recommendation">
-<h2>My Recommendation<a class="headerlink" href="#my-recommendation" title="Link to this heading">¶</a></h2>
-<section id="reason">
-<h3>Reason<a class="headerlink" href="#reason" title="Link to this heading">¶</a></h3>
-<p>First, I am widely using this project to build my markdown (and reStructureText) documentation/blog.</p>
-</section>
-<section id="inspiration">
-<h3>Inspiration<a class="headerlink" href="#inspiration" title="Link to this heading">¶</a></h3>
-<ol class="arabic simple">
-<li><p>Try to use emoji 🚀 in git commit message</p></li>
-</ol>
-</section>
+<section id="id2">
+<h2>解决方法<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p>首先，进入<a class="reference external" href="https://developer.nvidia.com/cuda-downloads">Nvidia官网</a>,找到对应的操作系统，架构(一般都为x86)，版本号等，Installer Type选择runfile。
+<img alt="version" src="../_images/nvcc2.png" /></p>
+<p>选择好之后，在该页面的下方会有一个wget命令，这是用于下载文件的(例如：wget <a class="reference external" href="https://developer.download.nvidia.com/compute/cuda/12.6.3/local_installers/cuda_12.6.3_560.35.05_linux.run">https://developer.download.nvidia.com/compute/cuda/12.6.3/local_installers/cuda_12.6.3_560.35.05_linux.run</a>)。在终端运行该命令即可下载。</p>
+<p><strong>注意</strong>：文件很容易损坏，尽可能的使用wget命令下载</p>
+<p>下载好之后，在终端中使用命令安装：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">mkdir</span> <span class="n">cuda12</span> <span class="c1">#用于存放安装时产生的文件</span>
+</span><span data-line="2">
+</span><span data-line="3"><span class="n">bash</span> <span class="n">cuda_12</span><span class="mf">.6.3_560.35.05</span><span class="n">_linux</span><span class="o">.</span><span class="n">run</span> <span class="o">--</span><span class="n">silent</span> <span class="o">--</span><span class="n">override</span> <span class="o">--</span><span class="n">toolkit</span> <span class="o">--</span><span class="n">toolkitpath</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">houyikang</span><span class="o">/</span><span class="n">cuda12</span> 
+</span></pre></div>
+</div>
+<p>安装好之后，刷新一下目录，有时候不刷新显示不出来。接下来需要设置环境变量，安装产生的文件都存放在cuda12文件夹中。获取该文件夹的位置，环境变量设置如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">echo</span> <span class="s2">&quot;export PATH=/home/houyikang/cuda12/bin:$PATH&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</span><span data-line="2"><span class="n">echo</span> <span class="s2">&quot;export CPATH=/home/houyikang/cuda12/include:$CPATH&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</span><span data-line="3"><span class="n">echo</span> <span class="s2">&quot;export LD_LIBRARY_PATH=/home/houyikang/cuda12/lib64:$LD_LIBRARY_PATH&quot;</span><span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</span><span data-line="4">
+</span><span data-line="5">
+</span></pre></div>
+</div>
+<p>使用nvcc --version 查看是否安装成功,安装成功会显示类似下图的结果
+<img alt="success" src="../_images/nvcc3.png" /></p>
 </section>
 </section>
 

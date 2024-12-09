@@ -2,7 +2,7 @@
 <html lang="zh" data-accent-color="violet" data-content_root="../">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Scrapy + Celery + Multiprocessing - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="7 Days for beginner" href="../2024-summer/readme.html" /><link rel="prev" title="Git for Teams" href="git.html" /><script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Scrapy + Celery + Multiprocessing - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Sphinx_design" href="../engineer/sphinx_design.html" /><link rel="prev" title="Git for Teams" href="git.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
   </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
@@ -20,9 +20,7 @@
   --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
 }
 </style>
-    <meta property="og:type" content="website"/><meta property="og:title" content="Scrapy + Celery + Multiprocessing"/>
-<meta name="twitter:card" content="summary"/>
-  </head>
+        </head>
 <body><div class="sy-head">
   <div class="sy-head-blur"></div>
   <div class="sy-head-inner sy-container mx-auto">
@@ -52,93 +50,10 @@ data-aria-dark="切换到自动模式">
       </button>
     </div>
   </div>
-</div>
-<div class="sy-page sy-container flex mx-auto">
-  <aside id="lside" class="sy-lside md:w-72 md:shrink-0 print:hidden">
-    <div class="sy-lside-inner md:sticky">
-      <div class="sy-scrollbar p-6">
-        <div class="globaltoc" data-expand-depth="0"><p class="caption" role="heading" aria-level="3"><span class="caption-text">Tutorial:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="git.html">Git for Teams</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Scrapy + Celery + Multiprocessing</a></li>
-</ul>
-<p class="caption" role="heading" aria-level="3"><span class="caption-text">Articles:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../2024-summer/readme.html">7 Days for beginner</a></li>
-</ul>
-
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="lside-overlay js-menu" role="button" aria-label="Close left sidebar" aria-controls="lside" aria-expanded="false"></div>
-  <aside id="rside" class="sy-rside pb-3 w-64 shrink-0 order-last">
-    <button class="rside-close js-menu xl:hidden" aria-label="Close Table of Contents" type="button" aria-controls="rside" aria-expanded="false">
-      <i class="i-lucide close"></i>
-    </button>
-    <div class="sy-scrollbar sy-rside-inner px-6 xl:top-16 xl:sticky xl:pl-0 pt-6 pb-4"><div class="localtoc"><h3>该页内容</h3><ul>
-<li><a class="reference internal" href="#backgrounds">Backgrounds</a></li>
-<li><a class="reference internal" href="#scrapy-run-spider">Scrapy Run Spider</a></li>
-<li><a class="reference internal" href="#celery">Celery</a></li>
-<li><a class="reference internal" href="#celery-multiprocessing">Celery + Multiprocessing</a><ul>
-<li><a class="reference internal" href="#multiprocessing">1. &#20351;&#29992; <cite>multiprocessing</cite></a></li>
-<li><a class="reference internal" href="#billiard">2. &#20351;&#29992; <cite>billiard</cite></a></li>
-<li><a class="reference internal" href="#subprocess">3. &#20351;&#29992; <cite>subprocess</cite></a></li>
-<li><a class="reference internal" href="#spawn">4. &#20351;&#29992; <cite>spawn</cite></a></li>
-<li><a class="reference internal" href="#processexecutor">5. &#20351;&#29992; <cite>ProcessExecutor</cite></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#id5">&#24635;&#32467;</a></li>
-</ul>
-</div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/EZEORG/dev_zero_to_hero"
-  data-type="github" data-user="EZEORG" data-repo="dev_zero_to_hero">
-  <span class="w-8 flex items-center justify-around shrink-0 text-3xl">
-    <iconify-icon icon="simple-icons:github"></iconify-icon>
-  </span>
-  <span class="flex-grow px-2 break-all">
-    <span>EZEORG/dev_zero_to_hero</span>
-    <span class="flex text-sm repo-stats-count">
-      <span class="flex items-center pr-3">
-        <iconify-icon icon="lucide:star"></iconify-icon>
-        <strong class="js-repo-stars ml-1">0</strong>
-      </span>
-      <span class="flex items-center">
-        <iconify-icon icon="lucide:git-fork"></iconify-icon>
-        <strong class="js-repo-forks ml-1">0</strong>
-      </span>
-    </span>
-  </span>
-</a><div class="edit-this-page">
-  <a href="https://github.com/EZEORG/dev_zero_to_hero/blob/main/docs/tutorial/os_mp_celery_scrapy.rst">编辑此页面</a>
-</div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div></div>
-  </aside>
-  <div class="rside-overlay js-menu" role="button" aria-label="Close Table of Contents" aria-controls="rside" aria-expanded="false"></div>
-  <main class="sy-main w-full max-sm:max-w-full print:pt-6"><div class="sy-breadcrumbs" role="navigation">
-  <div class="sy-breadcrumbs-inner flex items-center">
-    <div class="md:hidden mr-3">
-      <button class="js-menu" aria-label="Menu" type="button" aria-controls="lside" aria-expanded="false">
-        <i class="i-lucide menu"></i>
-      </button>
-    </div>
-    <ol class="flex-1" itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="../index.html"><span itemprop="name">Dev_zero_to_hero</span></a>
-        <span>/</span>
-        <meta itemprop="position" content="1" />
-      </li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name">Scrapy + Celery + Multiprocessing</strong>
-        <meta itemprop="position" content="2" />
-      </li></ol>
-    <div class="xl:hidden ml-1">
-      <button class="js-menu" aria-label="Show table of contents" type="button" aria-controls="rside"
-        aria-expanded="false">
-        <i class="i-lucide outdent"></i>
-      </button>
-    </div>
-  </div>
-</div><div class="flex flex-col break-words justify-between">
-      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
-        <article class="yue" role="main">
-          <section id="scrapy-celery-multiprocessing">
+</div><div class="sy-container mx-auto body">
+    <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
+      <article class="yue" role="main">
+         <section id="scrapy-celery-multiprocessing">
 <h1>Scrapy + Celery + Multiprocessing<a class="headerlink" href="#scrapy-celery-multiprocessing" title="Link to this heading">¶</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
@@ -200,6 +115,82 @@ data-aria-dark="切换到自动模式">
 <h2>Celery<a class="headerlink" href="#celery" title="Link to this heading">¶</a></h2>
 <p>使用Django配合Celery，配合 <code class="code docutils literal notranslate"><span class="pre">django-celery-beat</span></code>和 <code class="code docutils literal notranslate"><span class="pre">django-celery-results</span></code>, 可以很好的实现爬虫任务的周期运行。</p>
 <p>具体的配置包括:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Python Install</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">pip<span class="w"> </span>install<span class="w"> </span>redis<span class="w"> </span>django-celery-beat<span class="w"> </span>django-celery-results
+</span></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+docker-compose.yml</label><div class="sd-tab-content docutils">
+<div class="highlight-docker-compose.yml notranslate"><div class="highlight"><pre><span></span><span data-line="1">services:
+</span><span data-line="2">  redis:
+</span><span data-line="3">      image: redis:alpine
+</span><span data-line="4">      restart: always
+</span><span data-line="5">
+</span><span data-line="6">  web:
+</span><span data-line="7">    build:
+</span><span data-line="8">      context: .
+</span><span data-line="9">      dockerfile: Dockerfile
+</span><span data-line="10">    image: xxx_system
+</span><span data-line="11">    command: python3 run_aiohttp.py
+</span><span data-line="12">    volumes:
+</span><span data-line="13">      - ./:/code
+</span><span data-line="14">      - ./logs:/logs
+</span><span data-line="15">    working_dir: /code
+</span><span data-line="16">    tty: true
+</span><span data-line="17">
+</span><span data-line="18">  celery_worker:
+</span><span data-line="19">    image: xxx_system
+</span><span data-line="20">    command: &#39;celery -A xxx_system worker -l info&#39;
+</span><span data-line="21">    volumes:
+</span><span data-line="22">      - ./:/code
+</span><span data-line="23">      - ./logs:/logs
+</span><span data-line="24">    working_dir: /code
+</span><span data-line="25">    depends_on:
+</span><span data-line="26">      - redis
+</span><span data-line="27">      - web
+</span><span data-line="28">
+</span><span data-line="29">  celery_beat:
+</span><span data-line="30">    image: xxx_system
+</span><span data-line="31">    command: &#39;celery -A xxx_system beat -l info&#39;
+</span><span data-line="32">    volumes:
+</span><span data-line="33">      - ./:/code
+</span><span data-line="34">      - ./logs:/logs
+</span><span data-line="35">    working_dir: /code
+</span><span data-line="36">    depends_on:
+</span><span data-line="37">      - redis
+</span><span data-line="38">      - web
+</span></pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+celery.py</label><div class="sd-tab-content docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span data-line="1">import<span class="w"> </span>os
+</span><span data-line="2">
+</span><span data-line="3">from<span class="w"> </span>celery<span class="w"> </span>import<span class="w"> </span>Celery
+</span><span data-line="4">
+</span><span data-line="5"><span class="c1"># set the default Django settings module for the &#39;celery&#39; program.</span>
+</span><span data-line="6">os.environ.setdefault<span class="o">(</span><span class="s2">&quot;DJANGO_SETTINGS_MODULE&quot;</span>,<span class="w"> </span><span class="s2">&quot;xxx_system.settings&quot;</span><span class="o">)</span>
+</span><span data-line="7">
+</span><span data-line="8"><span class="nv">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Celery<span class="o">(</span><span class="s2">&quot;xxx_system&quot;</span><span class="o">)</span>
+</span><span data-line="9">
+</span><span data-line="10"><span class="c1"># Using a string here means the worker doesn&#39;t have to serialize</span>
+</span><span data-line="11"><span class="c1"># the configuration object to child processes.</span>
+</span><span data-line="12"><span class="c1"># - namespace=&#39;CELERY&#39; means all celery-related configuration keys</span>
+</span><span data-line="13"><span class="c1">#   should have a `CELERY_` prefix.</span>
+</span><span data-line="14">app.config_from_object<span class="o">(</span><span class="s2">&quot;django.conf:settings&quot;</span>,<span class="w"> </span><span class="nv">namespace</span><span class="o">=</span><span class="s2">&quot;CELERY&quot;</span><span class="o">)</span>
+</span><span data-line="15">
+</span><span data-line="16"><span class="c1"># Load task modules from all registered Django app configs.</span>
+</span><span data-line="17">app.autodiscover_tasks<span class="o">()</span>
+</span></pre></div>
+</div>
+</div>
+</div>
 <p>然后编写 <code class="code docutils literal notranslate"><span class="pre">tasks.py</span></code>即可得到 celery 的运行函数，但是如果同时运行多个爬虫，很容易报错。</p>
 <p>相关的解决方案使用 crochet 参考资料如下：</p>
 <ul class="simple">
@@ -310,30 +301,14 @@ data-aria-dark="切换到自动模式">
 </section>
 </section>
 
-        </article><button class="back-to-top" type="button">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
-  </svg>
-  <span>回到顶部</span>
-</button><div class="navigation flex print:hidden"><div class="navigation-prev">
-    <a href="git.html">
-      <i class="i-lucide chevron-left"></i>
-      <div class="page-info">
-        <span>上一章</span><div class="title">Git for Teams</div></div>
-    </a>
-  </div><div class="navigation-next">
-    <a href="../2024-summer/readme.html">
-      <div class="page-info">
-        <span>下一章</span>
-        <div class="title">7 Days for beginner</div>
-      </div>
-      <i class="i-lucide chevron-right"></i>
-    </a>
-  </div></div></div>
-    </div>
-  </main>
+<div class="section ablog__blog_comments">
+   
 </div>
-<footer class="sy-foot">
+
+      </article>
+      
+    </main>
+  </div><footer class="sy-foot">
   <div class="sy-foot-inner sy-container mx-auto">
     <div class="sy-foot-reserved md:flex justify-between items-center">
       <div class="sy-foot-copyright"><p>2024, ezelab</p>
