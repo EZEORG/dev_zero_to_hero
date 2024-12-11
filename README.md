@@ -55,7 +55,7 @@ pip install -r requirements-dev.txt
 bash run_dev.sh
 ```
 
-Open [http://localhost:11111/darfts/xxx.html](http://localhost:11111/darfts/xxx.html), you will have your writing
+Open [http://localhost:11111/drafts/xxx.html](http://localhost:11111/drafts/xxx.html), you will have your writing
 
 
 
