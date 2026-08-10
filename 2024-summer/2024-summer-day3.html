@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day3 Python 开发环境搭载 - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Day4 SSH与Django" href="2024-summer-day4.html" /><link rel="prev" title="Day2 The Missing Semester of Your CS Education" href="2024-summer-day2.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=2ceb65ce" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
@@ -29,7 +29,7 @@
       
       <strong>Dev_zero_to_hero</strong>
     </a>
-    <div class="sy-head-nav" id="HeadNav">
+    <div class="sy-head-nav" id="head-nav">
       <nav class="sy-head-links"></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="搜索" />
@@ -41,11 +41,11 @@ data-aria-auto="切换到亮色模式"
 data-aria-light="切换到暗色模式"
 data-aria-dark="切换到自动模式">
 <i class="i-lucide theme-icon"></i>
-</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -54,7 +54,7 @@ data-aria-dark="切换到自动模式">
     <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
       <article class="yue" role="main">
          <section class="tex2jax_ignore mathjax_ignore" id="day3-python">
-<h1>Day3 Python 开发环境搭载<a class="headerlink" href="#day3-python" title="Link to this heading">¶</a></h1>
+<h1>Day3 Python 开发环境搭载<a class="headerlink" href="#day3-python" title="Link to this heading">#</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
@@ -79,14 +79,14 @@ data-aria-dark="切换到自动模式">
 </div>
 </div>
 <section id="install-oh-my-bash">
-<h2>Install Oh My Bash<a class="headerlink" href="#install-oh-my-bash" title="Link to this heading">¶</a></h2>
+<h2>Install Oh My Bash<a class="headerlink" href="#install-oh-my-bash" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>如果你更新了oh my bash，可能会出现终端配置清除的情况。这里影响最大的就是conda的配置，所以可以用这行命令：<code class="docutils literal notranslate"><span class="pre">~/anaconda3/bin/conda</span> <span class="pre">init</span></code></p>
 </div>
 </section>
 <section id="tmux">
-<h2>Tmux知识点补充<a class="headerlink" href="#tmux" title="Link to this heading">¶</a></h2>
+<h2>Tmux知识点补充<a class="headerlink" href="#tmux" title="Link to this heading">#</a></h2>
 <p>在Day2的semester课程中已经提到了Tmux的一些基本操作了。之前我们提过，多个 tmux 会话之间本质上是相互独立的。这里补充一些关于Tmux的概念：</p>
 <ul class="simple">
 <li><p><strong>tmux 会话之间没有共享的环境</strong> ：每个会话有自己的窗口和窗格，每个窗格中运行的 shell 或程序也是独立的。会话之间不会自动共享任何环境变量、工作目录或进程状态</p></li>
@@ -94,7 +94,7 @@ data-aria-dark="切换到自动模式">
 </ul>
 </section>
 <section id="python">
-<h2>Python虚拟环境的配置<a class="headerlink" href="#python" title="Link to this heading">¶</a></h2>
+<h2>Python虚拟环境的配置<a class="headerlink" href="#python" title="Link to this heading">#</a></h2>
 <p>现在我们默认已经在你想要的目录下了，接下来开始配置<strong>Python</strong>虚拟环境。</p>
 <p>当然，首先你得需要相关依赖。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
@@ -112,7 +112,7 @@ data-aria-dark="切换到自动模式">
 </ul>
 </section>
 <section id="pythonanaconda3">
-<h2>Python虚拟环境之Anaconda3<a class="headerlink" href="#pythonanaconda3" title="Link to this heading">¶</a></h2>
+<h2>Python虚拟环境之Anaconda3<a class="headerlink" href="#pythonanaconda3" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -180,5 +180,5 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=e2e99575"></script></body>
+      <script src="../_static/shibuya.js?v=50760d75"></script></body>
 </html>

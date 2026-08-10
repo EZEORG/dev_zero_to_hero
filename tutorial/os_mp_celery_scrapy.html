@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Scrapy + Celery + Multiprocessing - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Sphinx_design" href="../engineer/sphinx_design.html" /><link rel="prev" title="Git for Teams" href="git.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=2ceb65ce" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
@@ -29,7 +29,7 @@
       
       <strong>Dev_zero_to_hero</strong>
     </a>
-    <div class="sy-head-nav" id="HeadNav">
+    <div class="sy-head-nav" id="head-nav">
       <nav class="sy-head-links"></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="搜索" />
@@ -41,11 +41,11 @@ data-aria-auto="切换到亮色模式"
 data-aria-light="切换到暗色模式"
 data-aria-dark="切换到自动模式">
 <i class="i-lucide theme-icon"></i>
-</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -54,7 +54,7 @@ data-aria-dark="切换到自动模式">
     <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
       <article class="yue" role="main">
          <section id="scrapy-celery-multiprocessing">
-<h1>Scrapy + Celery + Multiprocessing<a class="headerlink" href="#scrapy-celery-multiprocessing" title="Link to this heading">¶</a></h1>
+<h1>Scrapy + Celery + Multiprocessing<a class="headerlink" href="#scrapy-celery-multiprocessing" title="Link to this heading">#</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
@@ -79,7 +79,7 @@ data-aria-dark="切换到自动模式">
 </div>
 </div>
 <section id="backgrounds">
-<h2>Backgrounds<a class="headerlink" href="#backgrounds" title="Link to this heading">¶</a></h2>
+<h2>Backgrounds<a class="headerlink" href="#backgrounds" title="Link to this heading">#</a></h2>
 <p>首先说明一下本博文需要解决问题，要使用scrapy + celery 来实现定期对多个爬虫的运行问题。</p>
 <p>当然，上述的运行，通过 <a class="reference external" href="https://github.com/celery/django-celery-beat">django-celery-beat</a> 和 <a class="reference external" href="https://django-celery-results.readthedocs.io/en/latest/">django-celery-results</a> 可以用 django的web页面进行管理，比较方便。</p>
 <p>假设现在有spider1, spider2 两个爬虫，可以通过</p>
@@ -90,7 +90,7 @@ data-aria-dark="切换到自动模式">
 <p>实现调用，并且成功运行，接下来需要解决的问题是将上述的调用嵌入celery中。</p>
 <p>需要完成函数</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="nd">@shared_task</span>
-</span><span data-line="2"><span class="k">def</span> <span class="nf">run_my_spider</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span data-line="2"><span class="k">def</span><span class="w"> </span><span class="nf">run_my_spider</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 </span><span data-line="3">    <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;spider_name&#39;</span><span class="p">]</span>
 </span><span data-line="4">
 </span><span data-line="5">    <span class="c1"># Here, we need to implement calling a process for crawling</span>
@@ -98,7 +98,7 @@ data-aria-dark="切换到自动模式">
 </div>
 </section>
 <section id="scrapy-run-spider">
-<h2>Scrapy Run Spider<a class="headerlink" href="#scrapy-run-spider" title="Link to this heading">¶</a></h2>
+<h2>Scrapy Run Spider<a class="headerlink" href="#scrapy-run-spider" title="Link to this heading">#</a></h2>
 <p>关于 <code class="docutils literal notranslate"><span class="pre">Scrapy</span></code>, 启动一个爬虫的方式通常包括:</p>
 <ol class="arabic simple">
 <li><p>使用命令行 <code class="code docutils literal notranslate"><span class="pre">scrapy</span> <span class="pre">crawl</span> <span class="pre">xxx</span></code>, 其中 <code class="code docutils literal notranslate"><span class="pre">xxx</span></code>是爬虫的名字。</p></li>
@@ -112,7 +112,7 @@ data-aria-dark="切换到自动模式">
 其中，有开发者提到，<cite>The default pool option of Celery is &quot;prefork&quot;, which doesn't support multiprocessing</cite>。因此在这一方面处理需要更多的注意, 需要将Celery切换到 <cite>thread</cite> 。所以本次博文想要描述一下问题和解决过程。</p>
 </section>
 <section id="celery">
-<h2>Celery<a class="headerlink" href="#celery" title="Link to this heading">¶</a></h2>
+<h2>Celery<a class="headerlink" href="#celery" title="Link to this heading">#</a></h2>
 <p>使用Django配合Celery，配合 <code class="code docutils literal notranslate"><span class="pre">django-celery-beat</span></code>和 <code class="code docutils literal notranslate"><span class="pre">django-celery-results</span></code>, 可以很好的实现爬虫任务的周期运行。</p>
 <p>具体的配置包括:</p>
 <div class="sd-tab-set docutils">
@@ -217,12 +217,12 @@ celery.py</label><div class="sd-tab-content docutils">
 <p>另外一个方法也是一些资料提到的使用多进程的方式。在尝试了多个操作后，目前得到了相对较有的方案。记录自己的尝试如下：</p>
 </section>
 <section id="celery-multiprocessing">
-<h2>Celery + Multiprocessing<a class="headerlink" href="#celery-multiprocessing" title="Link to this heading">¶</a></h2>
+<h2>Celery + Multiprocessing<a class="headerlink" href="#celery-multiprocessing" title="Link to this heading">#</a></h2>
 <section id="multiprocessing">
-<h3>1. 使用 <cite>multiprocessing</cite><a class="headerlink" href="#multiprocessing" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
+<h3>1. 使用 <cite>multiprocessing</cite><a class="headerlink" href="#multiprocessing" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">multiprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
 </span><span data-line="2">
-</span><span data-line="3"><span class="k">def</span> <span class="nf">run_spider_process</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span><span data-line="3"><span class="k">def</span><span class="w"> </span><span class="nf">run_spider_process</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 </span><span data-line="4">    <span class="n">settings</span> <span class="o">=</span> <span class="n">get_project_settings</span><span class="p">()</span>
 </span><span data-line="5">    <span class="n">process</span> <span class="o">=</span> <span class="n">CrawlerProcess</span><span class="p">(</span><span class="n">settings</span><span class="p">)</span>
 </span><span data-line="6">    <span class="n">crawler</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">create_crawler</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -232,7 +232,7 @@ celery.py</label><div class="sd-tab-content docutils">
 </span><span data-line="10">    <span class="k">return</span> <span class="n">stats_dict</span>
 </span><span data-line="11">
 </span><span data-line="12"><span class="nd">@shared_task</span>
-</span><span data-line="13"><span class="k">def</span> <span class="nf">run_my_spider</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span data-line="13"><span class="k">def</span><span class="w"> </span><span class="nf">run_my_spider</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 </span><span data-line="14">    <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;spider_name&#39;</span><span class="p">]</span>
 </span><span data-line="15">    <span class="n">process</span> <span class="o">=</span> <span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">run_spider_process</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">))</span>
 </span><span data-line="16">    <span class="n">process</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -252,31 +252,31 @@ celery.py</label><div class="sd-tab-content docutils">
 <p>关于 <cite>spawn</cite> 和 <cite>fork</cite> 的详细说明，请查看 <a class="reference external" href="https://docs.python.org/3/library/multiprocessing.html#contexts-and-start-methods">contexts-and-start-methods</a> 这里面的文档涉及到很多操作系统的知识。</p>
 </section>
 <section id="billiard">
-<h3>2. 使用 <cite>billiard</cite><a class="headerlink" href="#billiard" title="Link to this heading">¶</a></h3>
+<h3>2. 使用 <cite>billiard</cite><a class="headerlink" href="#billiard" title="Link to this heading">#</a></h3>
 <p>根据 <a class="reference external" href="https://github.com/celery/billiard">billiard</a> 的文档说明，其使用一个fork版本的多进程进行的开发。(billiard is a fork of the Python 2.7 multiprocessing package. The multiprocessing package itself is a renamed and updated version of R Oudkerk's pyprocessing package)</p>
 <p>因此尝试将上述的multiprocessing修改为billiard, 出现了新的报错 <cite>daemonic processes are not allowed to have children</cite></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="o">...</span>
-</span><span data-line="2"><span class="kn">from</span> <span class="nn">billiard</span> <span class="kn">import</span> <span class="n">Process</span>
+</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">billiard</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
 </span></pre></div>
 </div>
 <p>更多的魔改方法参见， <a class="reference external" href="https://stackoverflow.com/questions/22116493/run-a-scrapy-spider-in-a-celery-task/22202877#22202877">Run a Scrapy spider in a Celery Task</a> ，包括 use <a class="reference external" href="https://docs.scrapy.org/en/2.11/topics/api.html#scrapy.crawler.Crawler">Crawler</a> instead <a class="reference external" href="https://docs.scrapy.org/en/2.11/topics/api.html#scrapy.crawler.CrawlerProcess">CrawlerProcess</a> 。</p>
 </section>
 <section id="subprocess">
-<h3>3. 使用 <cite>subprocess</cite><a class="headerlink" href="#subprocess" title="Link to this heading">¶</a></h3>
+<h3>3. 使用 <cite>subprocess</cite><a class="headerlink" href="#subprocess" title="Link to this heading">#</a></h3>
 <p>使用subprocess是比较简单的方式，</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">def</span> <span class="nf">run_spider_subprocess</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">def</span><span class="w"> </span><span class="nf">run_spider_subprocess</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 </span><span data-line="2">    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;scrapy crawl </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </span></pre></div>
 </div>
 <p>这个代码本身可以正常运行，但是问题就是不能返回结果，不是很好的能捕获输出的stats_dict 到 <a class="reference external" href="https://django-celery-results.readthedocs.io/en/latest/">django-celery-results</a> 中。</p>
 </section>
 <section id="spawn">
-<h3>4. 使用 <cite>spawn</cite><a class="headerlink" href="#spawn" title="Link to this heading">¶</a></h3>
+<h3>4. 使用 <cite>spawn</cite><a class="headerlink" href="#spawn" title="Link to this heading">#</a></h3>
 <p>在前文提到的报错的情况下，ChatGPT建议将启动方式改为 <cite>spawn</cite> 。
 需要在 <cite>__main__</cite> 位置进行，显然是不适合这个场景的。</p>
 </section>
 <section id="processexecutor">
-<h3>5. 使用 <cite>ProcessExecutor</cite><a class="headerlink" href="#processexecutor" title="Link to this heading">¶</a></h3>
+<h3>5. 使用 <cite>ProcessExecutor</cite><a class="headerlink" href="#processexecutor" title="Link to this heading">#</a></h3>
 <p>最终，在进行多次分析后，得到了使用 <a class="reference external" href="https://docs.python.org/3/library/concurrent.futures.html#processpoolexecutor">ProcessExecutor</a> 的建议，并且同样需要设置启动方式为 <cite>spawn</cite></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">mp_context</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">get_context</span><span class="p">(</span><span class="s1">&#39;spawn&#39;</span><span class="p">)</span>
 </span><span data-line="2"><span class="k">with</span> <span class="n">ProcessPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mp_context</span><span class="o">=</span><span class="n">mp_context</span><span class="p">)</span> <span class="k">as</span> <span class="n">excutor</span><span class="p">:</span>
@@ -288,7 +288,7 @@ celery.py</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="id5">
-<h2>总结<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<h2>总结<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>在本文中，我们尝试了很多的方案实现 Celery + Django + Scrapy ， 并且爬虫需要定期多个同时并发执行。
 最终的解决solution是使用 <a class="reference external" href="https://docs.python.org/3/library/concurrent.futures.html#processpoolexecutor">ProcessExecutor</a> , 配合使用 <cite>spawn</cite> 实现的。</p>
 <div role="list" class="citation-list">
@@ -365,5 +365,5 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=e2e99575"></script></body>
+      <script src="../_static/shibuya.js?v=50760d75"></script></body>
 </html>

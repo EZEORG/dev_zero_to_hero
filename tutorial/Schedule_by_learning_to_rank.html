@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Efficient LLM Scheduling by Learning to Rank - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=2ceb65ce" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
@@ -29,7 +29,7 @@
       
       <strong>Dev_zero_to_hero</strong>
     </a>
-    <div class="sy-head-nav" id="HeadNav">
+    <div class="sy-head-nav" id="head-nav">
       <nav class="sy-head-links"></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="搜索" />
@@ -41,11 +41,11 @@ data-aria-auto="切换到亮色模式"
 data-aria-light="切换到暗色模式"
 data-aria-dark="切换到自动模式">
 <i class="i-lucide theme-icon"></i>
-</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -54,10 +54,10 @@ data-aria-dark="切换到自动模式">
     <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
       <article class="yue" role="main">
          <section class="tex2jax_ignore mathjax_ignore" id="efficient-llm-scheduling-by-learning-to-rank">
-<h1>Efficient LLM Scheduling by Learning to Rank<a class="headerlink" href="#efficient-llm-scheduling-by-learning-to-rank" title="Link to this heading">¶</a></h1>
+<h1>Efficient LLM Scheduling by Learning to Rank<a class="headerlink" href="#efficient-llm-scheduling-by-learning-to-rank" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://scholar.google.com/citations?user=2zCW8IUAAAAJ">Yichao Fu</a>,Siqi Zhu,Runlong Su,Aurick Qiao,Ion Stoica,<a class="reference external" href="https://scholar.google.com/citations?user=H1d4BS8AAAAJ&amp;amp;hl=en">Hao Zhang</a></p>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Large language models (LLMs) are essential to modern Internet services, but as demand grows, efficient scheduling becomes crucial to maintain low latency and high throughput. Traditional scheduling methods like First-Come-First-Serve (FCFS) often lead to Head-Of-Line (HOL) blocking, causing high latencies, especially when long requests block shorter ones. While Shortest-Job-First (SJF) and Shortest-Remaining-Time-First (SRTF) can reduce latency, they require accurate knowledge of request lengths, which is challenging to predict.</p>
 <div style="text-align:center">
 <img src="./imgs/schedule-1.png" width="500" style="text-align:center"/>  
@@ -66,7 +66,7 @@ This paper proposes that instead of knowing exact generation lengths, it is suff
 <p>The proposed method significantly improves performance, reducing p90 latency by 2.8× for chatbot serving and increasing throughput for batch data generation by 6.5×, offering a simple and effective solution for LLM scheduling.</p>
 </section>
 <section id="method">
-<h2>Method<a class="headerlink" href="#method" title="Link to this heading">¶</a></h2>
+<h2>Method<a class="headerlink" href="#method" title="Link to this heading">#</a></h2>
 <p><strong>1.Problem Formulation</strong></p>
 <p>The goal is to approximate SJF/SRTF scheduling by predicting the ranking order of request generation lengths, rather than predicting the exact lengths. The ranking list is evaluated using Kendall’s Tau, where a higher Tau indicates a better alignment with the ground truth, leading to improved scheduling and lower latency. Since Kendall’s Tau is difficult to optimize directly, ListMLE, a listwise ranking loss, is used to train the predictor, ensuring a holistic evaluation of the ranking order and better correlation with the ideal SJF/SRTF execution.</p>
 <p><strong>2.Generation length ranking predictor</strong></p>
@@ -93,7 +93,7 @@ This paper proposes that instead of knowing exact generation lengths, it is suff
 <p>This mechanism helps mitigate starvation, reduces <strong>max_waiting_time</strong>, and ensures better user satisfaction.</p>
 </section>
 <section id="result">
-<h2>Result<a class="headerlink" href="#result" title="Link to this heading">¶</a></h2>
+<h2>Result<a class="headerlink" href="#result" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Chatbot Serving Scheduling</strong></p></li>
 </ul>
@@ -105,7 +105,7 @@ This paper proposes that instead of knowing exact generation lengths, it is suff
 <li><p><strong>Synthetic Data Generation Scheduling</strong></p></li>
 </ul>
 <section id="synthetic-data-generation-sdg">
-<h3>Synthetic Data Generation (SDG)<a class="headerlink" href="#synthetic-data-generation-sdg" title="Link to this heading">¶</a></h3>
+<h3>Synthetic Data Generation (SDG)<a class="headerlink" href="#synthetic-data-generation-sdg" title="Link to this heading">#</a></h3>
 <p>Synthetic data generation (SDG) has become a critical inference workload for LLMs, particularly due to their high data requirements. In SDG, short responses are often preferred for practical reasons, including cost efficiency and to mitigate evaluation metric bias caused by long generations. To address this, samples with shorter generation lengths are prioritized for training in specific scenarios.</p>
 <p>The proposed method demonstrates improvements in generation throughput in scenarios where short responses are favored. Two experiments were conducted:</p>
 <ol class="arabic simple">
@@ -117,7 +117,7 @@ This paper proposes that instead of knowing exact generation lengths, it is suff
 </section>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>This paper presents a method for training a predictor to learn the generation length ordering of LLM requests using learning to rank. A rank-based scheduler is implemented on top of vLLM, demonstrating substantial improvements across various tasks: a 2.8x reduction in latency for chatbot serving and a 6.5x increase in throughput for synthetic data generation. Due to its simplicity and low computational cost, the proposed method can be easily integrated into production-level LLM serving systems, helping to reduce serving costs while improving service quality.</p>
 </section>
 </section>
@@ -186,7 +186,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=e2e99575"></script>
+      <script src="../_static/shibuya.js?v=50760d75"></script>
       <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
       <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></body>
 </html>

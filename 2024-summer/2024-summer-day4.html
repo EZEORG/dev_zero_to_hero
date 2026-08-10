@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day4 SSH与Django - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Day5 Docker与Scrapy爬虫项目" href="2024-summer-day5.html" /><link rel="prev" title="Day3 Python 开发环境搭载" href="2024-summer-day3.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=2ceb65ce" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
@@ -29,7 +29,7 @@
       
       <strong>Dev_zero_to_hero</strong>
     </a>
-    <div class="sy-head-nav" id="HeadNav">
+    <div class="sy-head-nav" id="head-nav">
       <nav class="sy-head-links"></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="搜索" />
@@ -41,11 +41,11 @@ data-aria-auto="切换到亮色模式"
 data-aria-light="切换到暗色模式"
 data-aria-dark="切换到自动模式">
 <i class="i-lucide theme-icon"></i>
-</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -54,7 +54,7 @@ data-aria-dark="切换到自动模式">
     <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
       <article class="yue" role="main">
          <section class="tex2jax_ignore mathjax_ignore" id="day4-sshdjango">
-<h1>Day4 SSH与Django<a class="headerlink" href="#day4-sshdjango" title="Link to this heading">¶</a></h1>
+<h1>Day4 SSH与Django<a class="headerlink" href="#day4-sshdjango" title="Link to this heading">#</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
@@ -79,7 +79,7 @@ data-aria-dark="切换到自动模式">
 </div>
 </div>
 <section id="windowsssh">
-<h2>Windows系统下的ssh密钥<a class="headerlink" href="#windowsssh" title="Link to this heading">¶</a></h2>
+<h2>Windows系统下的ssh密钥<a class="headerlink" href="#windowsssh" title="Link to this heading">#</a></h2>
 <p>为了避免每次登录服务器都需要输密码的这个麻烦的问题，可以使用以下方法解决。</p>
 <p>如果你的系统是mac，那么这个问题将会变的很简单，使用命令</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="n">userid</span><span class="nd">@服务器地址</span>
@@ -97,7 +97,7 @@ data-aria-dark="切换到自动模式">
 <p>从现在开始，你再登录你的服务器，就不需要输密码了。</p>
 </section>
 <section id="django">
-<h2>Django<a class="headerlink" href="#django" title="Link to this heading">¶</a></h2>
+<h2>Django<a class="headerlink" href="#django" title="Link to this heading">#</a></h2>
 <p>首先进入服务器之后，先安装Django</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span>
 </span></pre></div>
@@ -134,10 +134,10 @@ data-aria-dark="切换到自动模式">
 <p>现在我们创建了一个名为polls的投票项目，项目的文件夹下面多出了一个名为polls的文件夹。</p>
 <p><img alt="" src="https://files.mdnice.com/user/58281/2e6a7682-8440-4f4b-a25c-29c3cc36b899.png" /></p>
 <p>打开polls目录下的views.py文件，添加这段代码</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">django.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">HttpResponse</span>
 </span><span data-line="2">
 </span><span data-line="3">
-</span><span data-line="4"><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+</span><span data-line="4"><span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 </span><span data-line="5">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;Hello, world. You&#39;re at the polls index.&quot;</span><span class="p">)</span>
 </span><span data-line="6">
 </span></pre></div>
@@ -145,9 +145,9 @@ data-aria-dark="切换到自动模式">
 <p><img alt="" src="https://files.mdnice.com/user/58281/d066fcce-7afb-4aa2-97bb-0846b299cf59.png" /></p>
 <p>这是编写的第一个视图，要将第一个URL映射到它。对应的index是路径下需要渲染的https，第一个需要修改应用的url。</p>
 <p>然后，在这个目录下创建一个urls.py文件，添加以下内容</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span>
 </span><span data-line="2">
-</span><span data-line="3"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+</span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">views</span>
 </span><span data-line="4">
 </span><span data-line="5"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
 </span><span data-line="6">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">),</span>
@@ -157,8 +157,8 @@ data-aria-dark="切换到自动模式">
 <p><img alt="" src="https://files.mdnice.com/user/58281/b9e06d75-e4e1-483d-8c83-c7e9f3dca06e.png" /></p>
 <p>捕获了url为空，调用views.index函数，上面编写的。</p>
 <p>然后在 mysite/urls.py 文件的 urlpatterns 列表里插入一个 include()，或者直接替换里面所有的内容为以下内容</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
-</span><span data-line="2"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
+</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
 </span><span data-line="3">
 </span><span data-line="4"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
 </span><span data-line="5">    <span class="n">path</span><span class="p">(</span><span class="s2">&quot;polls/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;polls.urls&quot;</span><span class="p">)),</span>
@@ -172,7 +172,7 @@ data-aria-dark="切换到自动模式">
 <p><img alt="" src="https://files.mdnice.com/user/58281/bd4b3197-68b5-45f7-b7ea-037ffdce6791.png" /></p>
 <p>成功出现了hello world。</p>
 <section id="id1">
-<h3>数据库<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<h3>数据库<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Django默认的数据库是SQLite。项目的根目录下已经有了这个文件</p>
 <p><img alt="" src="https://files.mdnice.com/user/58281/977638b7-4bf8-428b-9e66-393f860ca95a.png" /></p>
 <p>目前先不考虑使用别的数据库，因为需要添加一些额外的设置。先不管时区，如果以后需要上线再进行修改。</p>
@@ -188,15 +188,15 @@ data-aria-dark="切换到自动模式">
 </div>
 <p>就可以进入数据库，使用一些SQL语句了。</p>
 <p>编辑模型polls/models.py</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
 </span><span data-line="2">
 </span><span data-line="3">
-</span><span data-line="4"><span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span data-line="4"><span class="k">class</span><span class="w"> </span><span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
 </span><span data-line="5">    <span class="n">question_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 </span><span data-line="6">    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s2">&quot;date published&quot;</span><span class="p">)</span>
 </span><span data-line="7">
 </span><span data-line="8">
-</span><span data-line="9"><span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span data-line="9"><span class="k">class</span><span class="w"> </span><span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
 </span><span data-line="10">    <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
 </span><span data-line="11">    <span class="n">choice_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 </span><span data-line="12">    <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -223,7 +223,7 @@ data-aria-dark="切换到自动模式">
 </div>
 </section>
 <section id="id2">
-<h3>管理员账号<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<h3>管理员账号<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">createsuperuser</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="n">Username</span><span class="p">:</span> <span class="n">admin</span>
@@ -238,9 +238,9 @@ data-aria-dark="切换到自动模式">
 <p>现在来到了一个登录页面，输入账号密码之后即可登录。</p>
 <p><img alt="" src="https://files.mdnice.com/user/58281/18ccd2cb-a65f-46cc-aa25-a43cfce960e2.png" /></p>
 <p>打开 polls/admin.py 文件，把它编辑成下面这样</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
 </span><span data-line="2">
-</span><span data-line="3"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span>
+</span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Question</span>
 </span><span data-line="4">
 </span><span data-line="5"><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Question</span><span class="p">)</span>
 </span></pre></div>
@@ -248,23 +248,23 @@ data-aria-dark="切换到自动模式">
 <p>现在在网站的管理界面上已经有了POLLS里面的Questions类，可以使用了。</p>
 <p>接下来按照教程，开始创建接口</p>
 <p>向 polls/views.py 里添加更多视图</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="k">def</span><span class="w"> </span><span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
 </span><span data-line="2">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;You&#39;re looking at question </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">question_id</span><span class="p">)</span>
 </span><span data-line="3">
 </span><span data-line="4">
-</span><span data-line="5"><span class="k">def</span> <span class="nf">results</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+</span><span data-line="5"><span class="k">def</span><span class="w"> </span><span class="nf">results</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
 </span><span data-line="6">    <span class="n">response</span> <span class="o">=</span> <span class="s2">&quot;You&#39;re looking at the results of question </span><span class="si">%s</span><span class="s2">.&quot;</span>
 </span><span data-line="7">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">response</span> <span class="o">%</span> <span class="n">question_id</span><span class="p">)</span>
 </span><span data-line="8">
 </span><span data-line="9">
-</span><span data-line="10"><span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+</span><span data-line="10"><span class="k">def</span><span class="w"> </span><span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
 </span><span data-line="11">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&quot;You&#39;re voting on question </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">question_id</span><span class="p">)</span>
 </span></pre></div>
 </div>
 <p>把这些新视图添加进 polls.urls 模块里</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span>
 </span><span data-line="2">
-</span><span data-line="3"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+</span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">views</span>
 </span><span data-line="4">
 </span><span data-line="5"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
 </span><span data-line="6">    <span class="c1"># ex: /polls/</span>
@@ -279,12 +279,12 @@ data-aria-dark="切换到自动模式">
 </span></pre></div>
 </div>
 <p>修改polls/views.py</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">django.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">HttpResponse</span>
 </span><span data-line="2">
-</span><span data-line="3"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span>
+</span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Question</span>
 </span><span data-line="4">
 </span><span data-line="5">
-</span><span data-line="6"><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+</span><span data-line="6"><span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
 </span><span data-line="7">    <span class="n">latest_question_list</span> <span class="o">=</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;-pub_date&quot;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
 </span><span data-line="8">    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">q</span><span class="o">.</span><span class="n">question_text</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">latest_question_list</span><span class="p">])</span>
 </span><span data-line="9">    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
@@ -394,5 +394,5 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=e2e99575"></script></body>
+      <script src="../_static/shibuya.js?v=50760d75"></script></body>
 </html>

@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=2ceb65ce" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
@@ -29,7 +29,7 @@
       
       <strong>Dev_zero_to_hero</strong>
     </a>
-    <div class="sy-head-nav" id="HeadNav">
+    <div class="sy-head-nav" id="head-nav">
       <nav class="sy-head-links"></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="搜索" />
@@ -41,11 +41,11 @@ data-aria-auto="切换到亮色模式"
 data-aria-light="切换到暗色模式"
 data-aria-dark="切换到自动模式">
 <i class="i-lucide theme-icon"></i>
-</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -54,11 +54,11 @@ data-aria-dark="切换到自动模式">
     <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
       <article class="yue" role="main">
          <section class="tex2jax_ignore mathjax_ignore" id="htmlrag-html-is-better-than-plain-text-for-modeling-retrieved-knowledge-in-rag-systems">
-<h1>HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems<a class="headerlink" href="#htmlrag-html-is-better-than-plain-text-for-modeling-retrieved-knowledge-in-rag-systems" title="Link to this heading">¶</a></h1>
+<h1>HtmlRAG: HTML is Better Than Plain Text for Modeling Retrieved Knowledge in RAG Systems<a class="headerlink" href="#htmlrag-html-is-better-than-plain-text-for-modeling-retrieved-knowledge-in-rag-systems" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://scholar.google.com/citations?user=qHzX-cMAAAAJ&amp;amp;hl=en&amp;amp;oi=sra">Jiejun Tan</a>, <a class="reference external" href="http://playbigdata.ruc.edu.cn/dou/">Zhicheng Dou</a>, Wen Wang, Mang Wang, Weipeng Chen, Ji-Rong We<br />
 <a class="reference external" href="https://arxiv.org/pdf/2411.02959">https://arxiv.org/pdf/2411.02959</a></p>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>LLMs have demonstrated remarkable capabilities in natural language processing tasks. However, they often struggle with forgetting long-tailed knowledge, providing outdated information, and hallucination.</p>
 <div style="text-align:center">
 <img src="./imgs/HTMLRAG-2.png" width="500" style="text-align:center"/>  
@@ -128,7 +128,7 @@ The prompt for this step using a generative model is as follows:</p></li>
 To achieve finer granularity in block pruning, this paper expands the leaf nodes of the pruned block tree to obtain a finer-grained block tree. Given the limitations of embedding-based pruning, the paper proposes using a ** generative model **, as it can handle the entire block tree and is not limited to modeling one block at a time. However, directly processing the cleaned HTML (averaging 60K) with the generative model is impractical due to high computational costs. Inspired by CFIC, the paper uses a sequence of tags to identify a block, where the sequence starts from the root tag and ends at the block's tag, referred to as the "block path." During inference, the generative model calculates block scores based on the structure of the block tree.  
 </section>
 <section id="experiments-and-results">
-<h2>Experiments and Results<a class="headerlink" href="#experiments-and-results" title="Link to this heading">¶</a></h2>
+<h2>Experiments and Results<a class="headerlink" href="#experiments-and-results" title="Link to this heading">#</a></h2>
 <p>HtmlRAG was tested on six QA datasets, including:</p>
 <ul class="simple">
 <li><p><strong>ASQA</strong>: a QA dataset consists of ambiguous questions that can be answered by multiple  answers supported by different knowledge sources;</p></li>
@@ -140,11 +140,11 @@ To achieve finer granularity in block pruning, this paper expands the leaf nodes
 </ul>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>HtmlRAG demonstrates that using HTML as the format for retrieved knowledge in RAG systems is more effective than plain text. It retains richer semantics and structure, leading to improved performance. This work opens a new direction for research and provides a simple yet effective solution for processing HTML in RAG systems.</p>
 </section>
 <section id="future-works">
-<h2>Future Works<a class="headerlink" href="#future-works" title="Link to this heading">¶</a></h2>
+<h2>Future Works<a class="headerlink" href="#future-works" title="Link to this heading">#</a></h2>
 <p>As LLMs continue to evolve, HTML’s suitability as the format for external knowledge is expected to grow. Future work may develop better solutions for processing HTML in RAG systems, further enhancing the capabilities of LLMs.</p>
 </section>
 </section>
@@ -213,5 +213,5 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=e2e99575"></script></body>
+      <script src="../_static/shibuya.js?v=50760d75"></script></body>
 </html>

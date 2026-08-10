@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Day1 Linux、VScode与Git - Dev_zero_to_hero 0.0.1 文档</title><link rel="index" title="索引" href="../genindex.html" /><link rel="search" title="搜索" href="../search.html" /><link rel="next" title="Day2 The Missing Semester of Your CS Education" href="2024-summer-day2.html" /><link rel="prev" title="Day0 Markdown" href="2024-summer-day0.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=83eaa723" />
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=e1a1ceaf" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=2ceb65ce" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
@@ -29,7 +29,7 @@
       
       <strong>Dev_zero_to_hero</strong>
     </a>
-    <div class="sy-head-nav" id="HeadNav">
+    <div class="sy-head-nav" id="head-nav">
       <nav class="sy-head-links"></nav>
       <div class="sy-head-extra flex items-center print:hidden"><form class="searchbox flex items-center" action="../search.html" method="get">
   <input type="text" name="q" placeholder="搜索" />
@@ -41,11 +41,11 @@ data-aria-auto="切换到亮色模式"
 data-aria-light="切换到暗色模式"
 data-aria-dark="切换到自动模式">
 <i class="i-lucide theme-icon"></i>
-</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="HeadNav" aria-expanded="false">
+</button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -54,7 +54,7 @@ data-aria-dark="切换到自动模式">
     <main class="sy-content mx-auto pt-12 px-6 xl:px-12 break-words">
       <article class="yue" role="main">
          <section class="tex2jax_ignore mathjax_ignore" id="day1-linuxvscodegit">
-<h1>Day1 Linux、VScode与Git<a class="headerlink" href="#day1-linuxvscodegit" title="Link to this heading">¶</a></h1>
+<h1>Day1 Linux、VScode与Git<a class="headerlink" href="#day1-linuxvscodegit" title="Link to this heading">#</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-outline-muted sd-rounded-1 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
@@ -79,9 +79,9 @@ data-aria-dark="切换到自动模式">
 </div>
 </div>
 <section id="basic-linux">
-<h2>一、Basic Linux<a class="headerlink" href="#basic-linux" title="Link to this heading">¶</a></h2>
+<h2>一、Basic Linux<a class="headerlink" href="#basic-linux" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3>1. 文件和目录管理<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<h3>1. 文件和目录管理<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>列出当前目录下的文件列表</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">ls</span>
 </span></pre></div>
@@ -100,7 +100,7 @@ data-aria-dark="切换到自动模式">
 </div>
 </section>
 <section id="id2">
-<h3>2. 系统监控和任务管理<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<h3>2. 系统监控和任务管理<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>显示任务管理器，监控系统进程</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">top</span>
 </span></pre></div>
@@ -111,14 +111,14 @@ data-aria-dark="切换到自动模式">
 </div>
 </section>
 <section id="id3">
-<h3>3. 清理屏幕<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<h3>3. 清理屏幕<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>清空当前终端页面</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">clear</span>
 </span></pre></div>
 </div>
 </section>
 <section id="id4">
-<h3>4. 网络和系统信息<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<h3>4. 网络和系统信息<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>查看curl命令的文档</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">man</span> <span class="n">curl</span>
 </span></pre></div>
@@ -138,14 +138,14 @@ data-aria-dark="切换到自动模式">
 </div>
 </section>
 <section id="id5">
-<h3>5. 文件传输和安装<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<h3>5. 文件传输和安装<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>使用scp命令进行文件传输</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">scp</span> <span class="n">file</span><span class="o">.</span><span class="n">txt</span> <span class="n">username</span><span class="nd">@remotehost</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">destination</span><span class="o">/</span>
 </span></pre></div>
 </div>
 </section>
 <section id="vim">
-<h3>6. VIM快捷键<a class="headerlink" href="#vim" title="Link to this heading">¶</a></h3>
+<h3>6. VIM快捷键<a class="headerlink" href="#vim" title="Link to this heading">#</a></h3>
 <p>向下移动</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">J</span>
 </span></pre></div>
@@ -161,7 +161,7 @@ data-aria-dark="切换到自动模式">
 </div>
 </section>
 <section id="python">
-<h3>7. Python和虚拟环境管理<a class="headerlink" href="#python" title="Link to this heading">¶</a></h3>
+<h3>7. Python和虚拟环境管理<a class="headerlink" href="#python" title="Link to this heading">#</a></h3>
 <p>创建Python虚拟环境，用于隔离项目的依赖环境</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="n">virtualenv</span> <span class="n">venv</span>
 </span><span data-line="2"><span class="n">source</span> <span class="n">activate</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
@@ -171,27 +171,27 @@ data-aria-dark="切换到自动模式">
 </section>
 </section>
 <section id="vscode">
-<h2>二、VScode<a class="headerlink" href="#vscode" title="Link to this heading">¶</a></h2>
+<h2>二、VScode<a class="headerlink" href="#vscode" title="Link to this heading">#</a></h2>
 <section id="extension">
-<h3>Extension<a class="headerlink" href="#extension" title="Link to this heading">¶</a></h3>
+<h3>Extension<a class="headerlink" href="#extension" title="Link to this heading">#</a></h3>
 <section id="remote">
-<h4>1.Remote<a class="headerlink" href="#remote" title="Link to this heading">¶</a></h4>
+<h4>1.Remote<a class="headerlink" href="#remote" title="Link to this heading">#</a></h4>
 <p>安装Remote插件, 然后进行服务器的登录操作
 <img alt="image-1.png" src="../_images/image-1.png" /></p>
 </section>
 <section id="id6">
-<h4>2.简体中文<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h4>
+<h4>2.简体中文<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <p>如果不习惯看英文，可以安装简体中文的插件
 <img alt="image.png" src="../_images/image-3.png" /></p>
 </section>
 <section id="id7">
-<h4>3.Python<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h4>
+<h4>3.Python<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <p>VSCode中Python开发环境支持的插件
 <img alt="image.png" src="../_images/image-4.png" /></p>
 </section>
 </section>
 <section id="id8">
-<h3>VSCode连接服务器<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<h3>VSCode连接服务器<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>在安装好remote插件后，就可以连接到服务器了。</p>
 <p>点击这个按钮：
 <img alt="image.png" src="../_images/image-5.png" /></p>
@@ -210,7 +210,7 @@ data-aria-dark="切换到自动模式">
 </section>
 </section>
 <section id="git">
-<h2>三、Git<a class="headerlink" href="#git" title="Link to this heading">¶</a></h2>
+<h2>三、Git<a class="headerlink" href="#git" title="Link to this heading">#</a></h2>
 <p>首先请确保你的电脑已经安装了Git！</p>
 <p>Git的安装网址如下：
 <a class="reference external" href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git">git-scm</a></p>
@@ -234,17 +234,17 @@ data-aria-dark="切换到自动模式">
 </div>
 </div>
 <section id="id9">
-<h3>命令行操作<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h3>
+<h3>命令行操作<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>如果你要把Github上的项目克隆到本地，分两种情况，操作都大同小异。</p>
 <p>在后文，项目统一用repo代替，与github的repositories对应。</p>
 <section id="repo">
-<h4>一、repo是你自己创建的/你参与协作且拥有访问权限<a class="headerlink" href="#repo" title="Link to this heading">¶</a></h4>
+<h4>一、repo是你自己创建的/你参与协作且拥有访问权限<a class="headerlink" href="#repo" title="Link to this heading">#</a></h4>
 <p>进入自己的repo，点击绿色的Code按钮，会找到一个https网址，把它复制下来。用这行代码克隆到你初始化的仓库，url即复制的网址。访问Github可以使用科学上网。</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">复制的url</span></code></p>
 <p>命令行会反馈是否成功，如果不成功可能是网络问题。</p>
 </section>
 <section id="id10">
-<h4>二、repo是别人的，你想搬运来用<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h4>
+<h4>二、repo是别人的，你想搬运来用<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>点击Fork按钮，将项目fork到你自己的repo中，随后在自己的repo中查看url并使用相同的命令。网址后的ID是你自己的才是正确的。</p>
 <p>举例：<img alt="image.png" src="../_images/image-10.png" /></p>
 <p>现在，你可以在本地对这个项目进行操作。</p>
@@ -296,7 +296,7 @@ data-aria-dark="切换到自动模式">
 </section>
 </section>
 <section id="id11">
-<h3>VSCode中源代码管理<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<h3>VSCode中源代码管理<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <p><img alt="image.png" src="../_images/image-12.png" /></p>
 <p>页面的左侧工具栏自上往下第三个是源代码管理，在这里可以对你代码的修改提交进行管理。</p>
 <p>例如我对我的代码进行了修改，在源代码管理处就能看到我进行的修改。</p>
@@ -322,7 +322,7 @@ data-aria-dark="切换到自动模式">
 </ul>
 </section>
 <section id="id12">
-<h3>代码提交操作步骤<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h3>
+<h3>代码提交操作步骤<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>将仓库克隆到本地目录</p></li>
 <li><p>切换到正确的分支，对代码进行修改</p></li>
@@ -408,5 +408,5 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
-      <script src="../_static/shibuya.js?v=e2e99575"></script></body>
+      <script src="../_static/shibuya.js?v=50760d75"></script></body>
 </html>
